@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    tools:context=".activities.PerfilActivity">
+
+    <!-- HEADER ESTÁTICO -->
+    <LinearLayout
+        android:id="@+id/linearLayoutPerfilHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundPrincipal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/imgPerfilLogo"
+            android:layout_width="110dp"
+            android:layout_height="32dp"
+            android:src="@drawable/brand_logo" />
+
+        <View
+            android:id="@+id/viewPerfilHeaderSpacer"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPerfilIconos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgPerfilIconoNotificacion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/iconPrincipal" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImgPerfilIconoPerfil"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_usuario"
+                app:civ_border_color="@color/lineaDivisor"
+                app:civ_border_width="1dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPerfilRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="24dp">
+
+            <!-- PROFILE INFO CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPerfilInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPerfilInfoContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <FrameLayout
+                        android:id="@+id/framePerfilAvatarContainer"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/circleImgPerfilAvatar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/icono_usuario"
+                            app:civ_border_color="@color/btnPrincipal"
+                            app:civ_border_width="2dp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardPerfilAvatarEditBadge"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="bottom|end"
+                            app:cardBackgroundColor="@color/btnPrincipal"
+                            app:cardCornerRadius="13dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/imgPerfilAvatarEditIcon"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_camara"
+                                app:tint="@color/btnPrincipalTexto" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilTextInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtPerfilNombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Alex Rivera"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardPerfilVipBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            app:cardBackgroundColor="#F59E0B"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutPerfilVipInterno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="10dp"
+                                android:paddingVertical="5dp">
+
+                                <ImageView
+                                    android:id="@+id/imgPerfilVipStar"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:src="@drawable/icono_check"
+                                    app:tint="#131B2E" />
+
+                                <TextView
+                                    android:id="@+id/txtPerfilVipBadge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cliente VIP Gold"
+                                    android:textColor="#131B2E"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/txtPerfilEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="alex.rivera@example.com"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txtPerfilMiembro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="• Miembro desde Octubre 2023"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- STATS ROW -->
+            <LinearLayout
+                android:id="@+id/linearLayoutPerfilStatsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <!-- Stat 1 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilStat1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilStat1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilStat1Icon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/icono_pedidos"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <TextView
+                            android:id="@+id/txtPerfilStat1Valor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="12"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtPerfilStat1Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pedidos hechos"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Stat 2 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilStat2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilStat2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilStat2Icon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/icono_favorito_vacio"
+                            app:tint="@color/estadoError" />
+
+                        <TextView
+                            android:id="@+id/txtPerfilStat2Valor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="5"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtPerfilStat2Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Favoritos"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Stat 3 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilStat3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilStat3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilStat3Icon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/icono_puntos"
+                            app:tint="#D97706" />
+
+                        <TextView
+                            android:id="@+id/txtPerfilStat3Valor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="140 pts"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtPerfilStat3Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Puntos Celnova"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- MI ACTIVIDAD SECTION -->
+            <LinearLayout
+                android:id="@+id/linearLayoutPerfilActividadSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtPerfilActividadHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MI ACTIVIDAD"
+                    android:textColor="@color/txtTextoSecundario"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Item 1: Mis Pedidos -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilItemPedidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilItemPedidos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilPedidosIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_pedidos"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPerfilPedidosInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPerfilPedidosTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Mis Pedidos"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPerfilPedidosSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Historial de compras y rastreo"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardPerfilPedidosBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            app:cardBackgroundColor="#D1FAE5"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <TextView
+                                android:id="@+id/txtPerfilPedidosBadge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="4dp"
+                                android:text="1 en camino"
+                                android:textColor="#065F46"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <ImageView
+                            android:id="@+id/imgPerfilPedidosArrow"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:rotation="180"
+                            android:src="@drawable/icono_atras"
+                            app:tint="@color/iconSecundario" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Item 2: Lista de Deseos -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilItemDeseos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilItemDeseos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilDeseosIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_favorito_vacio"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPerfilDeseosInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPerfilDeseosTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Lista de Deseos"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPerfilDeseosSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Colecciones guardadas"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtPerfilDeseosCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="5 items"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/imgPerfilDeseosArrow"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:rotation="180"
+                            android:src="@drawable/icono_atras"
+                            app:tint="@color/iconSecundario" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Item 3: Mis comentarios -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilItemComentarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilItemComentarios"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilComentariosIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_msm"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPerfilComentariosInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPerfilComentariosTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Mis comentarios"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPerfilComentariosSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Opiniones y respuestas de la comunidad"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgPerfilComentariosArrow"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:rotation="180"
+                            android:src="@drawable/icono_atras"
+                            app:tint="@color/iconSecundario" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- CONFIGURACION DE CUENTA SECTION -->
+            <LinearLayout
+                android:id="@+id/linearLayoutPerfilConfigSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtPerfilConfigHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CONFIGURACIÓN DE CUENTA"
+                    android:textColor="@color/txtTextoSecundario"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Item 1: Direcciones de Envío -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilItemDirecciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilItemDirecciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilDireccionesIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_ubicacion"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPerfilDireccionesInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPerfilDireccionesTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Direcciones de Envío"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPerfilDireccionesSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Principal: Cra. 7 #72-41, Bogotá D.C."
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtPerfilDireccionesCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="2 guardadas"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/imgPerfilDireccionesArrow"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:rotation="180"
+                            android:src="@drawable/icono_atras"
+                            app:tint="@color/iconSecundario" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Item 2: Métodos de Pago -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilItemPagos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilItemPagos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilPagosIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_carrito_compras"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPerfilPagosInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPerfilPagosTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Métodos de Pago"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPerfilPagosSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Visa •••• 4242 (Predeterminada)"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgPerfilPagosArrow"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:rotation="180"
+                            android:src="@drawable/icono_atras"
+                            app:tint="@color/iconSecundario" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Item 3: Notificaciones y Alertas -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilItemNotificaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilItemNotificaciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilNotificacionesIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_notificacion"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPerfilNotificacionesInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPerfilNotificacionesTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Notificaciones y Alertas"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPerfilNotificacionesSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Promociones flash y estado de envíos"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchPerfilNotificaciones"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- PREFERENCIAS Y SOPORTE SECTION -->
+            <LinearLayout
+                android:id="@+id/linearLayoutPerfilPreferenciasSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtPerfilPreferenciasHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PREFERENCIAS Y SOPORTE"
+                    android:textColor="@color/txtTextoSecundario"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Item 1: Tema de la Aplicación -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilItemTema"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilItemTema"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilTemaIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_tema_aplicacion"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPerfilTemaInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPerfilTemaTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Tema de la Aplicación"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPerfilTemaSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Ajustes visuales y contraste"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtPerfilTemaValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="Modo Claro"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/imgPerfilTemaArrow"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:rotation="180"
+                            android:src="@drawable/icono_atras"
+                            app:tint="@color/iconSecundario" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Item 2: Seguridad y Biometría -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilItemSeguridad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilItemSeguridad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilSeguridadIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_huella"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPerfilSeguridadInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPerfilSeguridadTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Seguridad y Biometría"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPerfilSeguridadSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Huella digital para confirmar pagos"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchPerfilSeguridad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Item 3: Centro de Ayuda y Soporte -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilItemAyuda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilItemAyuda"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilAyudaIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_soporte"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPerfilAyudaInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPerfilAyudaTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Centro de Ayuda y Soporte"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPerfilAyudaSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Chat en vivo con agentes 24/7"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgPerfilAyudaArrow"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:rotation="180"
+                            android:src="@drawable/icono_atras"
+                            app:tint="@color/iconSecundario" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Item 4: Términos y Privacidad -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPerfilItemTerminos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPerfilItemTerminos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPerfilTerminosIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_cifrado"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPerfilTerminosInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPerfilTerminosTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Términos y Privacidad"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPerfilTerminosSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Políticas de garantía y devolución"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgPerfilTerminosArrow"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:rotation="180"
+                            android:src="@drawable/icono_atras"
+                            app:tint="@color/iconSecundario" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- LOGOUT BUTTON -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPerfilCerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#FEE2E2"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Cerrar Sesión"
+                android:textColor="#DC2626"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="25dp"
+                app:elevation="0dp"
+                app:icon="@drawable/icono_cerrar_sesion"
+                app:iconGravity="textStart"
+                app:iconSize="18dp"
+                app:iconTint="#DC2626" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundSecundario"
+        app:elevation="8dp"
+        app:itemIconTint="@color/navColorIconos"
+        app:itemTextColor="@color/navColorIconos"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

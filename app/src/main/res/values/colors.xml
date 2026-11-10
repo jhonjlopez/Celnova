@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- FONDOS -->
+    <color name="backgroundPrincipal">#f7f8fc</color>
+    <color name="backgroundSecundario">#FFFFFF</color>
+    <color name="backgroundTerciario">#005F73</color>
+
+    <!-- CARDS -->
+    <color name="backgroundCard">#FFFFFF</color>
+    <color name="backgroundCardSecundario">#FFFFFF</color>
+    <color name="backgroundCardTerciario">#2B6958</color>
+
+    <!-- TITULOS Y TEXTOS -->
+    <color name="txtTitulo">#131B2E</color>
+    <color name="txtTituloSecundario">#004655</color>
+    <color name="txtTexto">#3F484C</color>
+    <color name="txtTextoSecundario">#6F797C</color>
+    <color name="txtHintEntrada">#131B2E</color>
+
+    <!-- INPUTS -->
+    <color name="inputFondo">#FFFFFF</color>
+    <color name="inputTexto">#131B2E</color>
+    <color name="inputHint">#9CA3AF</color>
+    <color name="inputBorde">#D1D5DB</color>
+    <color name="inputBordeFocus">#5B5FEF</color>
+
+    <!-- BOTONES -->
+    <color name="btnPrincipal">#005F73</color>
+    <color name="btnSecundario">#FFFFFF</color>
+    <color name="btnPrincipalTexto">#FFFFFF</color>
+    <color name="btnSecundarioTexto">#131B2E</color>
+
+    <!-- MARCA CELNOVA -->
+    <color name="brandPrincipal">#001219</color>
+    <color name="brandSecondario">#005F73</color>
+
+    <!-- ESTADOS -->
+    <color name="estadoExito">#2B6958</color>
+    <color name="estadoInformacion">#22C55E</color>
+    <color name="estadoAdvertencia">#F59E0B</color>
+    <color name="estadoError">#EF4444</color>
+
+    <!-- ICONOS -->
+    <color name="iconPrincipal">#3F484C</color>
+    <color name="iconSecundario">#6F797C</color>
+
+    <!-- LINEAS Y DIVISORES -->
+    <color name="lineaDivisor">#DAE2FD</color>
+
+    <!-- NAVEGACION INFERIOR -->
+    <color name="navFondo">#FFFFFF</color>
+    <color name="navItemActivo">#005F73</color>
+    <color name="navItemInactivo">#6F797C</color>
+    <color name="navIndicadorFondo">#C7F3E5</color>
+    <color name="navColorIconos">#3F484C</color>
+
+    <!-- BANNERS Y OFERTAS -->
+    <color name="bannerFondo">#005F73</color>
+    <color name="txtBannerPrincipal">#FFFFFF</color>
+    <color name="txtBannerSecundario">#002018</color>
+
+
+</resources>

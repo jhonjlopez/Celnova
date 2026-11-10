@@ -1,0 +1,1780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    tools:context=".activities.AdminDashboardActivity">
+
+    <!-- HEADER ESTÁTICO EN LA PARTE SUPERIOR -->
+    <LinearLayout
+        android:id="@+id/linearLayoutAdminHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundPrincipal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdminLogoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgAdminLogo"
+                android:layout_width="110dp"
+                android:layout_height="32dp"
+                android:src="@drawable/brand_logo" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:cardBackgroundColor="@color/btnPrincipal"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:id="@+id/txtAdminBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:text="Admin Panel"
+                    android:textColor="@color/btnPrincipalTexto"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewAdminHeaderSpacer"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdminIconos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgAdminIconoNotificacion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/iconPrincipal" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminIconoPerfilContainer"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:id="@+id/imgAdminIconoPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="6dp"
+                    android:src="@drawable/icono_usuario"
+                    app:tint="@color/iconPrincipal" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- SCROLLABLE BODY -->
+    <ScrollView
+        android:id="@+id/scrollViewAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdminRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="24dp">
+
+            <!-- GREETING & MANTENIMIENTO -->
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminGreetingRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminGreetingTitles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtAdminCentroMando"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CENTRO DE MANDO"
+                        android:textColor="@color/txtTextoSecundario"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtAdminHolaAdmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Hola, Admin"
+                        android:textColor="@color/txtTitulo"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminMantenimiento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/backgroundCard"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminMantenimiento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp">
+
+                        <TextView
+                            android:id="@+id/txtAdminMantenimientoLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="Mantenimiento"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchAdminMantenimiento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- BANNER PRINCIPAL VENTAS -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminVentasBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/bannerFondo"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminVentasBannerInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminVentasHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminVentasTitulo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="VENTAS TOTALES HOY (COLOMBIA)"
+                            android:textColor="@color/txtBannerPrincipal"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminVentasPercentageBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="#D1FAE5"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <TextView
+                                android:id="@+id/txtAdminVentasPercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="3dp"
+                                android:text="📈 +16.8%"
+                                android:textColor="#065F46"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtAdminVentasMonto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="$148.920.000 COP"
+                        android:textColor="@color/txtBannerPrincipal"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminVentasSubStats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminMargen"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminMargenLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Margen Bruto Real"
+                                android:textColor="@color/txtBannerPrincipal"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtAdminMargenValor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="34.2% (+$$1M)"
+                                android:textColor="@color/txtBannerPrincipal"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminOrdenes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminOrdenesLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Órdenes Procesadas"
+                                android:textColor="@color/txtBannerPrincipal"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtAdminOrdenesValor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="412 pedidos"
+                                android:textColor="@color/txtBannerPrincipal"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 4 KPI CARDS GRID (2x2) -->
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminKpiRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <!-- KPI 1: Usuarios Activos -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminKpi1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminKpi1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminKpi1Top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgAdminKpi1Icon"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/icono_usuarios"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <View
+                                android:id="@+id/viewAdminKpi1Spacer"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardAdminKpi1Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="#D1FAE5"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtAdminKpi1Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="+124 hoy"
+                                    android:textColor="#065F46"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAdminKpi1Valor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="28.450"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtAdminKpi1Label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Usuarios Activos"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- KPI 2: Vendedores Verificados -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminKpi2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminKpi2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminKpi2Top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgAdminKpi2Icon"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/icono_check_verificado"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <View
+                                android:id="@+id/viewAdminKpi2Spacer"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/txtAdminKpi2Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="68.4% ratio"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAdminKpi2Valor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="184"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtAdminKpi2Label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Vendedores Verificados"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminKpiRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <!-- KPI 3: Pedidos Totales Mes -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminKpi3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminKpi3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminKpi3Top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgAdminKpi3Icon"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/icono_pedidos"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <View
+                                android:id="@+id/viewAdminKpi3Spacer"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardAdminKpi3Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="#D1FAE5"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtAdminKpi3Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="+8.2%"
+                                    android:textColor="#065F46"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAdminKpi3Valor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="8.920"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtAdminKpi3Label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Pedidos Totales Mes"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- KPI 4: Facturación DIAN -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminKpi4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminKpi4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminKpi4Top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgAdminKpi4Icon"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/icono_tienda"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <View
+                                android:id="@+id/viewAdminKpi4Spacer"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/txtAdminKpi4Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100% OK"
+                                android:textColor="#B45309"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAdminKpi4Valor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="$1.420M"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtAdminKpi4Label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Facturación DIAN"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- RENDIMIENTO POR CANAL CHART CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminChartCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminChartContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminChartHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminChartTitles"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminChartTitulo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rendimiento por Canal"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminChartSub"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="B2C Tienda vs. Marketplace"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <!-- Toggle Buttons -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminChartToggleGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/backgroundCard"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminChartToggle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="3dp">
+
+                                <TextView
+                                    android:id="@+id/btnAdminChartSemanal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_admin_toggle_seleccionado"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="4dp"
+                                    android:text="Semanal"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/btnAdminChartMensual"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="4dp"
+                                    android:text="Mensual"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <!-- Chart Legend -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminChartLegend"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminChartLegendB2c"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:text="● B2C Directo (68%)"
+                            android:textColor="@color/btnPrincipal"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtAdminChartLegendMarketplace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="● Marketplace (32%)"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <!-- Bar Chart Bars -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminChartBarsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <!-- Lun -->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutChartLun"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBarsLun"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:id="@+id/barLun1"
+                                    android:layout_width="10dp"
+                                    android:layout_height="65dp"
+                                    android:layout_marginEnd="3dp"
+                                    android:background="@color/btnPrincipal" />
+
+                                <View
+                                    android:id="@+id/barLun2"
+                                    android:layout_width="10dp"
+                                    android:layout_height="40dp"
+                                    android:background="@color/estadoExito" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtChartLun"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Lun"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <!-- Mar -->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutChartMar"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBarsMar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:id="@+id/barMar1"
+                                    android:layout_width="10dp"
+                                    android:layout_height="75dp"
+                                    android:layout_marginEnd="3dp"
+                                    android:background="@color/btnPrincipal" />
+
+                                <View
+                                    android:id="@+id/barMar2"
+                                    android:layout_width="10dp"
+                                    android:layout_height="45dp"
+                                    android:background="@color/estadoExito" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtChartMar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Mar"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <!-- Mié -->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutChartMie"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBarsMie"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:id="@+id/barMie1"
+                                    android:layout_width="10dp"
+                                    android:layout_height="55dp"
+                                    android:layout_marginEnd="3dp"
+                                    android:background="@color/btnPrincipal" />
+
+                                <View
+                                    android:id="@+id/barMie2"
+                                    android:layout_width="10dp"
+                                    android:layout_height="50dp"
+                                    android:background="@color/estadoExito" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtChartMie"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Mié"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <!-- Jue -->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutChartJue"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBarsJue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:id="@+id/barJue1"
+                                    android:layout_width="10dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginEnd="3dp"
+                                    android:background="@color/btnPrincipal" />
+
+                                <View
+                                    android:id="@+id/barJue2"
+                                    android:layout_width="10dp"
+                                    android:layout_height="55dp"
+                                    android:background="@color/estadoExito" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtChartJue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Jue"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <!-- Vie -->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutChartVie"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBarsVie"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:id="@+id/barVie1"
+                                    android:layout_width="10dp"
+                                    android:layout_height="85dp"
+                                    android:layout_marginEnd="3dp"
+                                    android:background="@color/btnPrincipal" />
+
+                                <View
+                                    android:id="@+id/barVie2"
+                                    android:layout_width="10dp"
+                                    android:layout_height="60dp"
+                                    android:background="@color/estadoExito" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtChartVie"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Vie"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <!-- Sáb -->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutChartSab"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBarsSab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:id="@+id/barSab1"
+                                    android:layout_width="10dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginEnd="3dp"
+                                    android:background="@color/btnPrincipal" />
+
+                                <View
+                                    android:id="@+id/barSab2"
+                                    android:layout_width="10dp"
+                                    android:layout_height="65dp"
+                                    android:background="@color/estadoExito" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtChartSab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Sáb"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+
+                        <!-- Hoy -->
+                        <LinearLayout
+                            android:id="@+id/linearLayoutChartHoy"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBarsHoy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:id="@+id/barHoy1"
+                                    android:layout_width="10dp"
+                                    android:layout_height="95dp"
+                                    android:layout_marginEnd="3dp"
+                                    android:background="@color/btnPrincipal" />
+
+                                <View
+                                    android:id="@+id/barHoy2"
+                                    android:layout_width="10dp"
+                                    android:layout_height="70dp"
+                                    android:background="@color/estadoExito" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtChartHoy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Hoy"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ACCIONES RÁPIDAS SECTION (2x2 GRID) -->
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminAccionesSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtAdminAccionesTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Acciones Rápidas"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Row 1 -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminAccionesRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <!-- Acción 1: Auditoría DIAN -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminAccion1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminAccion1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:id="@+id/frameAdminAccion1IconContainer"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@color/backgroundCard"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:id="@+id/imgAdminAccion1Icon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/icono_categorias"
+                                    app:tint="@color/txtTituloSecundario" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminAccion1Info"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtAdminAccion1Titulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Auditoría DIAN"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtAdminAccion1Sub"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="XML &amp; Facturas"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Acción 2: Aprobar Tiendas -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminAccion2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminAccion2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:id="@+id/frameAdminAccion2IconContainer"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@color/backgroundCard"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:id="@+id/imgAdminAccion2Icon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/icono_usuarios"
+                                    app:tint="@color/txtTituloSecundario" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminAccion2Info"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtAdminAccion2Titulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Aprobar Tiendas"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtAdminAccion2Sub"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="3 pendientes"
+                                    android:textColor="#B45309"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminAccionesRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <!-- Acción 3: Fraude Wompi -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminAccion3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminAccion3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:id="@+id/frameAdminAccion3IconContainer"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="#FEE2E2"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:id="@+id/imgAdminAccion3Icon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/icono_cifrado"
+                                    app:tint="#DC2626" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminAccion3Info"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtAdminAccion3Titulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Fraude Wompi"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtAdminAccion3Sub"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="1 caso activo"
+                                    android:textColor="#DC2626"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Acción 4: Comisiones -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminAccion4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminAccion4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:id="@+id/frameAdminAccion4IconContainer"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@color/backgroundCard"
+                                android:padding="8dp">
+
+                                <ImageView
+                                    android:id="@+id/imgAdminAccion4Icon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/icono_puntos"
+                                    app:tint="@color/txtTituloSecundario" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminAccion4Info"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtAdminAccion4Titulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Comisiones"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtAdminAccion4Sub"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Corte quincenal"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ACTIVIDAD CRÍTICA EN VIVO SECTION -->
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminActividadSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminActividadHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminActividadTitles"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgAdminActividadLiveIcon"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/icono_rayo"
+                            app:tint="@color/btnPrincipal" />
+
+                        <TextView
+                            android:id="@+id/txtAdminActividadTitulo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Actividad Crítica en Vivo"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtAdminActividadVerTodo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Ver Todo"
+                        android:textColor="@color/txtTituloSecundario"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Activity Item 1 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminActividad1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminActividad1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminActividad1Icon"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminActividad1Icon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_tienda"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminActividad1Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminActividad1TitleRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminActividad1Titulo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="AudioTech Colombia SAS"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminActividad1Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    app:cardBackgroundColor="#FEF3C7"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminActividad1Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="5dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="DIAN Pendiente"
+                                        android:textColor="#B45309"
+                                        android:textSize="9sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtAdminActividad1Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Solicitud de apertura de marketplace"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAdminActividad1Time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hace 4m"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Activity Item 2 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminActividad2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminActividad2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminActividad2Icon"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:background="#FEE2E2"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminActividad2Icon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_cifrado"
+                                app:tint="#DC2626" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminActividad2Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminActividad2TitleRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminActividad2Titulo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bloqueo Preventivo Wompi"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminActividad2Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    app:cardBackgroundColor="#FEE2E2"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminActividad2Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="5dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="Riesgo Alto"
+                                        android:textColor="#DC2626"
+                                        android:textSize="9sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtAdminActividad2Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="IP sospechosa bloqueada"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAdminActividad2Time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hace 18m"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Activity Item 3 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminActividad3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminActividad3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminActividad3Icon"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:background="#D1FAE5"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminActividad3Icon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_check"
+                                app:tint="#065F46" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminActividad3Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminActividad3TitleRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminActividad3Titulo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Distribuidora Medellín"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminActividad3Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    app:cardBackgroundColor="#E0F2FE"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminActividad3Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="5dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="Inventario"
+                                        android:textColor="#0369A1"
+                                        android:textSize="9sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtAdminActividad3Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Solicita cupo de +500 SKU para Bodega Central"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAdminActividad3Time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hace 1h"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- ADMIN BOTTOM NAVIGATION -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundSecundario"
+        app:elevation="8dp"
+        app:itemIconTint="@color/navColorIconos"
+        app:itemTextColor="@color/navColorIconos"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/admin_bottom_nav_menu" />
+
+</LinearLayout>

@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    tools:context=".activities.AdminUsuariosActivity">
+
+    <!-- HEADER ESTÁTICO -->
+    <LinearLayout
+        android:id="@+id/linearLayoutAdminUsersHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundPrincipal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdminUsersLogoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgAdminUsersLogo"
+                android:layout_width="110dp"
+                android:layout_height="32dp"
+                android:src="@drawable/brand_logo" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminUsersBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:cardBackgroundColor="@color/btnPrincipal"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:id="@+id/txtAdminUsersBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:text="Usuarios"
+                    android:textColor="@color/btnPrincipalTexto"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewAdminUsersHeaderSpacer"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdminUsersIconos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgAdminUsersIconoNotificacion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/iconPrincipal" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminUsersIconoPerfilContainer"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:id="@+id/imgAdminUsersIconoPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="6dp"
+                    android:src="@drawable/icono_usuario"
+                    app:tint="@color/iconPrincipal" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- BODY SCROLLVIEW -->
+    <ScrollView
+        android:id="@+id/scrollViewAdminUsers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdminUsersRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="24dp">
+
+            <!-- BUSCADOR -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminUsersBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminUsersBusquedaInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgAdminUsersIconoBusqueda"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_busqueda"
+                        app:tint="@color/iconSecundario" />
+
+                    <EditText
+                        android:id="@+id/etAdminUsersBuscar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="Buscar usuario, C.C./NIT o tienda..."
+                        android:inputType="text"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/imgAdminUsersIconoFiltro"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_ajuste"
+                        app:tint="@color/iconSecundario" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CHIPS DE FILTRO -->
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollAdminUsersChips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminUsersChipsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Chip 1: Todos -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminUsersChipTodos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardBackgroundColor="#D1FAE5"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminUsersChipTodos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="14dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminUsersChipTodos"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/icono_usuarios"
+                                app:tint="#065F46" />
+
+                            <TextView
+                                android:id="@+id/txtAdminUsersChipTodos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="Todos (28.4k)"
+                                android:textColor="#065F46"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 2: Clientes -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminUsersChipClientes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardBackgroundColor="@color/backgroundCard"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <TextView
+                            android:id="@+id/txtAdminUsersChipClientes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="8dp"
+                            android:text="Clientes (28.2k)"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 3: Vendedores -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminUsersChipVendedores"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        app:cardBackgroundColor="@color/backgroundCard"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <TextView
+                            android:id="@+id/txtAdminUsersChipVendedores"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="8dp"
+                            android:text="Vendedores (184)"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- BANNER RESUMEN RED -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminUsersBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/bannerFondo"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminUsersBannerInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminUsersBannerTexts"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtAdminUsersBannerSub"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="• Red CELNOVA Colombia"
+                            android:textColor="@color/txtBannerPrincipal"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/txtAdminUsersBannerCuentas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="28,404 Cuentas"
+                            android:textColor="@color/txtBannerPrincipal"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtAdminUsersBannerSync"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Sincronización en tiempo real (COP)"
+                            android:textColor="@color/txtBannerPrincipal"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAdminUsersNuevo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:backgroundTint="#FEF3C7"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:paddingHorizontal="14dp"
+                        android:text="+ Nuevo"
+                        android:textColor="#B45309"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp"
+                        app:elevation="0dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SECTION HEADER -->
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminUsersSectionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtAdminUsersSectionTitulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CUENTAS REGISTRADAS"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtAdminUsersOrden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Orden: Recientes"
+                    android:textColor="@color/txtTextoSecundario"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- CARD USER 1: Carlos Mendoza -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminUser1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminUser1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminUser1Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminUser1AvatarContainer"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardBackgroundColor="@color/backgroundCard"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/lineaDivisor"
+                            app:strokeWidth="1dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminUser1Avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="8dp"
+                                android:src="@drawable/icono_usuario"
+                                app:tint="@color/txtTituloSecundario" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminUser1Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminUser1NameRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminUser1Nombre"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Carlos Mendoza"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminUser1Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    app:cardBackgroundColor="#D1FAE5"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminUser1Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="Vendedor"
+                                        android:textColor="#065F46"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtAdminUser1Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="TechStore Col • NIT: 901.442.310-3"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchAdminUser1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+                    </LinearLayout>
+
+                    <!-- Stats Card row -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminUser1Stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardBackgroundColor="@color/backgroundCard"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminUser1Stats"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutUser1Ventas"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtUser1VentasLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Ventas"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtUser1VentasVal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="142 pedidos"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutUser1Ubicacion"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtUser1UbicacionLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Ubicación"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtUser1UbicacionVal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Bogotá D.C."
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutUser1Total"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtUser1TotalLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Total COP"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtUser1TotalVal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$48.2M"
+                                    android:textColor="@color/estadoExito"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Footer Row -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminUser1Footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminUser1Status"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="● Tienda Activa"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminUser1Editar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="6dp"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="12dp"
+                            android:text="Editar"
+                            android:textColor="@color/btnPrincipal"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:elevation="0dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminUser1Rol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="12dp"
+                            android:text="Rol"
+                            android:textColor="@color/btnPrincipal"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:elevation="0dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CARD USER 2: Valentine Gómez -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminUser2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminUser2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminUser2Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminUser2AvatarContainer"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardBackgroundColor="@color/backgroundCard"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/lineaDivisor"
+                            app:strokeWidth="1dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminUser2Avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="8dp"
+                                android:src="@drawable/icono_usuario"
+                                app:tint="@color/txtTituloSecundario" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminUser2Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminUser2NameRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminUser2Nombre"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Valentine Gómez"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminUser2Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    app:cardBackgroundColor="#E0F2FE"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminUser2Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="Cliente VIP"
+                                        android:textColor="#0369A1"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtAdminUser2Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="valen.gomez@gmail.com • C.C. 1.020..."
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchAdminUser2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+                    </LinearLayout>
+
+                    <!-- Stats Card row -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminUser2Stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardBackgroundColor="@color/backgroundCard"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminUser2Stats"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutUser2Compras"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtUser2ComprasLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Compras"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtUser2ComprasVal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="18 órdenes"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutUser2Ciudad"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtUser2CiudadLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Ciudad"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtUser2CiudadVal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Medellín"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutUser2Total"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtUser2TotalLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Inversión COP"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtUser2TotalVal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$3.420.000"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Footer Row -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminUser2Footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminUser2Status"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Historial impecable"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminUser2Editar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="6dp"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="12dp"
+                            android:text="Editar"
+                            android:textColor="@color/btnPrincipal"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:elevation="0dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminUser2Rol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="12dp"
+                            android:text="Rol"
+                            android:textColor="@color/btnPrincipal"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:elevation="0dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CARD USER 3: Santiago Restrepo -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminUser3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminUser3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminUser3Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminUser3AvatarContainer"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardBackgroundColor="@color/backgroundCard"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/lineaDivisor"
+                            app:strokeWidth="1dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminUser3Avatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="8dp"
+                                android:src="@drawable/icono_usuario"
+                                app:tint="@color/txtTituloSecundario" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminUser3Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminUser3NameRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminUser3Nombre"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Santiago Restrepo"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminUser3Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    app:cardBackgroundColor="#FEF3C7"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminUser3Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="Admin / Soporte"
+                                        android:textColor="#B45309"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtAdminUser3Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="santiago.soporte@celnova.co • C.C. 71..."
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchAdminUser3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+                    </LinearLayout>
+
+                    <!-- Stats Card row -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminUser3Stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardBackgroundColor="@color/backgroundCard"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminUser3Stats"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutUser3Tickets"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtUser3TicketsLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tickets resueltos"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtUser3TicketsVal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1,240 casos (99.4%)"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutUser3Sede"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtUser3SedeLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sede"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtUser3SedeVal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cali, Valle"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Footer Row -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminUser3Footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminUser3Status"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Nivel 2 de Autorización"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminUser3Editar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="6dp"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="12dp"
+                            android:text="Editar"
+                            android:textColor="@color/btnPrincipal"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:elevation="0dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminUser3Rol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="12dp"
+                            android:text="Rol"
+                            android:textColor="@color/btnPrincipal"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:elevation="0dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CARD USER 4: Impor. Andina SAS -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminUser4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminUser4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminUser4Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminUser4Avatar"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardBackgroundColor="#FEE2E2"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <TextView
+                                android:id="@+id/txtAdminUser4Initials"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="IA"
+                                android:textColor="#DC2626"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminUser4Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminUser4NameRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminUser4Nombre"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Impor. Andina SAS"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminUser4Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    app:cardBackgroundColor="#FEE2E2"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminUser4Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="En Revisión"
+                                        android:textColor="#DC2626"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtAdminUser4Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="contacto@andinastore.co • NIT: 900.581.082-1"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Alert Box -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminUser4Alert"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardBackgroundColor="#FEF2F2"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminUser4Alert"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:id="@+id/txtAdminUser4AlertTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Documentación CRC Pendiente"
+                                android:textColor="#B91C1C"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminUser4AlertDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Falta homologación de terminales móviles ante la Comisión de Regulación de Comunicaciones. Tienda suspendida preventivamente."
+                                android:textColor="#991B1B"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Footer Row -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminUser4Footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminUser4Status"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Barranquilla, Atlántico"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminUser4Editar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:layout_marginEnd="6dp"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="12dp"
+                            android:text="Editar"
+                            android:textColor="@color/btnPrincipal"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:elevation="0dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminUser4Auditar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:backgroundTint="#DC2626"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="12dp"
+                            android:text="Auditar"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:elevation="0dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- ADMIN BOTTOM NAVIGATION -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationAdminUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundSecundario"
+        app:elevation="8dp"
+        app:itemIconTint="@color/navColorIconos"
+        app:itemTextColor="@color/navColorIconos"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/admin_bottom_nav_menu" />
+
+</LinearLayout>

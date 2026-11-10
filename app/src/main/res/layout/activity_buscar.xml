@@ -1,0 +1,1498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    tools:context=".activities.BuscarActivity">
+
+    <!-- HEADER ESTÁTICO -->
+    <LinearLayout
+        android:id="@+id/linearLayoutBuscarHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundPrincipal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/imgBuscarLogo"
+            android:layout_width="110dp"
+            android:layout_height="32dp"
+            android:src="@drawable/brand_logo" />
+
+        <View
+            android:id="@+id/viewBuscarHeaderSpacer"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutBuscarIconos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgBuscarIconoNotificacion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/iconPrincipal" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImgBuscarIconoPerfil"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_usuario"
+                app:civ_border_color="@color/lineaDivisor"
+                app:civ_border_width="1dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutBuscarRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="24dp">
+
+            <!-- BUSCADOR -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBuscarBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutBuscarBusquedaInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgBuscarIconoBusqueda"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_busqueda"
+                        app:tint="@color/iconSecundario" />
+
+                    <EditText
+                        android:id="@+id/etBuscarInput"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="Buscar..."
+                        android:inputType="text"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imgBuscarIconoMicroPhone"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_microphone"
+                        app:tint="@color/iconSecundario" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CHIPS DE FILTRO -->
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollBuscarChips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutBuscarChipsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Chip 1: Más buscados -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBuscarChipMasBuscados"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardBackgroundColor="#FEF3C7"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarChipMasBuscados"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="14dp">
+
+                            <ImageView
+                                android:id="@+id/imgBuscarChipMasBuscados"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/icono_rayo"
+                                app:tint="#D97706" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarChipMasBuscados"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="Más buscados"
+                                android:textColor="#B45309"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 2: Ofertas COP -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBuscarChipOfertas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardBackgroundColor="@color/backgroundCard"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarChipOfertas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="14dp">
+
+                            <ImageView
+                                android:id="@+id/imgBuscarChipOfertas"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/icono_categorias"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarChipOfertas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="Ofertas COP"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 3: Envío Gratis -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBuscarChipEnvio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        app:cardBackgroundColor="@color/backgroundCard"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarChipEnvio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="14dp">
+
+                            <ImageView
+                                android:id="@+id/imgBuscarChipEnvio"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/icono_check"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarChipEnvio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="Envío Gratis"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <!-- BUSQUEDAS RECIENTES -->
+            <LinearLayout
+                android:id="@+id/linearLayoutBuscarRecientesSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutBuscarRecientesHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtBuscarRecientesTitulo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Búsquedas Recientes"
+                        android:textColor="@color/txtTitulo"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtBuscarRecientesBorrarTodo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Borrar todo"
+                        android:textColor="@color/txtTituloSecundario"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Item Reciente 1 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBuscarReciente1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutBuscarReciente1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="12dp">
+
+                        <ImageView
+                            android:id="@+id/imgBuscarReciente1Clock"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/icono_categorias"
+                            app:tint="@color/iconSecundario" />
+
+                        <TextView
+                            android:id="@+id/txtBuscarReciente1Text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:text="MacBook Pro M3 Max"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/imgBuscarReciente1Delete"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/icono_error"
+                            app:tint="@color/iconSecundario" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Item Reciente 2 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBuscarReciente2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutBuscarReciente2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="12dp">
+
+                        <ImageView
+                            android:id="@+id/imgBuscarReciente2Clock"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/icono_categorias"
+                            app:tint="@color/iconSecundario" />
+
+                        <TextView
+                            android:id="@+id/txtBuscarReciente2Text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:text="Samsung Galaxy S24 Ultra"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/imgBuscarReciente2Delete"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/icono_error"
+                            app:tint="@color/iconSecundario" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- TENDENCIAS EN COLOMBIA -->
+            <LinearLayout
+                android:id="@+id/linearLayoutBuscarTendenciasSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutBuscarTendenciasHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutBuscarTendenciasTitleContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgBuscarTendenciasIcono"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/icono_rayo"
+                            app:tint="@color/estadoAdvertencia" />
+
+                        <TextView
+                            android:id="@+id/txtBuscarTendenciasTitulo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tendencias en Colombia"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewBuscarTendenciasSpacer"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBuscarTendenciasBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#D1FAE5"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <TextView
+                            android:id="@+id/txtBuscarTendenciasBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="4dp"
+                            android:text="Actualizada hoy"
+                            android:textColor="#065F46"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <!-- Trend 1 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBuscarTendenciaItem1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutBuscarTendenciaItem1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/txtBuscarTendencia1Num"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/icono_check"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/txtTituloSecundario"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarTendencia1Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia1Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="iPhone 15 Pro Max Titanium"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia1Desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Flagship Apple 256GB"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardBuscarTendencia1PorcentajeBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="#D1FAE5"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia1Porcentaje"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="4dp"
+                                android:text="+33%"
+                                android:textColor="#065F46"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Trend 2 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBuscarTendenciaItem2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutBuscarTendenciaItem2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/txtBuscarTendencia2Num"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/icono_check"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="@color/txtTituloSecundario"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarTendencia2Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia2Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Nintendo Switch OLED"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia2Desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Consolas y videojuegos"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardBuscarTendencia2PorcentajeBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="#D1FAE5"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia2Porcentaje"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="4dp"
+                                android:text="+26%"
+                                android:textColor="#065F46"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Trend 3 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBuscarTendenciaItem3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutBuscarTendenciaItem3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/txtBuscarTendencia3Num"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/icono_check"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/txtTituloSecundario"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarTendencia3Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia3Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Portátil ASUS ROG Zephyrus"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia3Desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Gaming RTX 4070"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardBuscarTendencia3PorcentajeBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="#D1FAE5"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia3Porcentaje"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="4dp"
+                                android:text="+28%"
+                                android:textColor="#065F46"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Trend 4 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBuscarTendenciaItem4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutBuscarTendenciaItem4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/txtBuscarTendencia4Num"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/icono_check"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:gravity="center"
+                            android:text="4"
+                            android:textColor="@color/txtTituloSecundario"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarTendencia4Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia4Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Apple Watch Ultra 2"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia4Desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Smartwatches Titanium 44mm"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardBuscarTendencia4PorcentajeBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="#D1FAE5"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <TextView
+                                android:id="@+id/txtBuscarTendencia4Porcentaje"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="4dp"
+                                android:text="+24%"
+                                android:textColor="#065F46"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- PRODUCTOS SUGERIDOS -->
+            <LinearLayout
+                android:id="@+id/linearLayoutBuscarSugeridosSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutBuscarSugeridosHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutBuscarSugeridosTitles"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtBuscarSugeridosTitulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Productos Sugeridos"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtBuscarSugeridosSub"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Basado en tus preferencias tecnológicas"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtBuscarSugeridosVerCatalogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Ver catálogo"
+                        android:textColor="@color/txtTituloSecundario"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Sugeridos Row 1 -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutBuscarSugeridosRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <!-- Sugerido 1 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBuscarSugerido1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarSugerido1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:id="@+id/frameBuscarSugerido1ImageContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="130dp"
+                                android:background="@color/backgroundCard"
+                                android:padding="8dp">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardBuscarSugerido1Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top|start"
+                                    app:cardBackgroundColor="#D1FAE5"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtBuscarSugerido1Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="Garantía Oficial"
+                                        android:textColor="#065F46"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <ImageView
+                                    android:id="@+id/imgBuscarSugerido1"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/icono_telefono"
+                                    app:tint="@color/txtTituloSecundario" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardBuscarSugerido1Fav"
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:layout_gravity="top|end"
+                                    app:cardBackgroundColor="@color/backgroundSecundario"
+                                    app:cardCornerRadius="14dp"
+                                    app:cardElevation="1dp"
+                                    app:strokeWidth="0dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgBuscarSugerido1Fav"
+                                        android:layout_width="14dp"
+                                        android:layout_height="14dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/icono_notificacion"
+                                        app:tint="@color/iconPrincipal" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/txtBuscarSugerido1Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Envío Inmediato"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarSugerido1Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="iPhone 15 Pro 128GB Titanio Natural"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBuscarSugerido1Precios"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtBuscarSugerido1PrecioOriginal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$ 5.299.900 COP"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtBuscarSugerido1Precio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$ 4.899.900 COP"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnBuscarSugerido1Add"
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="10dp"
+                                android:backgroundTint="@color/btnPrincipal"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                android:text="Añadir"
+                                android:textColor="@color/btnPrincipalTexto"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:cornerRadius="18dp"
+                                app:elevation="0dp"
+                                app:icon="@drawable/icono_carrito_compras"
+                                app:iconGravity="textStart"
+                                app:iconSize="14dp"
+                                app:iconTint="@color/btnPrincipalTexto" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Sugerido 2 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBuscarSugerido2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarSugerido2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:id="@+id/frameBuscarSugerido2ImageContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="130dp"
+                                android:background="@color/backgroundCard"
+                                android:padding="8dp">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardBuscarSugerido2Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top|start"
+                                    app:cardBackgroundColor="@color/estadoError"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtBuscarSugerido2Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="-20% OFF"
+                                        android:textColor="@color/btnPrincipalTexto"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <ImageView
+                                    android:id="@+id/imgBuscarSugerido2"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/icono_audifono"
+                                    app:tint="@color/txtTituloSecundario" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardBuscarSugerido2Fav"
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:layout_gravity="top|end"
+                                    app:cardBackgroundColor="@color/backgroundSecundario"
+                                    app:cardCornerRadius="14dp"
+                                    app:cardElevation="1dp"
+                                    app:strokeWidth="0dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgBuscarSugerido2Fav"
+                                        android:layout_width="14dp"
+                                        android:layout_height="14dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/icono_notificacion"
+                                        app:tint="@color/iconPrincipal" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/txtBuscarSugerido2Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Envío Inmediato"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarSugerido2Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="Sony WH-1000XM5 Cancelación Ruido"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBuscarSugerido2Precios"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtBuscarSugerido2PrecioOriginal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$ 1.550.000 COP"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtBuscarSugerido2Precio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$ 1.250.000 COP"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnBuscarSugerido2Add"
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="10dp"
+                                android:backgroundTint="@color/btnPrincipal"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                android:text="Añadir"
+                                android:textColor="@color/btnPrincipalTexto"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:cornerRadius="18dp"
+                                app:elevation="0dp"
+                                app:icon="@drawable/icono_carrito_compras"
+                                app:iconGravity="textStart"
+                                app:iconSize="14dp"
+                                app:iconTint="@color/btnPrincipalTexto" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <!-- Sugeridos Row 2 -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutBuscarSugeridosRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <!-- Sugerido 3 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBuscarSugerido3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarSugerido3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:id="@+id/frameBuscarSugerido3ImageContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="130dp"
+                                android:background="@color/backgroundCard"
+                                android:padding="8dp">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardBuscarSugerido3Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top|start"
+                                    app:cardBackgroundColor="#FEF3C7"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtBuscarSugerido3Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="Garantía 1 Año"
+                                        android:textColor="#B45309"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <ImageView
+                                    android:id="@+id/imgBuscarSugerido3"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/icono_categorias"
+                                    app:tint="@color/txtTituloSecundario" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardBuscarSugerido3Fav"
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:layout_gravity="top|end"
+                                    app:cardBackgroundColor="@color/backgroundSecundario"
+                                    app:cardCornerRadius="14dp"
+                                    app:cardElevation="1dp"
+                                    app:strokeWidth="0dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgBuscarSugerido3Fav"
+                                        android:layout_width="14dp"
+                                        android:layout_height="14dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/icono_notificacion"
+                                        app:tint="@color/iconPrincipal" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/txtBuscarSugerido3Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Bogotá &amp; Medellín"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarSugerido3Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="PlayStation 5 Slim Edición Digital 1TB"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBuscarSugerido3Precios"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtBuscarSugerido3PrecioOriginal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$ 2.499.900 COP"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtBuscarSugerido3Precio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$ 2.290.000 COP"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnBuscarSugerido3Add"
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="10dp"
+                                android:backgroundTint="@color/btnPrincipal"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                android:text="Añadir"
+                                android:textColor="@color/btnPrincipalTexto"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:cornerRadius="18dp"
+                                app:elevation="0dp"
+                                app:icon="@drawable/icono_carrito_compras"
+                                app:iconGravity="textStart"
+                                app:iconSize="14dp"
+                                app:iconTint="@color/btnPrincipalTexto" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Sugerido 4 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBuscarSugerido4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutBuscarSugerido4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:id="@+id/frameBuscarSugerido4ImageContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="130dp"
+                                android:background="@color/backgroundCard"
+                                android:padding="8dp">
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardBuscarSugerido4Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top|start"
+                                    app:cardBackgroundColor="#E0F2FE"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtBuscarSugerido4Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="6dp"
+                                        android:paddingVertical="2dp"
+                                        android:text="Potencia ROG"
+                                        android:textColor="#0369A1"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+
+                                <ImageView
+                                    android:id="@+id/imgBuscarSugerido4"
+                                    android:layout_width="64dp"
+                                    android:layout_height="64dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/icono_laptop"
+                                    app:tint="@color/txtTituloSecundario" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardBuscarSugerido4Fav"
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:layout_gravity="top|end"
+                                    app:cardBackgroundColor="@color/backgroundSecundario"
+                                    app:cardCornerRadius="14dp"
+                                    app:cardElevation="1dp"
+                                    app:strokeWidth="0dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgBuscarSugerido4Fav"
+                                        android:layout_width="14dp"
+                                        android:layout_height="14dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/icono_notificacion"
+                                        app:tint="@color/iconPrincipal" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/txtBuscarSugerido4Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Envío Gratis COP"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtBuscarSugerido4Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="Portátil ASUS ROG Zephyrus G14 OLED"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBuscarSugerido4Precios"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtBuscarSugerido4PrecioOriginal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$ 7.699.000 COP"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/txtBuscarSugerido4Precio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$ 6.999.000 COP"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnBuscarSugerido4Add"
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="10dp"
+                                android:backgroundTint="@color/btnPrincipal"
+                                android:insetTop="0dp"
+                                android:insetBottom="0dp"
+                                android:text="Añadir"
+                                android:textColor="@color/btnPrincipalTexto"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:cornerRadius="18dp"
+                                app:elevation="0dp"
+                                app:icon="@drawable/icono_carrito_compras"
+                                app:iconGravity="textStart"
+                                app:iconSize="14dp"
+                                app:iconTint="@color/btnPrincipalTexto" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundSecundario"
+        app:elevation="8dp"
+        app:itemIconTint="@color/navColorIconos"
+        app:itemTextColor="@color/navColorIconos"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    tools:context=".activities.CarritoActivity">
+
+    <!-- HEADER ESTÁTICO -->
+    <LinearLayout
+        android:id="@+id/linearLayoutCarritoHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundPrincipal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/imgCarritoLogo"
+            android:layout_width="110dp"
+            android:layout_height="32dp"
+            android:src="@drawable/brand_logo" />
+
+        <View
+            android:id="@+id/viewCarritoHeaderSpacer"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutCarritoIconos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgCarritoIconoNotificacion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/iconPrincipal" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImgCarritoIconoPerfil"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_usuario"
+                app:civ_border_color="@color/lineaDivisor"
+                app:civ_border_width="1dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewCarrito"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutCarritoRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="24dp">
+
+            <!-- BANNER ENVIO GRATIS PROGRESS -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCarritoEnvioProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCarritoEnvioContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoEnvioTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgCarritoEnvioTruck"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/icono_check"
+                            app:tint="@color/estadoExito" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoEnvioMensaje"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="¡Te faltan solo $80.000 para Envío Express Gratis!"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoEnvioPorcentaje"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="92%"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Progress Bar -->
+                    <ProgressBar
+                        android:id="@+id/progressBarCarritoEnvio"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="10dp"
+                        android:progress="92"
+                        android:progressTint="@color/estadoExito" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoEnvioFooter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtCarritoEnvioSub"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Añade un accesorio pequeño"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoEnvioVerRecomendados"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:text="Ver recomendados"
+                            android:textColor="@color/txtTituloSecundario"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ITEM CART 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCarritoItem1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCarritoItem1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoItem1Top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkboxCarritoItem1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            app:buttonTint="@color/btnPrincipal" />
+
+                        <FrameLayout
+                            android:id="@+id/frameCarritoItem1ImageContainer"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgCarritoItem1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_telefono"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCarritoItem1Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtCarritoItem1Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Celnova Titan Pro 5G"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtCarritoItem1Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="512GB • Titanium Black"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgCarritoItem1Delete"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/icono_eliminar"
+                            app:tint="@color/iconSecundario" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoItem1Bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtCarritoItem1Precio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="$4.499.900"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <!-- Quantity Stepper -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardCarritoItem1StepperContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            app:cardBackgroundColor="@color/backgroundCard"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutCarritoItem1Stepper"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="6dp">
+
+                                <ImageView
+                                    android:id="@+id/btnCarritoItem1Minus"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:padding="4dp"
+                                    android:src="@drawable/icono_menos"
+                                    app:tint="@color/txtTitulo" />
+
+                                <TextView
+                                    android:id="@+id/txtCarritoItem1Cantidad"
+                                    android:layout_width="28dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="1"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/btnCarritoItem1Plus"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:padding="4dp"
+                                    android:src="@drawable/icono_suma"
+                                    app:tint="@color/txtTitulo" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewCarritoItem1Divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoItem1Footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgCarritoItem1EnvioIcon"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="4dp"
+                            android:src="@drawable/icono_check"
+                            app:tint="@color/estadoExito" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoItem1Envio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Envío Gratis"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ITEM CART 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCarritoItem2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCarritoItem2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoItem2Top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkboxCarritoItem2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            app:buttonTint="@color/btnPrincipal" />
+
+                        <FrameLayout
+                            android:id="@+id/frameCarritoItem2ImageContainer"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgCarritoItem2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_audifono"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCarritoItem2Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtCarritoItem2Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Auriculares Wireless ANC"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtCarritoItem2Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Active Noise Cancelling • Slate Teal"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgCarritoItem2Delete"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/icono_eliminar"
+                            app:tint="@color/iconSecundario" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoItem2Bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtCarritoItem2Precio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="$819.900"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <!-- Quantity Stepper -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardCarritoItem2StepperContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            app:cardBackgroundColor="@color/backgroundCard"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutCarritoItem2Stepper"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="6dp">
+
+                                <ImageView
+                                    android:id="@+id/btnCarritoItem2Minus"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:padding="4dp"
+                                    android:src="@drawable/icono_menos"
+                                    app:tint="@color/txtTitulo" />
+
+                                <TextView
+                                    android:id="@+id/txtCarritoItem2Cantidad"
+                                    android:layout_width="28dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="1"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/btnCarritoItem2Plus"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:padding="4dp"
+                                    android:src="@drawable/icono_suma"
+                                    app:tint="@color/txtTitulo" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewCarritoItem2Divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoItem2Footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgCarritoItem2EnvioIcon"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="4dp"
+                            android:src="@drawable/icono_check"
+                            app:tint="@color/estadoExito" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoItem2Envio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Envío Gratis"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ITEM CART 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCarritoItem3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCarritoItem3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoItem3Top"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.checkbox.MaterialCheckBox
+                            android:id="@+id/checkboxCarritoItem3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            app:buttonTint="@color/btnPrincipal" />
+
+                        <FrameLayout
+                            android:id="@+id/frameCarritoItem3ImageContainer"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgCarritoItem3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_rayo"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCarritoItem3Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtCarritoItem3Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Cargador Rápido GaN 65W"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtCarritoItem3Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Dual USB-C • Compact Edition"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgCarritoItem3Delete"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/icono_eliminar"
+                            app:tint="@color/iconSecundario" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoItem3Bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtCarritoItem3Precio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="$199.900 c/u"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <!-- Quantity Stepper -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardCarritoItem3StepperContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            app:cardBackgroundColor="@color/backgroundCard"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutCarritoItem3Stepper"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="6dp">
+
+                                <ImageView
+                                    android:id="@+id/btnCarritoItem3Minus"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:padding="4dp"
+                                    android:src="@drawable/icono_menos"
+                                    app:tint="@color/txtTitulo" />
+
+                                <TextView
+                                    android:id="@+id/txtCarritoItem3Cantidad"
+                                    android:layout_width="28dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="2"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/btnCarritoItem3Plus"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:padding="4dp"
+                                    android:src="@drawable/icono_suma"
+                                    app:tint="@color/txtTitulo" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewCarritoItem3Divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoItem3Footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgCarritoItem3EnvioIcon"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="4dp"
+                            android:src="@drawable/icono_check"
+                            app:tint="@color/estadoExito" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoItem3Envio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Envío Gratis"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CUPON DE DESCUENTO SECTION -->
+            <LinearLayout
+                android:id="@+id/linearLayoutCarritoCuponSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtCarritoCuponTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cupón de Descuento"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Applied Coupon Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCarritoCuponAplicado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="#D1FAE5"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoCuponAplicado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgCarritoCuponTag"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/icono_codigo_descuento"
+                            app:tint="#065F46" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCarritoCuponInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtCarritoCuponCodigo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="TECHNOVA10"
+                                android:textColor="#065F46"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtCarritoCuponDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Descuento de bienvenida (-$400.000)"
+                                android:textColor="#047857"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgCarritoCuponClose"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:src="@drawable/icono_error"
+                            app:tint="#065F46" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Input Coupon Row -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutCarritoCuponInputRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCarritoCuponInputCard"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0.2dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCarritoCuponInputInterno"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="14dp">
+
+                            <ImageView
+                                android:id="@+id/imgCarritoCuponInputIcon"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/icono_codigo_descuento"
+                                app:tint="@color/iconSecundario" />
+
+                            <EditText
+                                android:id="@+id/etCarritoCupon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:background="@null"
+                                android:hint="Código promocional o cupón"
+                                android:inputType="text"
+                                android:textColor="@color/inputTexto"
+                                android:textColorHint="@color/inputHint"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCarritoAplicarCupon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:backgroundTint="@color/btnPrincipal"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:paddingHorizontal="20dp"
+                        android:text="Aplicar"
+                        android:textColor="@color/btnPrincipalTexto"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp"
+                        app:elevation="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- RESUMEN DE COMPRA SECTION -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCarritoResumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCarritoResumenInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/txtCarritoResumenTitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Resumen de Compra"
+                        android:textColor="@color/txtTitulo"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Subtotal -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoSubtotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtCarritoSubtotalLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Subtotal"
+                            android:textColor="@color/txtTexto"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoSubtotalValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$5.719.600"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Descuento -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoDescuento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgCarritoDescuentoIcon"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="4dp"
+                            android:src="@drawable/icono_categorias"
+                            app:tint="@color/estadoExito" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoDescuentoLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Descuento aplicado (Cupón)"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoDescuentoValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-$400.000"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Envio -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoEnvioResumen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgCarritoEnvioResumenIcon"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="4dp"
+                            android:src="@drawable/icono_check"
+                            app:tint="@color/estadoExito" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoEnvioResumenLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Envío Estimado"
+                            android:textColor="@color/txtTexto"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoEnvioResumenValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gratis"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Impuestos -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoImpuestos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtCarritoImpuestosLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Impuestos estimados (IVA 19%)"
+                            android:textColor="@color/txtTexto"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/txtCarritoImpuestosValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$1.010.724"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewCarritoResumenDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <!-- Total Row -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCarritoTotalRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCarritoTotalLabels"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtCarritoTotalLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total a pagar:"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtCarritoTotalSub"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="IVA e impuestos incluidos"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCarritoTotalValores"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtCarritoTotalValor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$6.330.324 COP"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtCarritoAhorroValor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Ahorraste $400.000"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- Boton Pagar -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCarritoPagar"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="@color/btnPrincipal"
+                        android:text="Pagar"
+                        android:textColor="@color/btnPrincipalTexto"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="25dp"
+                        app:elevation="0dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationCarrito"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundSecundario"
+        app:elevation="8dp"
+        app:itemIconTint="@color/navColorIconos"
+        app:itemTextColor="@color/navColorIconos"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

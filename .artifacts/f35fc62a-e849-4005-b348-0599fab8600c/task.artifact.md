@@ -1,0 +1,3 @@
+- `[x]` 1. Actualizar `activity_registro.xml` para incluir el campo de contraseña, las 3 barras indicadoras y el texto dinámico.
+- `[x]` 2. Implementar la lógica y validación en las actividades.
+- `[x]` 3. Compilar y verificar el funcionamiento y scroll con teclado activo.

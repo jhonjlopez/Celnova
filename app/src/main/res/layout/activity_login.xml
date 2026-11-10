@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.LoginActivity">
+
+    <ScrollView
+        android:id="@+id/scrollLogin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/mainLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <ImageView
+                android:id="@+id/imgLoginLogo"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="40dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/brand_logo">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/txtLoginTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Bienvenido"
+                android:textColor="@color/txtTitulo"
+                android:textSize="25sp"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:id="@+id/txtLoginTexto"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_horizontal"
+                android:text="Ingresa a tu cuenta para continuar con tus compras"
+                android:textColor="@color/txtTexto"
+                android:textSize="15sp">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="28dp"
+                android:orientation="horizontal"
+                android:gravity="top">
+
+                <TextView
+                    android:id="@+id/txtLoginCorreo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correo electrónico"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="16sp">
+                </TextView>
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/icono_asterisco"
+                    app:tint="@color/estadoError">
+                </ImageView>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/etLoginMaterialCardViewCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/inputFondo"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0.2dp"
+                app:strokeColor="@color/inputBorde"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/etLoginLinearLayoutMaterialCardViewCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgLoginIconCorreo"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_email"
+                        app:tint="@color/iconSecundario" >
+                    </ImageView>
+
+                    <View
+                        android:id="@+id/ViewLoginLineaDivisorCorreo"
+                        android:layout_width="1dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/lineaDivisor">
+                    </View>
+
+                    <EditText
+                        android:id="@+id/etLoginCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:background="@null"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="16sp"
+                        android:maxLength="254">
+                    </EditText>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="top">
+
+                <TextView
+                    android:id="@+id/txtLoginContrasena"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contraseña"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="16sp">
+                </TextView>
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/icono_asterisco"
+                    app:tint="@color/estadoError" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/etLoginMaterialCardViewContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/inputFondo"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0.2dp"
+                app:strokeColor="@color/inputBorde"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/etLoginLinearLayoutMaterialCardViewContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgLoginIconContrasena"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_candado"
+                        app:tint="@color/iconSecundario" >
+                    </ImageView>
+
+                    <View
+                        android:id="@+id/ViewLoginLineaDivisorContrasena"
+                        android:layout_width="1dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/lineaDivisor">
+                    </View>
+
+                    <EditText
+                        android:id="@+id/etLoginContrasena"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:inputType="textPassword"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="16sp"
+                        android:layout_marginStart="12dp"
+                        android:maxLength="64">
+                    </EditText>
+
+                    <ImageView
+                        android:id="@+id/btnLoginTogglePassword"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:padding="12dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_vista_cerrada"
+                        android:contentDescription="Mostrar u ocultar contraseña"
+                        app:tint="@color/iconSecundario" >
+                    </ImageView>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutLoginRecordarme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/checkboxLoginRecordarme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recordarme"
+                    android:textSize="18sp"
+                    android:textColor="@color/txtTexto"
+                    app:buttonTint="@color/btnPrincipal"
+                    app:shapeAppearanceOverlay="@style/CheckboxRoundedStyle">
+
+                </com.google.android.material.checkbox.MaterialCheckBox>
+
+                <TextView
+                    android:id="@+id/txtLoginOlvideContrasena"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="Olvidé mi contraseña"
+                    android:textColor="@color/txtTituloSecundario"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+                </TextView>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLoginIniciarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/btnPrincipal"
+                android:text="Iniciar Sesión"
+                android:textColor="@color/btnPrincipalTexto"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:cornerRadius="25dp"
+                android:layout_marginTop="24dp">
+            </com.google.android.material.button.MaterialButton>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutLoginLineaDivisor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp">
+
+                <View
+                    android:id="@+id/ViewLoginLineaDivisor1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/lineaDivisor">
+                </View>
+
+                <TextView
+                    android:id="@+id/txtLoginLineaDivisor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center_horizontal"
+                    android:text="O CONTINUA CON"
+                    android:textColor="@color/txtTextoSecundario"
+                    android:textSize="16sp">
+                </TextView>
+
+                <View
+                    android:id="@+id/ViewLoginLineaDivisor2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/lineaDivisor" >
+                </View>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutLoginSociales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnLoginGoogle"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0.2dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <ImageView
+                        android:id="@+id/imgLoginIconGoogle"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_google" >
+                    </ImageView>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnLoginHuella"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0.2dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <ImageView
+                        android:id="@+id/imgLoginIconHuella"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_huella" >
+                    </ImageView>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutLoginRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtLoginPregunta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:gravity="center_horizontal"
+                    android:text="¿No tienes una cuenta?"
+                    android:textSize="16sp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/txtLoginRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:text="Registrate"
+                    android:textColor="@color/txtTituloSecundario"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutLoginCifrado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgLoginLogoCifrado"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/icono_cifrado"
+                    app:tint="@color/iconSecundario">
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/txtLoginMensajeCifrado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Tus datos están protegidos con cifrado"
+                    android:textColor="@color/txtTextoSecundario"
+                    android:textSize="14sp">
+                </TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

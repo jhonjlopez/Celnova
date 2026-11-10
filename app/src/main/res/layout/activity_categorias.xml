@@ -1,0 +1,1682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    tools:context=".activities.CategoriasActivity">
+
+    <!-- HEADER ESTÁTICO -->
+    <LinearLayout
+        android:id="@+id/linearLayoutCategoriasHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundPrincipal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/imgCategoriasLogo"
+            android:layout_width="110dp"
+            android:layout_height="32dp"
+            android:src="@drawable/brand_logo" />
+
+        <View
+            android:id="@+id/viewCategoriasHeaderSpacer"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutCategoriasIconos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgCategoriasIconoNotificacion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/iconPrincipal" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImgCategoriasIconoPerfil"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_usuario"
+                app:civ_border_color="@color/lineaDivisor"
+                app:civ_border_width="1dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewCategorias"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutCategoriasRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="24dp">
+
+            <!-- BUSCADOR -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCategoriasBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCategoriasBusquedaInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgCategoriasIconoBusqueda"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_busqueda"
+                        app:tint="@color/iconSecundario" />
+
+                    <EditText
+                        android:id="@+id/etCategoriasBuscar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="Buscar..."
+                        android:inputType="text"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imgCategoriasIconoMicroPhone"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_microphone"
+                        app:tint="@color/iconSecundario" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CHIPS DE FILTRO -->
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollCategoriasChips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCategoriasChipsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Chip 1: Apple -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCategoriasChipApple"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasChipApple"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="14dp">
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasChipApple"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/icono_apple" />
+
+                            <TextView
+                                android:id="@+id/txtCategoriasChipApple"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="Apple"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 2: Samsung -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCategoriasChipSamsung"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasChipSamsung"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="14dp">
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasChipSamsung"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/icono_telefono"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <TextView
+                                android:id="@+id/txtCategoriasChipSamsung"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="Samsung"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 3: Xiaomi -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCategoriasChipXiaomi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasChipXiaomi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="14dp">
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasChipXiaomi"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/icono_telefono"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <TextView
+                                android:id="@+id/txtCategoriasChipXiaomi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="Xiaomi"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Chip 4: Audio -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCategoriasChipAudio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        app:cardBackgroundColor="@color/backgroundSecundario"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0.5dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="0.7dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasChipAudio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="14dp">
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasChipAudio"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/icono_audifono"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <TextView
+                                android:id="@+id/txtCategoriasChipAudio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="Audio"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <!-- BANNER TECNOFAST -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCategoriasBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/bannerFondo"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCategoriasBannerInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasBannerTop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgCategoriasIconoBanner"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/icono_rayo"
+                            app:tint="@color/txtBannerPrincipal" />
+
+                        <TextView
+                            android:id="@+id/txtCategoriasTituloBanner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TecnoFast 24H"
+                            android:textColor="@color/txtBannerPrincipal"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasBannerContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasBannerTextos"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtCategoriasBannerSubtitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Renueva tu setup"
+                                android:textColor="@color/txtBannerPrincipal"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtCategoriasBannerDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Hasta 35% de descuento en periféricos seleccionados"
+                                android:textColor="@color/txtBannerPrincipal"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardCategoriasBannerBtn"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="12dp"
+                            app:cardBackgroundColor="@color/backgroundSecundario"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasBannerArrow"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:rotation="180"
+                                android:src="@drawable/icono_atras"
+                                app:tint="@color/txtTitulo" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- EXPLORAR CATALOGO HEADER -->
+            <LinearLayout
+                android:id="@+id/linearLayoutCategoriasCatalogHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtCategoriasCatalogTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Explorar Catálogo"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtCategoriasCatalogSub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Tecnología certificada con garantía local"
+                    android:textColor="@color/txtTextoSecundario"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <!-- GRID DE CATEGORIAS - ROW 1 -->
+            <LinearLayout
+                android:id="@+id/linearLayoutCategoriasRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <!-- Card 1: Smartphones & Tablets -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCategoriasItem1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasItem1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameCategoriasItem1ImageContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardCategoriasItem1Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|start"
+                                app:cardBackgroundColor="#FEF3C7"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtCategoriasItem1Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="Novedades"
+                                    android:textColor="#B45309"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem1"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_telefono"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem1Titulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Smartphones &amp; Tablets"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem1Desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="Flagships, Pro &amp; iPads"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasItem1Footer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtCategoriasItem1Count"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="145 modelos"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem1Arrow"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:rotation="180"
+                                android:src="@drawable/icono_atras"
+                                app:tint="@color/iconSecundario" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Card 2: Computadores -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCategoriasItem2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasItem2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameCategoriasItem2ImageContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardCategoriasItem2Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|start"
+                                app:cardBackgroundColor="#D1FAE5"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtCategoriasItem2Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="Envío Gratis"
+                                    android:textColor="#065F46"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem2"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_laptop"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem2Titulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Computadores"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem2Desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="MacBook, Ultrabooks, PC"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasItem2Footer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtCategoriasItem2Count"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="68 modelos"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem2Arrow"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:rotation="180"
+                                android:src="@drawable/icono_atras"
+                                app:tint="@color/iconSecundario" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- GRID DE CATEGORIAS - ROW 2 -->
+            <LinearLayout
+                android:id="@+id/linearLayoutCategoriasRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <!-- Card 3: Audio & Sonido -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCategoriasItem3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasItem3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameCategoriasItem3ImageContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardCategoriasItem3Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|start"
+                                app:cardBackgroundColor="@color/estadoError"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtCategoriasItem3Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="-25% OFF"
+                                    android:textColor="@color/btnPrincipalTexto"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem3"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_audifono"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem3Titulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Audio &amp; Sonido"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem3Desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="Audífonos, ANC &amp; Bocinas"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasItem3Footer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtCategoriasItem3Count"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="219 productos"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem3Arrow"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:rotation="180"
+                                android:src="@drawable/icono_atras"
+                                app:tint="@color/iconSecundario" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Card 4: Smartwatches -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCategoriasItem4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasItem4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameCategoriasItem4ImageContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardCategoriasItem4Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|start"
+                                app:cardBackgroundColor="#E0F2FE"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtCategoriasItem4Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="Popular"
+                                    android:textColor="#0369A1"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem4"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_usuario"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem4Titulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Smartwatches"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem4Desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="Relojes GPS &amp; Brazaletes"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasItem4Footer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtCategoriasItem4Count"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="104 opciones"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem4Arrow"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:rotation="180"
+                                android:src="@drawable/icono_atras"
+                                app:tint="@color/iconSecundario" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- GRID DE CATEGORIAS - ROW 3 -->
+            <LinearLayout
+                android:id="@+id/linearLayoutCategoriasRow3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <!-- Card 5: Gaming & Consolas -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCategoriasItem5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasItem5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameCategoriasItem5ImageContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardCategoriasItem5Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|start"
+                                app:cardBackgroundColor="#FEF3C7"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtCategoriasItem5Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="Top Ventas"
+                                    android:textColor="#B45309"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem5"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_categorias"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem5Titulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Gaming &amp; Consolas"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem5Desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="PS5, Switch, Controles"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasItem5Footer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtCategoriasItem5Count"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="112 productos"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem5Arrow"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:rotation="180"
+                                android:src="@drawable/icono_atras"
+                                app:tint="@color/iconSecundario" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Card 6: Accesorios & Carga -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCategoriasItem6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasItem6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameCategoriasItem6ImageContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardCategoriasItem6Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|start"
+                                app:cardBackgroundColor="#D1FAE5"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtCategoriasItem6Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="Dual Tech"
+                                    android:textColor="#065F46"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem6"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_rayo"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem6Titulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Accesorios &amp; Carga"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem6Desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="GaN 65W+, MagSafe"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasItem6Footer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtCategoriasItem6Count"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="278 items"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem6Arrow"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:rotation="180"
+                                android:src="@drawable/icono_atras"
+                                app:tint="@color/iconSecundario" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- GRID DE CATEGORIAS - ROW 4 -->
+            <LinearLayout
+                android:id="@+id/linearLayoutCategoriasRow4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <!-- Card 7: Cámaras & Drones -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCategoriasItem7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasItem7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameCategoriasItem7ImageContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardCategoriasItem7Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|start"
+                                app:cardBackgroundColor="#E0F2FE"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtCategoriasItem7Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="Creadores"
+                                    android:textColor="#0369A1"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem7"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_busqueda"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem7Titulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Cámaras &amp; Drones"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem7Desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="Mirrorless, 4K, Gimbal"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasItem7Footer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtCategoriasItem7Count"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="46 equipos"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem7Arrow"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:rotation="180"
+                                android:src="@drawable/icono_atras"
+                                app:tint="@color/iconSecundario" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Card 8: Hogar & Smart TV -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardCategoriasItem8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasItem8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameCategoriasItem8ImageContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardCategoriasItem8Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|start"
+                                app:cardBackgroundColor="#FEF3C7"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtCategoriasItem8Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="6dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="OLED-8K"
+                                    android:textColor="#B45309"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem8"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_laptop"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem8Titulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Hogar &amp; Smart TV"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCategoriasItem8Desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="OLED, Asistentes, IoT"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutCategoriasItem8Footer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtCategoriasItem8Count"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="73 modelos"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgCategoriasItem8Arrow"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:rotation="180"
+                                android:src="@drawable/icono_atras"
+                                app:tint="@color/iconSecundario" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- TENDENCIA EN COLOMBIA -->
+            <LinearLayout
+                android:id="@+id/linearLayoutCategoriasTendenciaSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCategoriasTendenciaHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasTendenciaTitleContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgCategoriasTendenciaIcono"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/icono_rayo"
+                            app:tint="@color/estadoAdvertencia" />
+
+                        <TextView
+                            android:id="@+id/txtCategoriasTendenciaTitulo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tendencia en Colombia"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewCategoriasTendenciaSpacer"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/txtCategoriasTendenciaVerMas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Ver más &gt;"
+                        android:textColor="@color/txtTituloSecundario"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollCategoriasTendencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutCategoriasTendenciaCards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Product 1 -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardCategoriasTendencia1"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            app:cardBackgroundColor="@color/backgroundSecundario"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0.5dp"
+                            app:strokeColor="@color/lineaDivisor"
+                            app:strokeWidth="0.7dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutCategoriasTendencia1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <FrameLayout
+                                    android:id="@+id/frameCategoriasTendencia1ImageContainer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="130dp"
+                                    android:background="@color/backgroundCard"
+                                    android:padding="8dp">
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cardCategoriasTendencia1Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="top|start"
+                                        app:cardBackgroundColor="@color/btnPrincipal"
+                                        app:cardCornerRadius="6dp"
+                                        app:cardElevation="0dp"
+                                        app:strokeWidth="0dp">
+
+                                        <TextView
+                                            android:id="@+id/txtCategoriasTendencia1Badge"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingHorizontal="6dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="TOP 1"
+                                            android:textColor="@color/btnPrincipalTexto"
+                                            android:textSize="11sp"
+                                            android:textStyle="bold" />
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <ImageView
+                                        android:id="@+id/imgCategoriasTendencia1Imagen"
+                                        android:layout_width="64dp"
+                                        android:layout_height="64dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/icono_telefono"
+                                        app:tint="@color/txtTituloSecundario" />
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cardCategoriasTendencia1Fav"
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="top|end"
+                                        app:cardBackgroundColor="@color/backgroundSecundario"
+                                        app:cardCornerRadius="14dp"
+                                        app:cardElevation="1dp"
+                                        app:strokeWidth="0dp">
+
+                                        <ImageView
+                                            android:id="@+id/imgCategoriasTendencia1Fav"
+                                            android:layout_width="14dp"
+                                            android:layout_height="14dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/icono_notificacion"
+                                            app:tint="@color/iconPrincipal" />
+                                    </com.google.android.material.card.MaterialCardView>
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/txtCategoriasTendencia1Titulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:text="Samsung Galaxy S24 Ultra 256GB Titanium"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayoutCategoriasTendencia1Precios"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txtCategoriasTendencia1PrecioOriginal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="$6.899.900 COP"
+                                        android:textColor="@color/txtTextoSecundario"
+                                        android:textSize="10sp" />
+
+                                    <TextView
+                                        android:id="@+id/txtCategoriasTendencia1Precio"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="$4.999.700 COP"
+                                        android:textColor="@color/txtTitulo"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Product 2 -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardCategoriasTendencia2"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/backgroundSecundario"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0.5dp"
+                            app:strokeColor="@color/lineaDivisor"
+                            app:strokeWidth="0.7dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutCategoriasTendencia2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <FrameLayout
+                                    android:id="@+id/frameCategoriasTendencia2ImageContainer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="130dp"
+                                    android:background="@color/backgroundCard"
+                                    android:padding="8dp">
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cardCategoriasTendencia2Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="top|start"
+                                        app:cardBackgroundColor="@color/estadoError"
+                                        app:cardCornerRadius="6dp"
+                                        app:cardElevation="0dp"
+                                        app:strokeWidth="0dp">
+
+                                        <TextView
+                                            android:id="@+id/txtCategoriasTendencia2Badge"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingHorizontal="6dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="-30%"
+                                            android:textColor="@color/btnPrincipalTexto"
+                                            android:textSize="11sp"
+                                            android:textStyle="bold" />
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <ImageView
+                                        android:id="@+id/imgCategoriasTendencia2Imagen"
+                                        android:layout_width="64dp"
+                                        android:layout_height="64dp"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/icono_audifono"
+                                        app:tint="@color/txtTituloSecundario" />
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cardCategoriasTendencia2Fav"
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="top|end"
+                                        app:cardBackgroundColor="@color/backgroundSecundario"
+                                        app:cardCornerRadius="14dp"
+                                        app:cardElevation="1dp"
+                                        app:strokeWidth="0dp">
+
+                                        <ImageView
+                                            android:id="@+id/imgCategoriasTendencia2Fav"
+                                            android:layout_width="14dp"
+                                            android:layout_height="14dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/icono_notificacion"
+                                            app:tint="@color/iconPrincipal" />
+                                    </com.google.android.material.card.MaterialCardView>
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/txtCategoriasTendencia2Titulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:text="Sony WH-1000XM5 Cancelación Ruido..."
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayoutCategoriasTendencia2Precios"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txtCategoriasTendencia2PrecioOriginal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="$1.899.900 COP"
+                                        android:textColor="@color/txtTextoSecundario"
+                                        android:textSize="10sp" />
+
+                                    <TextView
+                                        android:id="@+id/txtCategoriasTendencia2Precio"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="$1.429.900 COP"
+                                        android:textColor="@color/txtTitulo"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationCategorias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundSecundario"
+        app:elevation="8dp"
+        app:itemIconTint="@color/navColorIconos"
+        app:itemTextColor="@color/navColorIconos"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

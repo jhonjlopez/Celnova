@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    tools:context=".activities.AdminPerfilActivity">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:id="@+id/linearLayoutAdminPerfilHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundPrincipal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/imgAdminPerfilAtras"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/icono_atras"
+            app:tint="@color/iconPrincipal" />
+
+        <TextView
+            android:id="@+id/txtAdminPerfilHeaderTitulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:text="Perfil del Administrador"
+            android:textColor="@color/txtTitulo"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgAdminPerfilNotificacion"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/icono_notificacion"
+            app:tint="@color/iconPrincipal" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewAdminPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdminPerfilRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- HERO CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminPerfilHero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/btnPrincipal"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminPerfilHero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <FrameLayout
+                        android:id="@+id/frameAdminPerfilAvatarContainer"
+                        android:layout_width="92dp"
+                        android:layout_height="92dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/circleImgAdminPerfilAvatar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/icono_usuario"
+                            app:civ_border_color="#80FFFFFF"
+                            app:civ_border_width="2dp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminPerfilVerificado"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="bottom|end"
+                            app:cardBackgroundColor="@color/estadoInformacion"
+                            app:cardCornerRadius="13dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/btnPrincipal"
+                            app:strokeWidth="2dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminPerfilVerificado"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="5dp"
+                                android:src="@drawable/icono_check"
+                                app:tint="#FFFFFF" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/txtAdminPerfilNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Jhon Lopez"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminPerfilRolBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:cardBackgroundColor="#33FFFFFF"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#66FFFFFF"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilRolBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminPerfilRolBadge"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:src="@drawable/icono_candado"
+                                app:tint="#FFFFFF" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilRolBadge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="Administrador General"
+                                android:textColor="#FFFFFF"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/txtAdminPerfilCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center"
+                        android:text="jhonlopezadmin@gmail.com"
+                        android:textColor="#D5E8E8"
+                        android:textSize="12sp" />
+
+                    <!-- MINI STATS -->
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminPerfilHeroStats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="#1AFFFFFF"
+                        android:orientation="horizontal"
+                        android:paddingVertical="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilHeroStatRol"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilHeroStatRolValor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Super Admin"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilHeroStatRolLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Nivel de acceso"
+                                android:textColor="#C9E0E0"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/viewAdminPerfilHeroStatDivisor1"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#33FFFFFF" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilHeroStatEstado"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilHeroStatEstadoValor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Activo"
+                                android:textColor="#A7F3D0"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilHeroStatEstadoLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Estado"
+                                android:textColor="#C9E0E0"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/viewAdminPerfilHeroStatDivisor2"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#33FFFFFF" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilHeroStatAccesos"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilHeroStatAccesosValor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="128"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilHeroStatAccesosLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Accesos"
+                                android:textColor="#C9E0E0"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- INFORMACIÓN DE LA CUENTA -->
+            <TextView
+                android:id="@+id/txtAdminPerfilInfoLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="INFORMACIÓN DE LA CUENTA"
+                android:textColor="@color/txtTextoSecundario"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminPerfilDatos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminPerfilDatos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/rowAdminPerfilCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminPerfilCorreoIconContainer"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="#E0F2FE"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminPerfilCorreoIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_email"
+                                app:tint="#0369A1" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilCorreoInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilCorreoLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Correo corporativo"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilCorreoValor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="jhonlopezadmin@gmail.com"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewAdminPerfilDivisor1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="56dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <LinearLayout
+                        android:id="@+id/rowAdminPerfilTelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminPerfilTelefonoIconContainer"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="#FEF3C7"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminPerfilTelefonoIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_telefono"
+                                app:tint="#B45309" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilTelefonoInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilTelefonoLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Teléfono de contacto"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilTelefonoValor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="+57 300 123 4567"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewAdminPerfilDivisor2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="56dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <LinearLayout
+                        android:id="@+id/rowAdminPerfilUbicacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminPerfilUbicacionIconContainer"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="#EAF6F2"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminPerfilUbicacionIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_ubicacion"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilUbicacionInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilUbicacionLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Sede principal"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilUbicacionValor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bogotá D.C., Colombia"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewAdminPerfilDivisor3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="56dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <LinearLayout
+                        android:id="@+id/rowAdminPerfilMiembro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminPerfilMiembroIconContainer"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="#E0F2FE"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminPerfilMiembroIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_check_verificado"
+                                app:tint="#0369A1" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilMiembroInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilMiembroLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Miembro desde"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilMiembroValor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Enero 2024"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- SEGURIDAD Y PERMISOS -->
+            <TextView
+                android:id="@+id/txtAdminPerfilSeguridadLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="SEGURIDAD Y PERMISOS"
+                android:textColor="@color/txtTextoSecundario"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminPerfilSeguridad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminPerfilSeguridad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/rowAdminPerfilNivelAcceso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminPerfilNivelIconContainer"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="#EAF6F2"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminPerfilNivelIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_candado"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilNivelInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilNivelTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Nivel de acceso"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilNivelSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Control total de la plataforma"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminPerfilNivelBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="#D1FAE5"
+                            app:cardCornerRadius="7dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilNivelBadge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="6dp"
+                                android:paddingVertical="2dp"
+                                android:text="Super Admin"
+                                android:textColor="#065F46"
+                                android:textSize="8sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewAdminPerfilDivisor4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="56dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <LinearLayout
+                        android:id="@+id/rowAdminPerfilDosPasos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminPerfilDosPasosIconContainer"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="#E0F2FE"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminPerfilDosPasosIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_huella"
+                                app:tint="#0369A1" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilDosPasosInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilDosPasosTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Autenticación en dos pasos"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilDosPasosSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Protección adicional de la cuenta"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchAdminPerfilDosPasos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewAdminPerfilDivisor5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="56dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <LinearLayout
+                        android:id="@+id/rowAdminPerfilSesiones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminPerfilSesionesIconContainer"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="#FEF3C7"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminPerfilSesionesIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_usuario"
+                                app:tint="#B45309" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminPerfilSesionesInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilSesionesTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Sesiones activas"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminPerfilSesionesSub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="2 dispositivos conectados"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgAdminPerfilSesionesChevron"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:rotation="180"
+                            android:src="@drawable/icono_atras"
+                            app:tint="@color/iconSecundario" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ACTIVIDAD RECIENTE -->
+            <TextView
+                android:id="@+id/txtAdminPerfilActividadLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="ACTIVIDAD RECIENTE"
+                android:textColor="@color/txtTextoSecundario"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminPerfilActividad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminPerfilActividad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/rowAdminPerfilActividad1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:id="@+id/viewAdminPerfilActividad1Dot"
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:background="@color/estadoInformacion" />
+
+                        <TextView
+                            android:id="@+id/txtAdminPerfilActividad1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="Inicio de sesión verificado"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/txtAdminPerfilActividad1Hora"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hoy, 8:45"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rowAdminPerfilActividad2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:id="@+id/viewAdminPerfilActividad2Dot"
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:background="@color/btnPrincipal" />
+
+                        <TextView
+                            android:id="@+id/txtAdminPerfilActividad2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="Actualización de inventario"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/txtAdminPerfilActividad2Hora"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ayer, 17:20"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rowAdminPerfilActividad3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:id="@+id/viewAdminPerfilActividad3Dot"
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:background="@color/estadoAdvertencia" />
+
+                        <TextView
+                            android:id="@+id/txtAdminPerfilActividad3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="Aprobación de tienda oficial"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/txtAdminPerfilActividad3Hora"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hace 2 días"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ACCIONES -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAdminPerfilEditar"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="14dp"
+                android:backgroundTint="@color/btnPrincipal"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Editar perfil"
+                android:textColor="@color/btnPrincipalTexto"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:elevation="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAdminPerfilCerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/backgroundCard"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Cerrar sesión"
+                android:textColor="#DC2626"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:elevation="0dp"
+                app:strokeColor="#FECACA"
+                app:strokeWidth="1dp" />
+
+            <TextView
+                android:id="@+id/txtAdminPerfilVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="CELNOVA Admin · v1.0.0"
+                android:textColor="@color/txtTextoSecundario"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationAdminPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundSecundario"
+        app:elevation="8dp"
+        app:itemIconTint="@color/navColorIconos"
+        app:itemTextColor="@color/navColorIconos"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/admin_bottom_nav_menu" />
+
+</LinearLayout>

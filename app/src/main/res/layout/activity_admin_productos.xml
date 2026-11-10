@@ -1,0 +1,1708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    tools:context=".activities.AdminProductosActivity">
+
+    <!-- HEADER ESTÁTICO -->
+    <LinearLayout
+        android:id="@+id/linearLayoutAdminProductosHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundPrincipal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdminProductosLogoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgAdminProductosLogo"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:src="@drawable/brand_logo" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminProductosBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                app:cardBackgroundColor="@color/btnPrincipal"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:id="@+id/txtAdminProductosBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:text="Productos"
+                    android:textColor="@color/btnPrincipalTexto"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewAdminProductosHeaderSpacer"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdminProductosIconos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgAdminProductosIconoNotificacion"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginEnd="14dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/iconPrincipal" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminProductosIconoPerfilContainer"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="17dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="1dp">
+
+                <ImageView
+                    android:id="@+id/imgAdminProductosIconoPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="6dp"
+                    android:src="@drawable/icono_usuario"
+                    app:tint="@color/iconPrincipal" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- BODY SCROLLVIEW -->
+    <ScrollView
+        android:id="@+id/scrollViewAdminProductos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAdminProductosRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- TÍTULO -->
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminProductosTituloRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminProductosTituloInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtAdminProductosTitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gestión Global"
+                        android:textColor="@color/txtTitulo"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtAdminProductosSub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Catálogo, Inventario y Precios Transaccional"
+                        android:textColor="@color/txtTextoSecundario"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminProductosAjustes"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/backgroundCard"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="1dp">
+
+                    <ImageView
+                        android:id="@+id/imgAdminProductosAjustes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp"
+                        android:src="@drawable/icono_ajuste"
+                        app:tint="@color/txtTituloSecundario" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- KPIs -->
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminProductosKpis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <!-- KPI 1: SKUs -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminProductosKpi1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosKpi1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminProductosKpi1Top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgAdminProductosKpi1Icon"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/icono_tienda"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <TextView
+                                android:id="@+id/txtAdminProductosKpi1Label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="SKUs"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosKpi1Valor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="4.820"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosKpi1Sub"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1.305 activos"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- KPI 2: Hoy -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminProductosKpi2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosKpi2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminProductosKpi2Top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgAdminProductosKpi2Icon"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/icono_carrito_compras"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <TextView
+                                android:id="@+id/txtAdminProductosKpi2Label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="Hoy"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosKpi2Valor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="$42.6M"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosKpi2Sub"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="128 ventas"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="9sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- KPI 3: Última actualización -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminProductosKpi3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosKpi3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminProductosKpi3Top"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgAdminProductosKpi3Icon"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/icono_rayo"
+                                app:tint="@color/txtTituloSecundario" />
+
+                            <TextView
+                                android:id="@+id/txtAdminProductosKpi3Label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="Última act."
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosKpi3Valor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="64"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosKpi3Sub"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Centralizado hace 7m"
+                            android:textColor="@color/estadoExito"
+                            android:textSize="8sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- TABS -->
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminProductosTabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminProductosTabCatalogo"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#D1FAE5"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#059669"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosTabCatalogo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgAdminProductosTabCatalogo"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/icono_categorias"
+                            app:tint="#065F46" />
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosTabCatalogo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="Catálogo Global"
+                            android:textColor="#065F46"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardAdminProductosTabCompras"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/backgroundCard"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosTabCompras"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgAdminProductosTabCompras"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/icono_pedidos"
+                            app:tint="@color/iconSecundario" />
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosTabCompras"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="Compras &amp; Órdenes"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminProductosTabComprasBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            app:cardBackgroundColor="#FEE2E2"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <TextView
+                                android:id="@+id/txtAdminProductosTabComprasBadge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="4dp"
+                                android:paddingVertical="1dp"
+                                android:text="2"
+                                android:textColor="#DC2626"
+                                android:textSize="8sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- BUSCADOR -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminProductosBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminProductosBusquedaInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp">
+
+                    <ImageView
+                        android:id="@+id/imgAdminProductosIconoBusqueda"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_busqueda"
+                        app:tint="@color/iconSecundario" />
+
+                    <EditText
+                        android:id="@+id/etAdminProductosBuscar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="Buscar por SKU, producto o tienda..."
+                        android:inputType="text"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/imgAdminProductosIconoFiltro"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_ajuste"
+                        app:tint="@color/iconSecundario" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- FILTROS -->
+            <HorizontalScrollView
+                android:id="@+id/scrollViewAdminProductosFiltros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminProductosFiltros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminProductosFiltroTodas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="6dp"
+                        app:cardBackgroundColor="@color/btnPrincipal"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosFiltroTodas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:text="Todas"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminProductosFiltroCelulares"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="6dp"
+                        app:cardBackgroundColor="@color/backgroundCard"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosFiltroCelulares"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:text="Celulares"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminProductosFiltroAudio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="6dp"
+                        app:cardBackgroundColor="@color/backgroundCard"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosFiltroAudio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:text="Audio"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminProductosFiltroAccesorios"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        app:cardBackgroundColor="@color/backgroundCard"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/lineaDivisor"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosFiltroAccesorios"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:text="Accesorios"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="11sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- SUPERVISIÓN DE CATÁLOGO -->
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminProductosSupervisionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtAdminProductosSupervisionTitulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Supervisión de Catálogo (SKUs en Vivo)"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtAdminProductosSupervisionRegistros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.820 Registros"
+                    android:textColor="@color/txtTituloSecundario"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- PRODUCTO 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminProducto1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminProducto1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProducto1Row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminProducto1Imagen"
+                            android:layout_width="62dp"
+                            android:layout_height="62dp"
+                            app:cardBackgroundColor="#EAF6F2"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminProducto1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="12dp"
+                                android:src="@drawable/icono_tienda"
+                                app:tint="@color/txtTituloSecundario" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminProducto1Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminProducto1TituloRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminProducto1Titulo"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Samsung Galaxy S24 Ultra 256GB"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminProducto1Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    app:cardBackgroundColor="#D1FAE5"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminProducto1Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="5dp"
+                                        android:paddingVertical="1dp"
+                                        android:text="Activo"
+                                        android:textColor="#065F46"
+                                        android:textSize="8sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtAdminProducto1Sku"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="SKU: SM-S928 512"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/txtAdminProducto1Tienda"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Sede Central / CDMX"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminProducto1PrecioRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminProducto1Precio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$4.899.900 COP"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:id="@+id/viewAdminProducto1PrecioSpacer"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_weight="1" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminProducto1Stock"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:cardBackgroundColor="@color/lineaDivisor"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminProducto1Stock"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="5dp"
+                                        android:paddingVertical="1dp"
+                                        android:text="42 uds"
+                                        android:textColor="@color/txtTextoSecundario"
+                                        android:textSize="8sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProducto1Botones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminProducto1Actualizar"
+                            android:layout_width="0dp"
+                            android:layout_height="34dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/btnPrincipal"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:text="Solicitar Actualización"
+                            android:textColor="@color/btnPrincipalTexto"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="9dp"
+                            app:elevation="0dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminProducto1Proveedor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_marginStart="6dp"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="10dp"
+                            android:text="El Proveedor"
+                            android:textColor="@color/txtTituloSecundario"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="9dp"
+                            app:elevation="0dp"
+                            app:strokeColor="@color/lineaDivisor"
+                            app:strokeWidth="1dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- PRODUCTO 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminProducto2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminProducto2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProducto2Row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminProducto2Imagen"
+                            android:layout_width="62dp"
+                            android:layout_height="62dp"
+                            app:cardBackgroundColor="#EAF6F2"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminProducto2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="12dp"
+                                android:src="@drawable/icono_laptop"
+                                app:tint="@color/txtTituloSecundario" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminProducto2Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminProducto2TituloRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminProducto2Titulo"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Xiaomi Redmi Note 13 Pro + 5G"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminProducto2Badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    app:cardBackgroundColor="#FEE2E2"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminProducto2Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="5dp"
+                                        android:paddingVertical="1dp"
+                                        android:text="Stock Crítico"
+                                        android:textColor="#DC2626"
+                                        android:textSize="8sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtAdminProducto2Sku"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="SKU: MZB-8K2P-3073"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/txtAdminProducto2Tienda"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Sede Central / CDMX"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminProducto2PrecioRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminProducto2Precio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$1.699.900 COP"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtAdminProducto2PrecioAnterior"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="$1.735.992 COP"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="9sp" />
+
+                                <View
+                                    android:id="@+id/viewAdminProducto2PrecioSpacer"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_weight="1" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminProducto2Stock"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:cardBackgroundColor="#FEE2E2"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminProducto2Stock"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="5dp"
+                                        android:paddingVertical="1dp"
+                                        android:text="18 uds"
+                                        android:textColor="#DC2626"
+                                        android:textSize="8sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProducto2Botones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminProducto2Actualizar"
+                            android:layout_width="0dp"
+                            android:layout_height="34dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/btnPrincipal"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:text="Solicitar Actualización"
+                            android:textColor="@color/btnPrincipalTexto"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="9dp"
+                            app:elevation="0dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminProducto2Proveedor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_marginStart="6dp"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="10dp"
+                            android:text="El Proveedor"
+                            android:textColor="@color/txtTituloSecundario"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="9dp"
+                            app:elevation="0dp"
+                            app:strokeColor="@color/lineaDivisor"
+                            app:strokeWidth="1dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- PRODUCTO 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminProducto3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="#FECACA"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminProducto3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAdminProducto3Alerta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        app:cardBackgroundColor="#FEE2E2"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminProducto3Alerta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="7dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminProducto3Alerta"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/icono_error"
+                                app:tint="#DC2626" />
+
+                            <TextView
+                                android:id="@+id/txtAdminProducto3Alerta"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_weight="1"
+                                android:text="Alerta de Desabastecimiento"
+                                android:textColor="#DC2626"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminProducto3AlertaVariantes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3 variantes críticas"
+                                android:textColor="#DC2626"
+                                android:textSize="8sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProducto3Row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminProducto3Imagen"
+                            android:layout_width="62dp"
+                            android:layout_height="62dp"
+                            app:cardBackgroundColor="#EAF6F2"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminProducto3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="12dp"
+                                android:src="@drawable/icono_audifono"
+                                app:tint="@color/txtTituloSecundario" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminProducto3Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminProducto3Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Audífonos Sony WH-1000XM5"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminProducto3Sku"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="SKU: MDR-8H2-8802"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/txtAdminProducto3Tienda"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Sede Central / CDMX"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminProducto3PrecioRow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtAdminProducto3Precio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$1.849.000 COP"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:id="@+id/viewAdminProducto3PrecioSpacer"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_weight="1" />
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/cardAdminProducto3Stock"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:cardBackgroundColor="#FEE2E2"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtAdminProducto3Stock"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingHorizontal="5dp"
+                                        android:paddingVertical="1dp"
+                                        android:text="2 uds"
+                                        android:textColor="#DC2626"
+                                        android:textSize="8sp"
+                                        android:textStyle="bold" />
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProducto3Botones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminProducto3Actualizar"
+                            android:layout_width="0dp"
+                            android:layout_height="34dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/btnPrincipal"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:text="Solicitar Actualización"
+                            android:textColor="@color/btnPrincipalTexto"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="9dp"
+                            app:elevation="0dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdminProducto3Revisar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_marginStart="6dp"
+                            android:backgroundTint="@color/backgroundCard"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="10dp"
+                            android:text="Revisar Catálogo"
+                            android:textColor="@color/txtTituloSecundario"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="9dp"
+                            app:elevation="0dp"
+                            app:strokeColor="@color/lineaDivisor"
+                            app:strokeWidth="1dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- AUDITORÍA TRANSACCIONAL -->
+            <LinearLayout
+                android:id="@+id/linearLayoutAdminProductosAuditoriaHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtAdminProductosAuditoriaTitulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Auditoría Transaccional Reciente"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtAdminProductosAuditoriaPrecios"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Precios Operativos"
+                    android:textColor="@color/txtTituloSecundario"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- ORDEN -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAdminProductosOrden"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0.5dp"
+                app:strokeColor="@color/lineaDivisor"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutAdminProductosOrden"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosOrdenHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:id="@+id/frameAdminProductosOrdenIconoContainer"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="#E0F2FE"
+                            android:padding="7dp">
+
+                            <ImageView
+                                android:id="@+id/imgAdminProductosOrdenIcono"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/icono_pedidos"
+                                app:tint="#0369A1" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminProductosOrdenInfo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtAdminProductosOrdenTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Orden #CM-70412"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtAdminProductosOrdenCliente"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Cliente: Camila A. R. · Bogotá, D.C."
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutAdminProductosOrdenEstado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardAdminProductosOrdenEstado"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="#D1FAE5"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtAdminProductosOrdenEstado"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="5dp"
+                                    android:paddingVertical="1dp"
+                                    android:text="Aprobado"
+                                    android:textColor="#065F46"
+                                    android:textSize="8sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:id="@+id/txtAdminProductosOrdenHora"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:gravity="end"
+                                android:text="5 min"
+                                android:textColor="@color/txtTextoSecundario"
+                                android:textSize="8sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewAdminProductosOrdenDivisor1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="8dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosOrdenSubtotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosOrdenSubtotalLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Subtotal Producto"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosOrdenSubtotalValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$1.126.447 COP"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosOrdenBase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosOrdenBaseLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Base Gravable"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosOrdenBaseValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$1.126.447"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosOrdenImpuestos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosOrdenImpuestosLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Impuestos (IVA)"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosOrdenImpuestosValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$0"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosOrdenRetencion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosOrdenRetencionLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Retención en la Fuente (ReteFuente)"
+                            android:textColor="@color/txtTextoSecundario"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosOrdenRetencionValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-$67.640 COP"
+                            android:textColor="#DC2626"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewAdminProductosOrdenDivisor2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="8dp"
+                        android:background="@color/lineaDivisor" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosOrdenTotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosOrdenTotalLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total Facturado PSE"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtAdminProductosOrdenTotalValor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$1.699.900 COP"
+                            android:textColor="@color/txtTituloSecundario"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutAdminProductosOrdenDetalles"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminProductosTrazabilidad"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/backgroundPrincipal"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminProductosTrazabilidad"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="7dp">
+
+                                <TextView
+                                    android:id="@+id/txtAdminProductosTrazabilidadTitulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="TRAZABILIDAD"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="8sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtAdminProductosTrazabilidadValor"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Pago PSE · Aprobado"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardAdminProductosCanales"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/backgroundPrincipal"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutAdminProductosCanales"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="7dp">
+
+                                <TextView
+                                    android:id="@+id/txtAdminProductosCanalesTitulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="CANALES DE VENTA"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="8sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtAdminProductosCanalesValor"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Tienda Oficial"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- BOTÓN DESCARGA -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAdminProductosDescargar"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/btnPrincipal"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Descargar Datos &amp; Métricas"
+                android:textColor="@color/btnPrincipalTexto"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:elevation="0dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- ADMIN BOTTOM NAVIGATION -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationAdminProductos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundSecundario"
+        app:elevation="8dp"
+        app:itemIconTint="@color/navColorIconos"
+        app:itemTextColor="@color/navColorIconos"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/admin_bottom_nav_menu" />
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Celnova" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/backgroundPrincipal</item>
+        <item name="android:statusBarColor">@color/backgroundPrincipal</item>
+        <item name="android:navigationBarColor">@color/backgroundPrincipal</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+
+    <style name="Theme.Celnova" parent="Base.Theme.Celnova" />
+
+    <style name="CheckboxRoundedStyle">
+        <item name="cornerSize">15dp</item>
+    </style>
+</resources>

@@ -1,0 +1,1413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    tools:context=".activities.HomeActivity">
+
+    <!-- HEADER ESTÁTICO -->
+    <LinearLayout
+        android:id="@+id/linearLayoutHomeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundPrincipal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/imgHomelogo"
+            android:layout_width="110dp"
+            android:layout_height="32dp"
+            android:src="@drawable/brand_logo" />
+
+        <View
+            android:id="@+id/viewHomeHeaderSpacer"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutHomeIconos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgHomeIconoNotificacion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/iconPrincipal" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImgHomeIconoPerfil"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/icono_usuario"
+                app:civ_border_color="@color/lineaDivisor"
+                app:civ_border_width="1dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="24dp">
+
+            <!-- SALUDO -->
+            <LinearLayout
+                android:id="@+id/linearLayoutHomeSaludoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtHomeSaludo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hola, "
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtHomeNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jhon Lopez"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtHomePregunta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="¿Qué tecnología buscas hoy?"
+                android:textColor="@color/txtTexto"
+                android:textSize="15sp" />
+
+            <!-- BUSCADOR -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHomeBusqueda"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/backgroundCard"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutHomeBusquedaInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgHomeIconoBusqueda"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_busqueda"
+                        app:tint="@color/iconSecundario" />
+
+                    <EditText
+                        android:id="@+id/etHomeBuscar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="Buscar..."
+                        android:inputType="text"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imgHomeIconoMicroPhone"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_microphone"
+                        app:tint="@color/iconSecundario" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- BANNER PRINCIPAL -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHomeBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/bannerFondo"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutHomeBannerInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHomeBannerTop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgHomeIconoBanner"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/icono_rayo"
+                            app:tint="@color/txtBannerPrincipal" />
+
+                        <TextView
+                            android:id="@+id/txtHomeTituloBanner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CYBER WEEK TECH"
+                            android:textColor="@color/txtBannerPrincipal"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtHomeBannerSubtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Hasta 40% OFF en Flagships"
+                        android:textColor="@color/txtBannerPrincipal"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtHomeBannerDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Galaxy S24, iPhone 15 Pro &amp; Audio Sony"
+                        android:textColor="@color/txtBannerPrincipal"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHomeBannerBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnHomeBannerExplorar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:backgroundTint="@color/backgroundSecundario"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:paddingHorizontal="16dp"
+                            android:text="Explorar ofertas"
+                            android:textColor="@color/txtBannerSecundario"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="18dp"
+                            app:elevation="0dp" />
+
+                        <View
+                            android:id="@+id/viewHomeBannerSpacer"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/txtHomeBannerValido"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Válido hasta domingo"
+                            android:textColor="@color/txtBannerPrincipal"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- EXPLORAR POR CATEGORIA -->
+            <LinearLayout
+                android:id="@+id/linearLayoutHomeCategoriasSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutHomeCategoriasHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtHomeCategoriasTitulo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Explorar por categoría"
+                        android:textColor="@color/txtTitulo"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtHomeCategoriasVerTodas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Ver todas >"
+                        android:textColor="@color/txtTituloSecundario"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollHomeCategorias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHomeCategoriasChips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Chip 1: Smartphones -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardHomeChipSmartphones"
+                            android:layout_width="wrap_content"
+                            android:layout_height="44dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardBackgroundColor="@color/backgroundCard"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHomeChipSmartphones"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="16dp">
+
+                                <ImageView
+                                    android:id="@+id/imgHomeChipSmartphones"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/icono_telefono"
+                                    app:tint="@color/txtTituloSecundario" />
+
+                                <TextView
+                                    android:id="@+id/txtHomeChipSmartphones"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="Smartphones"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Chip 2: Laptops -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardHomeChipLaptops"
+                            android:layout_width="wrap_content"
+                            android:layout_height="44dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardBackgroundColor="@color/backgroundCard"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHomeChipLaptops"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="16dp">
+
+                                <ImageView
+                                    android:id="@+id/imgHomeChipLaptops"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/icono_laptop"
+                                    app:tint="@color/txtTituloSecundario" />
+
+                                <TextView
+                                    android:id="@+id/txtHomeChipLaptops"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="Laptops"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Chip 3: Audio & Hi-Fi -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardHomeChipAudio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="44dp"
+                            app:cardBackgroundColor="@color/backgroundCard"
+                            app:cardCornerRadius="22dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHomeChipAudio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="16dp">
+
+                                <ImageView
+                                    android:id="@+id/imgHomeChipAudio"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/icono_audifono"
+                                    app:tint="@color/txtTituloSecundario" />
+
+                                <TextView
+                                    android:id="@+id/txtHomeChipAudio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="Audio &amp; Hi-Fi"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </LinearLayout>
+
+            <!-- OFERTAS DEL DIA -->
+            <LinearLayout
+                android:id="@+id/linearLayoutHomeOfertasSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutHomeOfertasHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHomeOfertasTitleContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgHomeOfertasTituloIcono"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/icono_rayo"
+                            app:tint="@color/estadoError" />
+
+                        <TextView
+                            android:id="@+id/txtHomeOfertasTitulo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ofertas del día"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewHomeOfertasSpacer"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <!-- Badge timer -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardHomeOfertasTimerBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#FEF3C7"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutHomeOfertasTimer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp">
+
+                            <ImageView
+                                android:id="@+id/imgHomeOfertasTimer"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/icono_rayo"
+                                app:tint="#D97706" />
+
+                            <TextView
+                                android:id="@+id/txtHomeOfertasTimer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Termina en 24h 33m 19s"
+                                android:textColor="#B45309"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollHomeOfertas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHomeOfertasCards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Product Card 1: Galaxy S24 Ultra -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardHomeOferta1"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="12dp"
+                            app:cardBackgroundColor="@color/backgroundSecundario"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0.5dp"
+                            app:strokeColor="@color/lineaDivisor"
+                            app:strokeWidth="0.7dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHomeOferta1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <FrameLayout
+                                    android:id="@+id/frameHomeOferta1ImageContainer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="130dp"
+                                    android:background="@color/backgroundCard"
+                                    android:padding="8dp">
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cardHomeOferta1Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="top|start"
+                                        app:cardBackgroundColor="@color/estadoError"
+                                        app:cardCornerRadius="6dp"
+                                        app:cardElevation="0dp"
+                                        app:strokeWidth="0dp">
+
+                                        <TextView
+                                            android:id="@+id/txtHomeOferta1Badge"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingHorizontal="6dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="-14%"
+                                            android:textColor="@color/btnPrincipalTexto"
+                                            android:textSize="11sp"
+                                            android:textStyle="bold" />
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <ImageView
+                                        android:id="@+id/imgHomeOferta1Imagen"
+                                        android:layout_width="64dp"
+                                        android:layout_height="64dp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/icono_telefono"
+                                        app:tint="@color/txtTituloSecundario" />
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cardHomeOferta1Fav"
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="top|end"
+                                        app:cardBackgroundColor="@color/backgroundSecundario"
+                                        app:cardCornerRadius="14dp"
+                                        app:cardElevation="1dp"
+                                        app:strokeWidth="0dp">
+
+                                        <ImageView
+                                            android:id="@+id/imgHomeOferta1Fav"
+                                            android:layout_width="14dp"
+                                            android:layout_height="14dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/icono_notificacion"
+                                            app:tint="@color/iconPrincipal" />
+                                    </com.google.android.material.card.MaterialCardView>
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayoutHomeOferta1Rating"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imgHomeOferta1Star"
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:src="@drawable/icono_rayo"
+                                        app:tint="#F59E0B" />
+
+                                    <TextView
+                                        android:id="@+id/txtHomeOferta1Rating"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="4.9 (1,290)"
+                                        android:textColor="@color/txtTextoSecundario"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/txtHomeOferta1Titulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:text="Galaxy S24 Ultra 512GB Titanium"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayoutHomeOferta1Precios"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txtHomeOferta1Precio"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="$4.899.900"
+                                        android:textColor="@color/txtTitulo"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/txtHomeOferta1PrecioOriginal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="$5.899.000"
+                                        android:textColor="@color/txtTextoSecundario"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnHomeOferta1Anadir"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="36dp"
+                                    android:layout_marginTop="10dp"
+                                    android:backgroundTint="@color/btnPrincipal"
+                                    android:insetTop="0dp"
+                                    android:insetBottom="0dp"
+                                    android:text="Añadir"
+                                    android:textColor="@color/btnPrincipalTexto"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="18dp"
+                                    app:elevation="0dp"
+                                    app:icon="@drawable/icono_carrito_compras"
+                                    app:iconGravity="textStart"
+                                    app:iconSize="14dp"
+                                    app:iconTint="@color/btnPrincipalTexto" />
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Product Card 2: Sony WH-1000XM5 -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardHomeOferta2"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/backgroundSecundario"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="0.5dp"
+                            app:strokeColor="@color/lineaDivisor"
+                            app:strokeWidth="0.7dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHomeOferta2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <FrameLayout
+                                    android:id="@+id/frameHomeOferta2ImageContainer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="130dp"
+                                    android:background="@color/backgroundCard"
+                                    android:padding="8dp">
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cardHomeOferta2Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="top|start"
+                                        app:cardBackgroundColor="@color/estadoError"
+                                        app:cardCornerRadius="6dp"
+                                        app:cardElevation="0dp"
+                                        app:strokeWidth="0dp">
+
+                                        <TextView
+                                            android:id="@+id/txtHomeOferta2Badge"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingHorizontal="6dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="-18%"
+                                            android:textColor="@color/btnPrincipalTexto"
+                                            android:textSize="11sp"
+                                            android:textStyle="bold" />
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <ImageView
+                                        android:id="@+id/imgHomeOferta2Imagen"
+                                        android:layout_width="64dp"
+                                        android:layout_height="64dp"
+                                        android:layout_gravity="center"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/icono_audifono"
+                                        app:tint="@color/txtTituloSecundario" />
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cardHomeOferta2Fav"
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="top|end"
+                                        app:cardBackgroundColor="@color/backgroundSecundario"
+                                        app:cardCornerRadius="14dp"
+                                        app:cardElevation="1dp"
+                                        app:strokeWidth="0dp">
+
+                                        <ImageView
+                                            android:id="@+id/imgHomeOferta2Fav"
+                                            android:layout_width="14dp"
+                                            android:layout_height="14dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/icono_notificacion"
+                                            app:tint="@color/iconPrincipal" />
+                                    </com.google.android.material.card.MaterialCardView>
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayoutHomeOferta2Rating"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/imgHomeOferta2Star"
+                                        android:layout_width="12dp"
+                                        android:layout_height="12dp"
+                                        android:layout_marginEnd="4dp"
+                                        android:src="@drawable/icono_rayo"
+                                        app:tint="#F59E0B" />
+
+                                    <TextView
+                                        android:id="@+id/txtHomeOferta2Rating"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="4.6 (890)"
+                                        android:textColor="@color/txtTextoSecundario"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/txtHomeOferta2Titulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:text="Sony WH-1000XM5 ANC"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayoutHomeOferta2Precios"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txtHomeOferta2Precio"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="$1.349.900"
+                                        android:textColor="@color/txtTitulo"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/txtHomeOferta2PrecioOriginal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="$1.649.000"
+                                        android:textColor="@color/txtTextoSecundario"
+                                        android:textSize="11sp" />
+                                </LinearLayout>
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnHomeOferta2Anadir"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="36dp"
+                                    android:layout_marginTop="10dp"
+                                    android:backgroundTint="@color/btnPrincipal"
+                                    android:insetTop="0dp"
+                                    android:insetBottom="0dp"
+                                    android:text="Añadir"
+                                    android:textColor="@color/btnPrincipalTexto"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="18dp"
+                                    app:elevation="0dp"
+                                    app:icon="@drawable/icono_carrito_compras"
+                                    app:iconGravity="textStart"
+                                    app:iconSize="14dp"
+                                    app:iconTint="@color/btnPrincipalTexto" />
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </LinearLayout>
+
+            <!-- MAS VENDIDOS -->
+            <LinearLayout
+                android:id="@+id/linearLayoutHomeMasVendidosSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutHomeMasVendidosHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtHomeMasVendidosTitulo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Más vendidos"
+                        android:textColor="@color/txtTitulo"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtHomeMasVendidosRanking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Explorer ranking &gt;"
+                        android:textColor="@color/txtTituloSecundario"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Mas Vendido Item 1 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardHomeMasVendidosItem1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHomeMasVendidosItem1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameHomeMasVendidosItem1ImageContainer"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgHomeMasVendidosItem1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icono_laptop"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutHomeMasVendidosItem1Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtHomeMasVendidosItem1Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Top #1 en Tablets"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtHomeMasVendidosItem1Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Apple iPad Air M2 128GB"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHomeMasVendidosItem1Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtHomeMasVendidosItem1Precio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$2.459.900"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtHomeMasVendidosItem1Dot"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="6dp"
+                                    android:text="•"
+                                    android:textColor="@color/txtTextoSecundario" />
+
+                                <ImageView
+                                    android:id="@+id/imgHomeMasVendidosItem1Star"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:layout_marginEnd="2dp"
+                                    android:src="@drawable/icono_rayo"
+                                    app:tint="#F59E0B" />
+
+                                <TextView
+                                    android:id="@+id/txtHomeMasVendidosItem1Rating"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="4.8"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardHomeMasVendidosItem1AddBtn"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/btnPrincipal"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/imgHomeMasVendidosItem1AddIcon"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_check"
+                                app:tint="@color/btnPrincipalTexto" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Mas Vendido Item 2 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardHomeMasVendidosItem2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHomeMasVendidosItem2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <FrameLayout
+                            android:id="@+id/frameHomeMasVendidosItem2ImageContainer"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/imgHomeMasVendidosItem2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icono_telefono"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutHomeMasVendidosItem2Info"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtHomeMasVendidosItem2Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Top #2 en Productividad"
+                                android:textColor="@color/estadoExito"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtHomeMasVendidosItem2Titulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Logitech MX Master 3S"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHomeMasVendidosItem2Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtHomeMasVendidosItem2Precio"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="$419.900"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtHomeMasVendidosItem2Dot"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="6dp"
+                                    android:text="•"
+                                    android:textColor="@color/txtTextoSecundario" />
+
+                                <ImageView
+                                    android:id="@+id/imgHomeMasVendidosItem2Star"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:layout_marginEnd="2dp"
+                                    android:src="@drawable/icono_rayo"
+                                    app:tint="#F59E0B" />
+
+                                <TextView
+                                    android:id="@+id/txtHomeMasVendidosItem2Rating"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="4.8"
+                                    android:textColor="@color/txtTextoSecundario"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardHomeMasVendidosItem2AddBtn"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            app:cardBackgroundColor="@color/btnPrincipal"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/imgHomeMasVendidosItem2AddIcon"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icono_check"
+                                app:tint="@color/btnPrincipalTexto" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- NUEVOS LANZAMIENTOS -->
+            <LinearLayout
+                android:id="@+id/linearLayoutHomeNuevosSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutHomeNuevosHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHomeNuevosTitleContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgHomeNuevosTituloIcono"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/icono_rayo"
+                            app:tint="@color/txtTituloSecundario" />
+
+                        <TextView
+                            android:id="@+id/txtHomeNuevosTitulo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nuevos lanzamientos"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewHomeNuevosSpacer"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardHomeNuevosBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#D1FAE5"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <TextView
+                            android:id="@+id/txtHomeNuevosBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp"
+                            android:text="Temporada 2026"
+                            android:textColor="#065F46"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <!-- Nuevos Lanzamientos Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardHomeNuevosCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0.5dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutHomeNuevosCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:id="@+id/frameHomeNuevosImageContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp"
+                            android:background="@color/backgroundCard"
+                            android:padding="16dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardHomeNuevosTagBadge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|start"
+                                app:cardBackgroundColor="#E0F2FE"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp"
+                                app:strokeWidth="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtHomeNuevosTagBadge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingHorizontal="8dp"
+                                    android:paddingVertical="4dp"
+                                    android:text="Potencia Extrema"
+                                    android:textColor="#0369A1"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/imgHomeNuevosImagen"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                android:layout_gravity="center"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icono_laptop"
+                                app:tint="@color/txtTituloSecundario" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutHomeNuevosInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/txtHomeNuevosCardTitulo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="MacBook Pro 16&quot; M3 Max"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHomeNuevosBottom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayoutHomeNuevosPrecioLayout"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txtHomeNuevosDesde"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Desde"
+                                        android:textColor="@color/txtTextoSecundario"
+                                        android:textSize="11sp" />
+
+                                    <TextView
+                                        android:id="@+id/txtHomeNuevosPrecio"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="$10.299.900"
+                                        android:textColor="@color/txtTitulo"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <View
+                                    android:id="@+id/viewHomeNuevosButtonSpacer"
+                                    android:layout_width="0dp"
+                                    android:layout_height="1dp"
+                                    android:layout_weight="1" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnHomeNuevosEspecificaciones"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="40dp"
+                                    android:backgroundTint="@color/btnPrincipal"
+                                    android:insetTop="0dp"
+                                    android:insetBottom="0dp"
+                                    android:paddingHorizontal="16dp"
+                                    android:text="Ver especificaciones"
+                                    android:textColor="@color/btnPrincipalTexto"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="20dp"
+                                    app:elevation="0dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundSecundario"
+        app:elevation="8dp"
+        app:itemIconTint="@color/navColorIconos"
+        app:itemTextColor="@color/navColorIconos"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

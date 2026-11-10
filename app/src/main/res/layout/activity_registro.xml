@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.RegistroActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/imgRegistroLogo"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="40dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/brand_logo">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/txtRegistroTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Crea tu cuenta"
+                android:textColor="@color/txtTitulo"
+                android:textSize="25sp"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:id="@+id/txtRegistroTexto"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center_horizontal"
+                android:text="Únete y obtén cupones exclusivos de bienvenida."
+                android:textColor="@color/txtTexto"
+                android:textSize="15sp">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="28dp"
+                android:orientation="horizontal"
+                android:gravity="top">
+
+                <TextView
+                    android:id="@+id/txtRegistroNombreCompleto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre completo"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="16sp">
+                </TextView>
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/icono_asterisco"
+                    app:tint="@color/estadoError" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/etRegistroNombreCompletoMaterialCardView"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/inputFondo"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0.2dp"
+                app:strokeColor="@color/inputBorde"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconNombreCompleto"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_usuario"
+                        app:tint="@color/iconSecundario" >
+                    </ImageView>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/lineaDivisor">
+                    </View>
+
+                    <EditText
+                        android:id="@+id/etRegistroNombreCompleto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:background="@null"
+                        android:inputType="textCapWords|textPersonName"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="16sp"
+                        android:maxLength="100">
+                    </EditText>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="top">
+
+                <TextView
+                    android:id="@+id/txtRegistroCorreo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correo electronico"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="16sp">
+                </TextView>
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/icono_asterisco"
+                    app:tint="@color/estadoError" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/etRegistroCorreoMaterialCardView"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/inputFondo"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0.2dp"
+                app:strokeColor="@color/inputBorde"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgRegistroIconCorreo"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_email"
+                        app:tint="@color/iconSecundario" >
+                    </ImageView>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/lineaDivisor">
+                    </View>
+
+                    <EditText
+                        android:id="@+id/etRegistroCorreo"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="16sp"
+                        android:layout_marginStart="12dp"
+                        android:maxLength="254">
+                    </EditText>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="top">
+
+                <TextView
+                    android:id="@+id/txtRegistroTelefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Celular"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="16sp">
+                </TextView>
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/icono_asterisco"
+                    app:tint="@color/estadoError" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/etRegistroTelefonoMaterialCardView"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/inputFondo"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0.2dp"
+                app:strokeColor="@color/inputBorde"
+                app:strokeWidth="0.7dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgRegistroTelefono"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_telefono"
+                        app:tint="@color/iconSecundario" >
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/txtRegistroTelefonoNumero"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+57"
+                        android:textSize="16sp"
+                        android:textColor="@color/txtTitulo">
+                    </TextView>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/lineaDivisor">
+                    </View>
+
+                    <EditText
+                        android:id="@+id/etRegistroCelular"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="300 123 4567"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="top">
+
+                    <TextView
+                        android:id="@+id/txtRegistroContrasena"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contraseña"
+                        android:textColor="@color/txtTitulo"
+                        android:textSize="16sp" >
+                    </TextView>
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/icono_asterisco"
+                        app:tint="@color/estadoError" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtRegistroContrasenaEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Segura"
+                    android:textColor="@color/brandSecondario"
+                    android:textSize="14sp"
+                    android:textStyle="bold">
+                </TextView>
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/etRegistroContrasenaMaterialCardView"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/inputFondo"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0.2dp"
+                app:strokeColor="@color/inputBorde"
+                app:strokeWidth="0.7dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgRegistroIconContrasena"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_candado"
+                        app:tint="@color/iconSecundario">
+                    </ImageView>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/lineaDivisor">
+                    </View>
+
+                    <EditText
+                        android:id="@+id/etRegistroContrasena"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:inputType="textPassword"
+                        android:maxLength="64"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="16sp"
+                        android:layout_marginStart="12dp"
+                        >
+                    </EditText>
+
+                    <ImageView
+                        android:id="@+id/btnRegistroTogglePassword"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:padding="12dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_vista_cerrada"
+                        android:contentDescription="Mostrar u ocultar contraseña"
+                        app:tint="@color/iconSecundario" >
+                    </ImageView>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/txtRegistroPasswordHelper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Debe tener mínimo 8 caracteres, mayúscula, minúscula, números y símbolo."
+                android:textColor="@color/estadoInformacion"
+                android:textSize="12sp"
+                android:visibility="gone">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="top">
+
+                    <TextView
+                        android:id="@+id/txtRegistroConfirmarContrasena"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirmar contraseña"
+                        android:textColor="@color/txtTitulo"
+                        android:textSize="16sp">
+                    </TextView>
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/icono_asterisco"
+                        app:tint="@color/estadoError" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtRegistroConfirmarContrasenaEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correcto"
+                    android:textColor="@color/brandSecondario"
+                    android:textSize="14sp"
+                    android:textStyle="bold">
+                </TextView>
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/etRegistroConfirmarContrasenaMaterialCardView"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/inputFondo"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0.2dp"
+                app:strokeColor="@color/inputBorde"
+                app:strokeWidth="0.7dp"
+                >
+                <LinearLayout
+                    android:id="@+id/etRegistroConfirmarContrasenaLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgRegistroIconConfirmarContrasena"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_candado"
+                        app:tint="@color/iconSecundario">
+                    </ImageView>
+
+                    <View
+                        android:id="@+id/ViewRegistroLineaDivisorConfirmarContrasena"
+                        android:layout_width="1dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/lineaDivisor">
+                    </View>
+
+                    <EditText
+                        android:id="@+id/etRegistroConfirmarContrasena"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:inputType="textPassword"
+                        android:maxLength="64"
+                        android:textColor="@color/inputTexto"
+                        android:textColorHint="@color/inputHint"
+                        android:textSize="16sp"
+                        android:layout_marginStart="12dp" >
+                    </EditText>
+
+                    <ImageView
+                        android:id="@+id/btnRegistroTogglePasswordConfirmarContrasena"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:padding="12dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_vista_cerrada"
+                        android:contentDescription="Mostrar u ocultar contraseña"
+                        app:tint="@color/iconSecundario" >
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/imgRegistroCheckConfirmarContrasena"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="4dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_check"
+                        android:contentDescription="Contraseña coincidente"
+                        app:tint="@color/iconSecundario">
+                    </ImageView>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/txtRegistroConfirmarPasswordHelper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Debe tener mínimo 8 caracteres, mayúscula, minúscula, números y símbolo."
+                android:textColor="@color/estadoInformacion"
+                android:textSize="12sp"
+                android:visibility="gone">
+            </TextView>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkboxRegistroTerminos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="Acepto los Términos y Condiciones y la Política de Privacidad."
+                android:textSize="16sp"
+                android:textColor="@color/txtTexto"
+                app:buttonTint="@color/btnPrincipal"
+                app:shapeAppearanceOverlay="@style/CheckboxRoundedStyle" >
+            </com.google.android.material.checkbox.MaterialCheckBox>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkboxRegistroOfertasPromyMas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="4dp"
+                android:text="Deseo recibir ofertas, promociones y mas."
+                android:textSize="16sp"
+                android:textColor="@color/txtTexto"
+                app:buttonTint="@color/btnPrincipal"
+                app:shapeAppearanceOverlay="@style/CheckboxRoundedStyle" >
+            </com.google.android.material.checkbox.MaterialCheckBox>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegistroRegistrarme"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/btnPrincipal"
+                android:text="Registrarme"
+                android:textColor="@color/btnPrincipalTexto"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:cornerRadius="25dp"
+                android:layout_marginTop="16dp">
+            </com.google.android.material.button.MaterialButton>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRegistroLineaDivisor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp">
+
+                <View
+                    android:id="@+id/ViewRegistroLineaDivisor1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/lineaDivisor">
+                </View>
+
+                <TextView
+                    android:id="@+id/txtRegistroLineaDivisor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center_horizontal"
+                    android:text="O REGISTRATE CON"
+                    android:textColor="@color/txtTextoSecundario"
+                    android:textSize="16sp">
+                </TextView>
+
+                <View
+                    android:id="@+id/ViewRegistroLineaDivisor2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/lineaDivisor" >
+                </View>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRegistroSociales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnRegistroGoogle"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/backgroundSecundario"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0.2dp"
+                    app:strokeColor="@color/lineaDivisor"
+                    app:strokeWidth="0.7dp">
+
+                    <ImageView
+                        android:id="@+id/imgRegistroIconGoogle"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icono_google" >
+                    </ImageView>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRegistroLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtRegistroPregunta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:gravity="center_horizontal"
+                    android:text="¿Ya tienes una cuenta?"
+                    android:textSize="16sp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/txtRegistroIniciaSesion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:text="Inicia sesión"
+                    android:textColor="@color/txtTituloSecundario"
+                    android:textSize="18sp"
+                    android:textStyle="bold">
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRegistroCifrado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgRegistroLogoCifrado"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/icono_cifrado"
+                    app:tint="@color/iconSecundario">
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/txtRegistroMensajeCifrado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Tus datos están protegidos con cifrado"
+                    android:textColor="@color/txtTextoSecundario"
+                    android:textSize="14sp">
+                </TextView>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
