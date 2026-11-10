@@ -41,4 +41,4 @@ CELNOVA es un prototipo funcional de interfaz gráfica para una tienda virtual A
 ---
 
 ## ✒️ Autor
-Proyecto desarrollado para la asignatura **Desarrollo de Aplicaciones Móviles Nativas**.
+Proyecto desarrollado por Jhon Lopez para la asignatura **Desarrollo de Aplicaciones Móviles Nativas**.
