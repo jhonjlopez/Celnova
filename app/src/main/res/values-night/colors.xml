@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="backgroundPrincipal">#0D1117</color>
+    <color name="backgroundSecundario">#161B22</color>
+    <color name="backgroundTerciario">#1C2530</color>
+
+    <color name="backgroundCard">#161B22</color>
+    <color name="backgroundCardSecundario">#1C2530</color>
+    <color name="backgroundCardTerciario">#134E4A</color>
+
+    <color name="txtTitulo">#F1F5F9</color>
+    <color name="txtTituloSecundario">#5EEAD4</color>
+    <color name="txtTexto">#CBD5E1</color>
+    <color name="txtTextoSecundario">#94A3B8</color>
+    <color name="txtHintEntrada">#64748B</color>
+
+    <color name="inputFondo">#1C2530</color>
+    <color name="inputTexto">#F1F5F9</color>
+    <color name="inputHint">#64748B</color>
+    <color name="inputBorde">#334155</color>
+    <color name="inputBordeFocus">#2DD4BF</color>
+
+    <color name="btnPrincipal">#14B8A6</color>
+    <color name="btnSecundario">#1C2530</color>
+    <color name="btnPrincipalTexto">#052E2B</color>
+    <color name="btnSecundarioTexto">#E2E8F0</color>
+
+    <color name="brandPrincipal">#5EEAD4</color>
+    <color name="brandSecondario">#2DD4BF</color>
+
+    <color name="estadoExito">#34D399</color>
+    <color name="estadoInformacion">#38BDF8</color>
+    <color name="estadoAdvertencia">#FBBF24</color>
+    <color name="estadoError">#F87171</color>
+
+    <color name="iconPrincipal">#CBD5E1</color>
+    <color name="iconSecundario">#94A3B8</color>
+
+    <color name="lineaDivisor">#2A3542</color>
+
+    <color name="navFondo">#161B22</color>
+    <color name="navItemActivo">#2DD4BF</color>
+    <color name="navItemInactivo">#94A3B8</color>
+    <color name="navIndicadorFondo">#134E4A</color>
+    <color name="navColorIconos">#94A3B8</color>
+
+    <color name="bannerFondo">#0F766E</color>
+    <color name="txtBannerPrincipal">#F8FAFC</color>
+    <color name="txtBannerSecundario">#99F6E4</color>
+
+</resources>

@@ -9,7 +9,6 @@
     android:orientation="vertical"
     tools:context=".activities.PerfilActivity">
 
-    <!-- HEADER ESTÁTICO -->
     <LinearLayout
         android:id="@+id/linearLayoutPerfilHeader"
         android:layout_width="match_parent"
@@ -81,7 +80,6 @@
             android:paddingHorizontal="24dp"
             android:paddingBottom="24dp">
 
-            <!-- PROFILE INFO CARD -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardPerfilInfo"
                 android:layout_width="match_parent"
@@ -213,7 +211,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- STATS ROW -->
             <LinearLayout
                 android:id="@+id/linearLayoutPerfilStatsRow"
                 android:layout_width="match_parent"
@@ -221,7 +218,6 @@
                 android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
-                <!-- Stat 1 -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilStat1"
                     android:layout_width="0dp"
@@ -269,7 +265,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Stat 2 -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilStat2"
                     android:layout_width="0dp"
@@ -317,7 +312,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Stat 3 -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilStat3"
                     android:layout_width="0dp"
@@ -367,7 +361,6 @@
 
             </LinearLayout>
 
-            <!-- MI ACTIVIDAD SECTION -->
             <LinearLayout
                 android:id="@+id/linearLayoutPerfilActividadSection"
                 android:layout_width="match_parent"
@@ -384,7 +377,6 @@
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-                <!-- Item 1: Mis Pedidos -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilItemPedidos"
                     android:layout_width="match_parent"
@@ -472,7 +464,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Item 2: Lista de Deseos -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilItemDeseos"
                     android:layout_width="match_parent"
@@ -547,7 +538,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Item 3: Mis comentarios -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilItemComentarios"
                     android:layout_width="match_parent"
@@ -615,7 +605,6 @@
 
             </LinearLayout>
 
-            <!-- CONFIGURACION DE CUENTA SECTION -->
             <LinearLayout
                 android:id="@+id/linearLayoutPerfilConfigSection"
                 android:layout_width="match_parent"
@@ -632,7 +621,6 @@
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-                <!-- Item 1: Direcciones de Envío -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilItemDirecciones"
                     android:layout_width="match_parent"
@@ -707,7 +695,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Item 2: Métodos de Pago -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilItemPagos"
                     android:layout_width="match_parent"
@@ -773,7 +760,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Item 3: Notificaciones y Alertas -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilItemNotificaciones"
                     android:layout_width="match_parent"
@@ -839,7 +825,6 @@
 
             </LinearLayout>
 
-            <!-- PREFERENCIAS Y SOPORTE SECTION -->
             <LinearLayout
                 android:id="@+id/linearLayoutPerfilPreferenciasSection"
                 android:layout_width="match_parent"
@@ -856,7 +841,6 @@
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
-                <!-- Item 1: Tema de la Aplicación -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilItemTema"
                     android:layout_width="match_parent"
@@ -931,7 +915,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Item 2: Seguridad y Biometría -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilItemSeguridad"
                     android:layout_width="match_parent"
@@ -995,7 +978,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Item 3: Centro de Ayuda y Soporte -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilItemAyuda"
                     android:layout_width="match_parent"
@@ -1061,7 +1043,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Item 4: Términos y Privacidad -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardPerfilItemTerminos"
                     android:layout_width="match_parent"
@@ -1129,7 +1110,6 @@
 
             </LinearLayout>
 
-            <!-- LOGOUT BUTTON -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnPerfilCerrarSesion"
                 android:layout_width="match_parent"

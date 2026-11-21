@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.celnova.R
+import com.example.celnova.utils.ComprasHelper
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CategoriasActivity : AppCompatActivity() {
@@ -64,5 +65,19 @@ class CategoriasActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        ComprasHelper.abrirDetalle(
+            this, findViewById(R.id.cardCategoriasTendencia1), "categoria_tendencia_1",
+            R.id.txtCategoriasTendencia1Titulo, R.id.txtCategoriasTendencia1Precio,
+            R.id.txtCategoriasTendencia1PrecioOriginal,
+            icono = "icono_telefono", categoria = "Smartphones", rating = "4.9 (1,290)"
+        )
+        ComprasHelper.abrirDetalle(
+            this, findViewById(R.id.cardCategoriasTendencia2), "categoria_tendencia_2",
+            R.id.txtCategoriasTendencia2Titulo, R.id.txtCategoriasTendencia2Precio,
+            R.id.txtCategoriasTendencia2PrecioOriginal,
+            icono = "icono_audifono", categoria = "Audio & Hi-Fi", rating = "4.6 (890)"
+        )
     }
 }
+

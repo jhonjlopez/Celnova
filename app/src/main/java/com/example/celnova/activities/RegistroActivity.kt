@@ -17,8 +17,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.doAfterTextChanged
 import com.example.celnova.R
-import com.example.celnova.utils.ValidadorNombre
 import com.example.celnova.utils.ValidadorCorreo
+import com.example.celnova.utils.ValidadorNombre
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 
 class RegistroActivity : AppCompatActivity() {
@@ -353,3 +353,4 @@ class RegistroActivity : AppCompatActivity() {
         }
     }
 }
+

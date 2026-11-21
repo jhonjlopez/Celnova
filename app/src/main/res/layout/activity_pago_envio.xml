@@ -1,0 +1,1284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="8dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPagoEnvioHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/imgPagoEnvioAtras"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/icono_atras"
+            app:tint="@color/txtTitulo" />
+
+        <ImageView
+            android:id="@+id/imgPagoEnvioBrandLogo"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/brand_logo" />
+
+        <View
+            android:id="@+id/viewPagoEnvio119"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:id="@+id/framePagoEnvio118"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/imgPagoEnvioIconoNotificacion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/txtTitulo" />
+
+            <TextView
+                android:id="@+id/txtPagoEnviov2"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="top|end"
+                android:background="@drawable/bg_badge_naranja"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/framePagoEnvio115"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_circulo_blanco"
+            android:backgroundTint="#DCE6F5">
+
+            <ImageView
+                android:id="@+id/imgPagoEnvioIconoUsuario"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icono_usuario"
+                app:tint="#4B5563" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPagoEnvioStepper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoEnvio113"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/framePagoEnvio112"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+
+                <View
+                    android:id="@+id/viewPagoEnvio111"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_paso_activo" />
+
+                <ImageView
+                    android:id="@+id/imgPagoEnvioIconoCocheEnvio2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icono_coche_envio"
+                    app:tint="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/imgPagoEnvioIconoCheck2"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_chip_verde"
+                    android:padding="2dp"
+                    android:src="@drawable/icono_check"
+                    app:tint="#065F46" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtPagoEnvioDirecciaN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Dirección"
+                android:textColor="#0F4C4C"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewPagoEnvio107"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="21dp"
+            android:layout_weight="1"
+            android:background="#D5DCEF" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoEnvio106"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/framePagoEnvio105"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+
+                <View
+                    android:id="@+id/viewPagoEnvio104"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_paso_pendiente" />
+
+                <ImageView
+                    android:id="@+id/imgPagoEnvioIconoTarjeta"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icono_tarjeta"
+                    app:tint="#9AA4BC" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtPagoEnvioMaTodoDePago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Método de Pago"
+                android:textColor="#8A93A8"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewPagoEnvio101"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="21dp"
+            android:layout_weight="1"
+            android:background="#D5DCEF" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoEnvio100"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/framePagoEnvio99"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+
+                <View
+                    android:id="@+id/viewPagoEnvio98"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_paso_pendiente" />
+
+                <ImageView
+                    android:id="@+id/imgPagoEnvioIconoCheck"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icono_check"
+                    app:tint="#9AA4BC" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtPagoEnvioConfirmar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Confirmar"
+                android:textColor="#8A93A8"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewPagoEnvio"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoEnvioRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="12dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPagoEnvioUbicacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E5E9F5"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPagoEnvio95"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio94"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPagoEnvioIconoUbicacion4"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_opcion_seleccionada"
+                            android:padding="8dp"
+                            android:src="@drawable/icono_ubicacion"
+                            app:tint="#FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioUbicaciaNDeEnvaO"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:text="Ubicación de Envío"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoEnvio91"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_chip_verde"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="4dp">
+
+                            <ImageView
+                                android:id="@+id/imgPagoEnvioIconoCheckVerificado"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:src="@drawable/icono_check_verificado"
+                                app:tint="#065F46" />
+
+                            <TextView
+                                android:id="@+id/txtPagoEnvioGpsAltaPrecisiaN"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="GPS Alta Precisión"
+                                android:textColor="#065F46"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnPagoEnvioUbicacionActual"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="#ECFDF5"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#A7F3D0"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoEnvio88"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="12dp">
+
+                            <FrameLayout
+                                android:id="@+id/framePagoEnvio87"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/bg_paso_activo"
+                                android:backgroundTint="#0F4C4C">
+
+                                <ImageView
+                                    android:id="@+id/imgPagoEnvioIconoUbicacion3"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/icono_ubicacion"
+                                    app:tint="#FFFFFF" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutPagoEnvio85"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtPagoEnvioUsarMiUbicaciaNActualGps"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Usar mi ubicación actual (GPS)"
+                                    android:textColor="#065F46"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtPagoEnvioDireccionGps"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Calle 72 # 10 - 34, Chapinero, Bogotá D.C."
+                                    android:textColor="#3F6B5E"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/imgPagoEnvioIconoRefrescar"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/icono_refrescar"
+                                app:tint="#065F46" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <FrameLayout
+                        android:id="@+id/framePagoEnvioMapa"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_marginTop="12dp">
+
+                        <ImageView
+                            android:id="@+id/imgPagoEnvioBgMapaCiudad"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/app_name"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bg_mapa_ciudad" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoEnvio81"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/bg_chip_teal"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="6dp">
+
+                            <ImageView
+                                android:id="@+id/imgPagoEnvioIconoPin2"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/icono_pin"
+                                app:tint="#FFFFFF" />
+
+                            <TextView
+                                android:id="@+id/txtPagoEnvioPuntoDeEntregaExacto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="Punto de Entrega Exacto"
+                                android:textColor="#FFFFFF"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoEnvio78"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|start"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/bg_circulo_blanco"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp">
+
+                            <ImageView
+                                android:id="@+id/imgPagoEnvioIconoUbicacion2"
+                                android:layout_width="13dp"
+                                android:layout_height="13dp"
+                                android:src="@drawable/icono_ubicacion"
+                                app:tint="#0F4C4C" />
+
+                            <TextView
+                                android:id="@+id/txtPagoEnvioBogotaDCAMargenA3m"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:text="BogotÃ¡ D.C. â€¢ Margen Â±3m"
+                                android:textColor="#0F4C4C"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPagoEnvioDestinatario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E5E9F5"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPagoEnvio75"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio74"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPagoEnvioIconoUbicacion"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_opcion_seleccionada"
+                            android:padding="8dp"
+                            android:src="@drawable/icono_ubicacion"
+                            app:tint="#FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioDatosDelDestinatario"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Datos del Destinatario"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtPagoEnvioDepartamentoCiuudad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Departamento / Ciuudad"
+                        android:textColor="#6F797C"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio70"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_campo"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPagoEnvioIconoTienda"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/icono_tienda"
+                            app:tint="#5B6472" />
+
+                        <EditText
+                            android:id="@+id/etPagoEnvioPais"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:text="BogotÃ¡ D.C. (Cundamarca)"
+                            android:textColor="@color/inputTexto"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/imgPagoEnvioIconoChevronAbajo"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/icono_chevron_abajo"
+                            app:tint="#5B6472" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtPagoEnvioDirecciaNExacta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="DirecciÃ³n exacta"
+                        android:textColor="#6F797C"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio66"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_campo"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPagoEnvioIconoPin"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/icono_pin"
+                            app:tint="#5B6472" />
+
+                        <EditText
+                            android:id="@+id/etPagoEnvioDireccion"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:text="Calle 72 # 10 - 34, Apto 502, Torre Norte"
+                            android:textColor="@color/inputTexto"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio64"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoEnvio63"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoEnvioLocalidadSector"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Localidad / Sector"
+                                android:textColor="#6F797C"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutPagoEnvio61"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginTop="6dp"
+                                android:background="@drawable/bg_campo"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="14dp">
+
+                                <EditText
+                                    android:id="@+id/etPagoEnvioCodigoPostal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:text="Chapinero"
+                                    android:textColor="@color/inputTexto"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoEnvio60"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoEnvioBarrio"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Barrio"
+                                android:textColor="#6F797C"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutPagoEnvio58"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginTop="6dp"
+                                android:background="@drawable/bg_campo"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="14dp">
+
+                                <EditText
+                                    android:id="@+id/etPagoEnvioBarrio"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:text="Quinta Camacho"
+                                    android:textColor="@color/inputTexto"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio57"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioIndicacionesDeEntrega"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Indicaciones de entrega"
+                            android:textColor="#6F797C"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/imgPagoEnvioIconoInfo"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/icono_info"
+                            app:tint="#9AA4BC" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio54"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_campo"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="10dp">
+
+                        <EditText
+                            android:id="@+id/etPagoEnvioIndicaciones"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:minLines="2"
+                            android:text="Dejar en porterÃ­a con vigilancia 24h. Anunciar a nombre de Carlos GÃ³mez."
+                            android:textColor="@color/inputTexto"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtPagoEnvioTelaFonoMaVilDeContactoAdicional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="TelÃ©fono mÃ³vil de contacto adicional"
+                        android:textColor="#6F797C"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio52"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_campo"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp">
+
+                        <TextView
+                            android:id="@+id/txtPagoEnviov57"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+57"
+                            android:textColor="#5B6472"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:id="@+id/viewPagoEnvio50"
+                            android:layout_width="1dp"
+                            android:layout_height="22dp"
+                            android:layout_marginHorizontal="12dp"
+                            android:background="#C9D2E3" />
+
+                        <EditText
+                            android:id="@+id/etPagoEnvioTelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:inputType="phone"
+                            android:text="312 890 4421"
+                            android:textColor="@color/inputTexto"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPagoEnvioTransportadora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E5E9F5"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPagoEnvio49"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio48"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPagoEnvioIconoCocheEnvio"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_opcion_seleccionada"
+                            android:padding="8dp"
+                            android:src="@drawable/icono_coche_envio"
+                            app:tint="#FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioTransportadora"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Transportadora"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/opcionEnvioCoordinadora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_campo"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <View
+                            android:id="@+id/viewPagoEnvio45"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/bg_radio_on" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoEnvio44"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutPagoEnvio43"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtPagoEnvioCoordinadoraExpress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Coordinadora express"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtPagoEnvioRecomendada"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:background="@drawable/bg_chip_ambar"
+                                    android:paddingHorizontal="8dp"
+                                    android:paddingVertical="2dp"
+                                    android:text="Recomendada"
+                                    android:textColor="#92400E"
+                                    android:textSize="9sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtPagoEnvioEntregaEstimada2A3DaAsHaBiles"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="Entrega estimada: 2 a 3 dÃ­as hÃ¡biles"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioGratis"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gratis"
+                            android:textColor="#0F4C4C"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/opcionEnvioServientrega"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_campo"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <View
+                            android:id="@+id/viewPagoEnvio38"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/bg_radio_off" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoEnvio37"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoEnvioServientregaEstaNdar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Servientrega EstÃ¡ndar"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoEnvioEntregaEstimada1A2DaAsHaBiles"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="Entrega estimada: 1 a 2 dÃ­as hÃ¡biles"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtPagoEnviov12000Cop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="$ 12.000 COP"
+                            android:textColor="#374151"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/opcionEnvioFlash"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_campo"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <View
+                            android:id="@+id/viewPagoEnvio33"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/bg_radio_off" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoEnvio32"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutPagoEnvio31"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtPagoEnvioCelnovaFlashAHoyMismo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="CELNOVA Flash â€“ Hoy mismo"
+                                    android:textColor="@color/txtTitulo"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/imgPagoEnvioIconoRayo"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:layout_marginStart="4dp"
+                                    android:src="@drawable/icono_rayo"
+                                    app:tint="#F59E0B" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtPagoEnvioEntregaHoyAntesDeLas800Pm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="Entrega hoy antes de las 8:00 PM"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtPagoEnviov22000Cop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="$ 22.000 COP"
+                            android:textColor="#374151"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPagoEnvioResumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E5E9F5"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPagoEnvio26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioResumenDeCompra"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Resumen de Compra"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtPagoEnviov1ArtaCulo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1 artÃ­culo"
+                            android:textColor="#6F797C"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPagoEnvioIconoCelular"
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/bg_miniatura"
+                            android:padding="6dp"
+                            android:src="@drawable/icono_celular"
+                            app:tint="#2B3440" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoEnvio20"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoEnvioXiaomiRedmiNote13Pro5g"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Xiaomi Redmi Note 13 Pro+ 5G"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoEnviov512gbRomA12gbRamANegroANix"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="512GB ROM â€¢ 12GB RAM â€¢ Negro Ã“nix"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtPagoEnviov1699900Cop2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="$ 1.699.900 COP"
+                                android:textColor="#0F4C4C"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewPagoEnvio16"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="#EDF0F7" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioSubtotalCelular"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Subtotal celular"
+                            android:textColor="#6F797C"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txtPagoEnviov1699900Cop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 1.699.900 COP"
+                            android:textColor="#374151"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioEnvaONacionalCoordinadora"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="EnvÃ­o nacional (Coordinadora)"
+                            android:textColor="#6F797C"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txtPagoEnviov14500Cop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 14.500 COP"
+                            android:textColor="#374151"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioIvaIncluido19"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="IVA incluido (19%)"
+                            android:textColor="#6F797C"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txtPagoEnviov271405Cop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 271.405 COP"
+                            android:textColor="#374151"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioTotalAPagar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total a pagar"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtPagoEnviov1714400Cop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 1.714.400 COP"
+                            android:textColor="#0F4C4C"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoEnvio3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_chip_verde"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:id="@+id/imgPagoEnvioIconoCifrado"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/icono_cifrado"
+                            app:tint="#065F46" />
+
+                        <TextView
+                            android:id="@+id/txtPagoEnvioEnvaO100AseguradoContraRoboOExtravaO"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="EnvÃ­o 100% asegurado contra robo o extravÃ­o"
+                            android:textColor="#065F46"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPagoEnvioContinuar"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#0F4C4C"
+                android:text="Continuar"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="26dp"
+                app:elevation="0dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

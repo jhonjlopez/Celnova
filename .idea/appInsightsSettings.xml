@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AppInsightsSettings">
+    <option name="tabSettings">
+      <map>
+        <entry key="Firebase Crashlytics">
+          <value>
+            <InsightsFilterSettings>
+              <option name="connection">
+                <ConnectionSetting>
+                  <option name="appId" value="com.example.celnova" />
+                  <option name="mobileSdkAppId" value="Android:SHA256:58:2A:9D:6B:A2:72:73:4B:5C:72:5D:43:72:61:62:3B:6D:2B:5B:1B:7B:73:4D:6B:5D:2D:3D:45:5B:71:73" />
+                  <option name="projectId" value="celtest" />
+                  <option name="projectNumber" value="999999999999" />
+                </ConnectionSetting>
+              </option>
+              <option name="signal" value="SIGNAL_UNSPECIFIED" />
+              <option name="timeIntervalDays" value="THIRTY_DAYS" />
+              <option name="visibilityType" value="ALL" />
+            </InsightsFilterSettings>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

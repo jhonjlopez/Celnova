@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="8dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPagoConfirmacionHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/imgPagoConfirmacionAtras"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/icono_atras"
+            app:tint="@color/txtTitulo" />
+
+        <ImageView
+            android:id="@+id/imgPagoConfirmacionBrandLogo"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/brand_logo" />
+
+        <View
+            android:id="@+id/viewPagoConfirmacion91"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:id="@+id/framePagoConfirmacion90"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/imgPagoConfirmacionIconoNotificacion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/txtTitulo" />
+
+            <TextView
+                android:id="@+id/txtPagoConfirmacionv2"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="top|end"
+                android:background="@drawable/bg_badge_naranja"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/framePagoConfirmacion87"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_circulo_blanco"
+            android:backgroundTint="#DCE6F5">
+
+            <ImageView
+                android:id="@+id/imgPagoConfirmacionIconoUsuario"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icono_usuario"
+                app:tint="#4B5563" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPagoConfirmacionStepper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoConfirmacion85"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/framePagoConfirmacion84"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+
+                <View
+                    android:id="@+id/viewPagoConfirmacion83"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_paso_activo" />
+
+                <ImageView
+                    android:id="@+id/imgPagoConfirmacionIconoCocheEnvio2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icono_coche_envio"
+                    app:tint="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/imgPagoConfirmacionIconoCheck5"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_chip_verde"
+                    android:padding="2dp"
+                    android:src="@drawable/icono_check"
+                    app:tint="#065F46" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtPagoConfirmacionDirecciaN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="DirecciÃ³n"
+                android:textColor="#0F4C4C"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewPagoConfirmacion79"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="21dp"
+            android:layout_weight="1"
+            android:background="#0F4C4C" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoConfirmacion78"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/framePagoConfirmacion77"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+
+                <View
+                    android:id="@+id/viewPagoConfirmacion76"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_paso_activo" />
+
+                <ImageView
+                    android:id="@+id/imgPagoConfirmacionIconoTarjeta"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icono_tarjeta"
+                    app:tint="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/imgPagoConfirmacionIconoCheck4"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_chip_verde"
+                    android:padding="2dp"
+                    android:src="@drawable/icono_check"
+                    app:tint="#065F46" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtPagoConfirmacionMaTodoDePago2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="MÃ©todo de Pago"
+                android:textColor="#0F4C4C"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewPagoConfirmacion72"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="21dp"
+            android:layout_weight="1"
+            android:background="#0F4C4C" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoConfirmacion71"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/framePagoConfirmacion70"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+
+                <View
+                    android:id="@+id/viewPagoConfirmacion69"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_paso_activo" />
+
+                <ImageView
+                    android:id="@+id/imgPagoConfirmacionIconoCheck3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icono_check"
+                    app:tint="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/imgPagoConfirmacionIconoCheck2"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_chip_verde"
+                    android:padding="2dp"
+                    android:src="@drawable/icono_check"
+                    app:tint="#065F46" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtPagoConfirmacionConfirmar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Confirmar"
+                android:textColor="#0F4C4C"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewPagoConfirmacion"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoConfirmacionRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="12dp">
+
+            <FrameLayout
+                android:id="@+id/framePagoConfirmacion65"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="18dp">
+
+                <ImageView
+                    android:id="@+id/imgPagoConfirmacionIconoCheck"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/icon_checkmark_animado_margin" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPagoConfirmacion61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_chip_verde"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp">
+
+                <ImageView
+                    android:id="@+id/imgPagoConfirmacionIconoCheckVerificado2"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/icono_check_verificado"
+                    app:tint="#065F46" />
+
+                <TextView
+                    android:id="@+id/txtPagoConfirmacionTransacciaNAprobada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="TRANSACCIÃ“N APROBADA"
+                    android:textColor="#065F46"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtPagoConfirmacionAPagoAprobadoYPedidoConfirmado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="Â¡Pago Aprobado y Pedido Confirmado!"
+                android:textColor="@color/txtTitulo"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtPagoConfirmacionTuOrdenCn90458HaSidoProcesadaExitosament"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Tu orden #CN-90458 ha sido procesada exitosamente con factura electrÃ³nica DIAN."
+                android:textColor="#6F797C"
+                android:textSize="13sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPagoConfirmacionComprobante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E5E9F5"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPagoConfirmacion56"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion55"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPagoConfirmacionIconoPedidos"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_opcion_normal"
+                            android:padding="8dp"
+                            android:src="@drawable/icono_pedidos"
+                            app:tint="#0F4C4C" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoConfirmacion53"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionComprobanteTransaccional"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Comprobante Transaccional"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionAcreditadoEnTiempoReal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Acreditado en tiempo real"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgPagoConfirmacionIconoCifrado"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icono_cifrado"
+                            app:tint="#059669" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion49"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/bg_opcion_normal"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoConfirmacion48"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionTotalPagado"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Total Pagado"
+                                android:textColor="#6F797C"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionTotal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="$ 1.714.400 COP"
+                                android:textColor="#0F4C4C"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoConfirmacion46"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_chip_teal"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="9dp"
+                            android:paddingVertical="4dp">
+
+                            <ImageView
+                                android:id="@+id/imgPagoConfirmacionIconoCheckVerificado"
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/icono_check_verificado"
+                                app:tint="#FFFFFF" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionPseOnline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:text="PSE Online"
+                                android:textColor="#FFFFFF"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion43"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoConfirmacionNaMeroDeOrden"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="NÃºmero de Orden"
+                            android:textColor="#6F797C"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txtPagoConfirmacionCn90458"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="#CN-90458"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imgPagoConfirmacionIconoCopiar"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginStart="6dp"
+                            android:src="@drawable/icono_copiar"
+                            app:tint="#9AA4BC" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion39"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoConfirmacionCusRefPasarela"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="CUS / Ref. Pasarela"
+                            android:textColor="#6F797C"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txtPagoConfirmacionCus88392019482"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CUS-88392019482"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion36"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoConfirmacionMaTodoDePago"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="MÃ©todo de Pago"
+                            android:textColor="#6F797C"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txtPagoConfirmacionMetodo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bancolombia PSE"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion34"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoConfirmacionFechaYHora"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Fecha y Hora"
+                            android:textColor="#6F797C"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/txtPagoConfirmacionHoy0342Pm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hoy, 03:42 PM"
+                            android:textColor="@color/txtTitulo"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion31"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/bg_opcion_normal"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoConfirmacion30"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgPagoConfirmacionIconoPdf"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/icono_pdf"
+                                app:tint="#0F4C4C" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionFacturaciaNDianValidada"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="FacturaciÃ³n DIAN Validada"
+                                android:textColor="#0F4C4C"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtPagoConfirmacionFacturaElectraNicaFe4895RemitidaATuCorre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Factura ElectrÃ³nica #FE-4895 remitida a tu correo registrado."
+                            android:textColor="#6F797C"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPagoConfirmacionDespacho"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E5E9F5"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPagoConfirmacion26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPagoConfirmacionIconoCocheEnvio"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_chip_verde"
+                            android:padding="8dp"
+                            android:src="@drawable/icono_coche_envio"
+                            app:tint="#065F46" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoConfirmacion23"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionDespachoAmpLogaStica"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Despacho &amp; LogÃ­stica"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionAsignaciaNInmediata"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="AsignaciÃ³n Inmediata"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtPagoConfirmacionExpress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_chip_lavanda"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:text="Express"
+                            android:textColor="#4338CA"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/bg_opcion_normal"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoConfirmacion18"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionTransportadoraAliada"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Transportadora Aliada"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionCoordinadoraExpress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Coordinadora Express"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoConfirmacion15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionGuaAPreliminar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="GuÃ­a Preliminar"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionCrd892144"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="#CRD-892144"
+                                android:textColor="#0F4C4C"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="top"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPagoConfirmacionIconoPin"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/icono_pin"
+                            app:tint="#6F797C" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoConfirmacion10"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionDirecciaNDeEntrega"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="DirecciÃ³n de Entrega"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionCalle721034Apto502"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Calle 72 # 10 - 34, Apto 502"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionBogotaDCColombia"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="BogotÃ¡ D.C., Colombia"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoConfirmacion6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="top"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPagoConfirmacionIconoReloj"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="2dp"
+                            android:src="@drawable/icono_reloj"
+                            app:tint="#6F797C" />
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoConfirmacion4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionTiempoEstimado"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Tiempo Estimado"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionv1A2DaAsHaBilesMartesMiaRcoles"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="1 a 2 dÃ­as hÃ¡biles (Martes - MiÃ©rcoles)"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoConfirmacionNotificacionesSmsActivas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Notificaciones SMS activas"
+                                android:textColor="#059669"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPagoConfirmacionAceptar"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#0F4C4C"
+                android:text="Rastrear Mi Pedido"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="26dp"
+                app:elevation="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPagoConfirmacionDescargar"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#0F4C4C"
+                android:text="Descargar Comprobante / Factura PDF"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="26dp"
+                app:elevation="0dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

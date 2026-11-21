@@ -9,7 +9,6 @@
     android:orientation="vertical"
     tools:context=".activities.AdminDashboardActivity">
 
-    <!-- HEADER ESTÁTICO EN LA PARTE SUPERIOR -->
     <LinearLayout
         android:id="@+id/linearLayoutAdminHeader"
         android:layout_width="match_parent"
@@ -107,7 +106,6 @@
 
     </LinearLayout>
 
-    <!-- SCROLLABLE BODY -->
     <ScrollView
         android:id="@+id/scrollViewAdmin"
         android:layout_width="match_parent"
@@ -124,7 +122,6 @@
             android:paddingHorizontal="24dp"
             android:paddingBottom="24dp">
 
-            <!-- GREETING & MANTENIMIENTO -->
             <LinearLayout
                 android:id="@+id/linearLayoutAdminGreetingRow"
                 android:layout_width="match_parent"
@@ -197,7 +194,6 @@
 
             </LinearLayout>
 
-            <!-- BANNER PRINCIPAL VENTAS -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminVentasBanner"
                 android:layout_width="match_parent"
@@ -329,7 +325,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- 4 KPI CARDS GRID (2x2) -->
             <LinearLayout
                 android:id="@+id/linearLayoutAdminKpiRow1"
                 android:layout_width="match_parent"
@@ -337,7 +332,6 @@
                 android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
-                <!-- KPI 1: Usuarios Activos -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdminKpi1"
                     android:layout_width="0dp"
@@ -420,7 +414,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- KPI 2: Vendedores Verificados -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdminKpi2"
                     android:layout_width="0dp"
@@ -499,7 +492,6 @@
                 android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
-                <!-- KPI 3: Pedidos Totales Mes -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdminKpi3"
                     android:layout_width="0dp"
@@ -582,7 +574,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- KPI 4: Facturación DIAN -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdminKpi4"
                     android:layout_width="0dp"
@@ -655,7 +646,6 @@
 
             </LinearLayout>
 
-            <!-- RENDIMIENTO POR CANAL CHART CARD -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminChartCard"
                 android:layout_width="match_parent"
@@ -707,7 +697,6 @@
                                 android:textSize="12sp" />
                         </LinearLayout>
 
-                        <!-- Toggle Buttons -->
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/cardAdminChartToggleGroup"
                             android:layout_width="wrap_content"
@@ -750,7 +739,6 @@
 
                     </LinearLayout>
 
-                    <!-- Chart Legend -->
                     <LinearLayout
                         android:id="@+id/linearLayoutAdminChartLegend"
                         android:layout_width="match_parent"
@@ -779,7 +767,6 @@
 
                     </LinearLayout>
 
-                    <!-- Bar Chart Bars -->
                     <LinearLayout
                         android:id="@+id/linearLayoutAdminChartBarsContainer"
                         android:layout_width="match_parent"
@@ -788,7 +775,6 @@
                         android:gravity="bottom"
                         android:orientation="horizontal">
 
-                        <!-- Lun -->
                         <LinearLayout
                             android:id="@+id/linearLayoutChartLun"
                             android:layout_width="0dp"
@@ -829,7 +815,6 @@
                                 android:textSize="10sp" />
                         </LinearLayout>
 
-                        <!-- Mar -->
                         <LinearLayout
                             android:id="@+id/linearLayoutChartMar"
                             android:layout_width="0dp"
@@ -870,7 +855,6 @@
                                 android:textSize="10sp" />
                         </LinearLayout>
 
-                        <!-- Mié -->
                         <LinearLayout
                             android:id="@+id/linearLayoutChartMie"
                             android:layout_width="0dp"
@@ -911,7 +895,6 @@
                                 android:textSize="10sp" />
                         </LinearLayout>
 
-                        <!-- Jue -->
                         <LinearLayout
                             android:id="@+id/linearLayoutChartJue"
                             android:layout_width="0dp"
@@ -952,7 +935,6 @@
                                 android:textSize="10sp" />
                         </LinearLayout>
 
-                        <!-- Vie -->
                         <LinearLayout
                             android:id="@+id/linearLayoutChartVie"
                             android:layout_width="0dp"
@@ -993,7 +975,6 @@
                                 android:textSize="10sp" />
                         </LinearLayout>
 
-                        <!-- Sáb -->
                         <LinearLayout
                             android:id="@+id/linearLayoutChartSab"
                             android:layout_width="0dp"
@@ -1034,7 +1015,6 @@
                                 android:textSize="10sp" />
                         </LinearLayout>
 
-                        <!-- Hoy -->
                         <LinearLayout
                             android:id="@+id/linearLayoutChartHoy"
                             android:layout_width="0dp"
@@ -1081,7 +1061,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- ACCIONES RÁPIDAS SECTION (2x2 GRID) -->
             <LinearLayout
                 android:id="@+id/linearLayoutAdminAccionesSection"
                 android:layout_width="match_parent"
@@ -1098,7 +1077,6 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <!-- Row 1 -->
                 <LinearLayout
                     android:id="@+id/linearLayoutAdminAccionesRow1"
                     android:layout_width="match_parent"
@@ -1106,7 +1084,6 @@
                     android:layout_marginTop="12dp"
                     android:orientation="horizontal">
 
-                    <!-- Acción 1: Auditoría DIAN -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminAccion1"
                         android:layout_width="0dp"
@@ -1172,7 +1149,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Acción 2: Aprobar Tiendas -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminAccion2"
                         android:layout_width="0dp"
@@ -1241,7 +1217,6 @@
 
                 </LinearLayout>
 
-                <!-- Row 2 -->
                 <LinearLayout
                     android:id="@+id/linearLayoutAdminAccionesRow2"
                     android:layout_width="match_parent"
@@ -1249,7 +1224,6 @@
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
-                    <!-- Acción 3: Fraude Wompi -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminAccion3"
                         android:layout_width="0dp"
@@ -1316,7 +1290,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Acción 4: Comisiones -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminAccion4"
                         android:layout_width="0dp"
@@ -1386,7 +1359,6 @@
 
             </LinearLayout>
 
-            <!-- ACTIVIDAD CRÍTICA EN VIVO SECTION -->
             <LinearLayout
                 android:id="@+id/linearLayoutAdminActividadSection"
                 android:layout_width="match_parent"
@@ -1441,7 +1413,6 @@
 
                 </LinearLayout>
 
-                <!-- Activity Item 1 -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdminActividad1"
                     android:layout_width="match_parent"
@@ -1547,7 +1518,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Activity Item 2 -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdminActividad2"
                     android:layout_width="match_parent"
@@ -1653,7 +1623,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Activity Item 3 -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdminActividad3"
                     android:layout_width="match_parent"
@@ -1765,7 +1734,6 @@
 
     </ScrollView>
 
-    <!-- ADMIN BOTTOM NAVIGATION -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationAdmin"
         android:layout_width="match_parent"

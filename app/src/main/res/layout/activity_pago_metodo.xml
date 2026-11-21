@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundPrincipal"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="8dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPagoMetodoHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/imgPagoMetodoAtras"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/icono_atras"
+            app:tint="@color/txtTitulo" />
+
+        <ImageView
+            android:id="@+id/imgPagoMetodoBrandLogo"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/brand_logo" />
+
+        <View
+            android:id="@+id/viewPagoMetodo90"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:id="@+id/framePagoMetodo89"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/imgPagoMetodoIconoNotificacion"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icono_notificacion"
+                app:tint="@color/txtTitulo" />
+
+            <TextView
+                android:id="@+id/txtPagoMetodov2"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="top|end"
+                android:background="@drawable/bg_badge_naranja"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/framePagoMetodo86"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_circulo_blanco"
+            android:backgroundTint="#DCE6F5">
+
+            <ImageView
+                android:id="@+id/imgPagoMetodoIconoUsuario2"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icono_usuario"
+                app:tint="#4B5563" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutPagoMetodoStepper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoMetodo84"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/framePagoMetodo83"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+
+                <View
+                    android:id="@+id/viewPagoMetodo82"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_paso_activo" />
+
+                <ImageView
+                    android:id="@+id/imgPagoMetodoIconoCocheEnvio"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icono_coche_envio"
+                    app:tint="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/imgPagoMetodoIconoCheck3"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_chip_verde"
+                    android:padding="2dp"
+                    android:src="@drawable/icono_check"
+                    app:tint="#065F46" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtPagoMetodoDirecciaN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="DirecciÃ³n"
+                android:textColor="#0F4C4C"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewPagoMetodo78"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="21dp"
+            android:layout_weight="1"
+            android:background="#0F4C4C" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoMetodo77"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/framePagoMetodo76"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+
+                <View
+                    android:id="@+id/viewPagoMetodo75"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_paso_activo" />
+
+                <ImageView
+                    android:id="@+id/imgPagoMetodoIconoTarjeta3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icono_tarjeta"
+                    app:tint="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/imgPagoMetodoIconoCheck2"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/bg_chip_verde"
+                    android:padding="2dp"
+                    android:src="@drawable/icono_check"
+                    app:tint="#065F46" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtPagoMetodoMaTodoDePago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="MÃ©todo de Pago"
+                android:textColor="#0F4C4C"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewPagoMetodo71"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="21dp"
+            android:layout_weight="1"
+            android:background="#D5DCEF" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoMetodo70"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/framePagoMetodo69"
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+
+                <View
+                    android:id="@+id/viewPagoMetodo68"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_paso_pendiente" />
+
+                <ImageView
+                    android:id="@+id/imgPagoMetodoIconoCheck"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icono_check"
+                    app:tint="#9AA4BC" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtPagoMetodoConfirmar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Confirmar"
+                android:textColor="#8A93A8"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewPagoMetodo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPagoMetodoRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="12dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPagoMetodoTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                app:cardBackgroundColor="#EEF1FB"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPagoMetodo65"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo64"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodo63"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoTotalALiquidar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="TOTAL A LIQUIDAR"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoTotal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="$ 1.714.400 COP"
+                                android:textColor="#0F4C4C"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoIncluyeIva19"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Incluye IVA (19%)"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodo60"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_circulo_blanco"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="6dp">
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoDetalle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Detalle"
+                                android:textColor="#374151"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/imgPagoMetodoIconoChevronAbajo2"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginStart="2dp"
+                                android:src="@drawable/icono_chevron_abajo"
+                                app:tint="#374151" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPagoMetodo57"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtPagoMetodoOpcionesDePago"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Opciones de Pago"
+                    android:textColor="@color/txtTitulo"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPagoMetodo55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_chip_verde"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="9dp"
+                    android:paddingVertical="4dp">
+
+                    <ImageView
+                        android:id="@+id/imgPagoMetodoIconoCheckVerificado2"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/icono_check_verificado"
+                        app:tint="#065F46" />
+
+                    <TextView
+                        android:id="@+id/txtPagoMetodov100Protegido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="100% Protegido"
+                        android:textColor="#065F46"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPagoMetodo52"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPagoMetodoTarjeta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#0F4C4C"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo51"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodo50"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgPagoMetodoTarjetaIcono"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:background="@drawable/bg_circulo_blanco"
+                                android:padding="5dp"
+                                android:src="@drawable/icono_tarjeta"
+                                app:tint="#0F4C4C" />
+
+                            <View
+                                android:id="@+id/viewPagoMetodo49"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imgPagoMetodoTarjetaChevron"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/bg_circulo_blanco"
+                                android:padding="4dp"
+                                android:src="@drawable/icono_check"
+                                app:tint="#0F4C4C" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodoTarjetaTexto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoTarjetas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Tarjetas"
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoCraDitoODaBito"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="CrÃ©dito o DÃ©bito"
+                                android:textColor="#B7D6D6"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPagoMetodoPse"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#EEF1FB"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo46"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodo45"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgPagoMetodoPseIcono"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:background="@drawable/bg_circulo_blanco"
+                                android:padding="5dp"
+                                android:src="@drawable/icono_pse"
+                                app:tint="#0660AA" />
+
+                            <View
+                                android:id="@+id/viewPagoMetodo44"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imgPagoMetodoPseChevron"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/bg_circulo_blanco"
+                                android:padding="4dp"
+                                android:src="@drawable/icono_check"
+                                android:visibility="invisible"
+                                app:tint="#0F4C4C" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodoPseTexto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoPse"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="PSE"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoCuentasYBancos"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Cuentas y Bancos"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPagoMetodo41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPagoMetodoBilleteras"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#EEF1FB"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo40"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodo39"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgPagoMetodoBilleterasIcono"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:background="@drawable/bg_circulo_blanco"
+                                android:padding="5dp"
+                                android:src="@drawable/icono_billetera"
+                                app:tint="#0F4C4C" />
+
+                            <View
+                                android:id="@+id/viewPagoMetodo38"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imgPagoMetodoBilleterasChevron"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/bg_circulo_blanco"
+                                android:padding="4dp"
+                                android:src="@drawable/icono_check"
+                                android:visibility="invisible"
+                                app:tint="#0F4C4C" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodoBilleterasTexto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoBilleteras"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Billeteras"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoNequiODaviplata"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Nequi o Daviplata"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPagoMetodoWompi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#EEF1FB"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo35"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodo34"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgPagoMetodoWompiIcono"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:background="@drawable/bg_circulo_blanco"
+                                android:padding="5dp"
+                                android:src="@drawable/icono_wompi"
+                                app:tint="#2C2A29" />
+
+                            <View
+                                android:id="@+id/viewPagoMetodo33"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/imgPagoMetodoWompiChevron"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/bg_circulo_blanco"
+                                android:padding="4dp"
+                                android:src="@drawable/icono_check"
+                                android:visibility="invisible"
+                                app:tint="#0F4C4C" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodoWompiTexto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoWompi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Wompi"
+                                android:textColor="@color/txtTitulo"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoBancolombiaDirecto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Bancolombia Directo"
+                                android:textColor="#6F797C"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPagoMetodoFormulario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardBackgroundColor="@color/backgroundSecundario"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E5E9F5"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPagoMetodo30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtPagoMetodoNaMeroDeTarjeta"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="NÃºmero de tarjeta"
+                            android:textColor="#374151"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imgPagoMetodoIconoCheckVerificado"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:src="@drawable/icono_check_verificado"
+                            app:tint="#059669" />
+
+                        <TextView
+                            android:id="@+id/txtPagoMetodoSegura"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="Segura"
+                            android:textColor="#059669"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo25"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_campo"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPagoMetodoIconoTarjeta2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/icono_tarjeta"
+                            app:tint="#5B6472" />
+
+                        <EditText
+                            android:id="@+id/etPagoMetodoNumeroTarjeta"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:inputType="number"
+                            android:text="4550 1289 9012 4092"
+                            android:textColor="@color/inputTexto"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/imgPagoMetodoIconoPuntos"
+                            android:layout_width="30dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/icono_puntos"
+                            app:tint="#0F4C4C" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtPagoMetodoTitularComoApareceEnLaTarjeta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Titular como aparece en la tarjeta"
+                        android:textColor="#374151"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo21"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_campo"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPagoMetodoIconoUsuario"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/icono_usuario"
+                            app:tint="#5B6472" />
+
+                        <EditText
+                            android:id="@+id/etPagoMetodoTitular"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@null"
+                            android:inputType="textCapCharacters"
+                            android:text="CAMILO A. MORA"
+                            android:textColor="@color/inputTexto"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodo18"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtPagoMetodoVencimiento"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Vencimiento"
+                                android:textColor="#374151"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutPagoMetodo16"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="6dp"
+                                android:background="@drawable/bg_campo"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="14dp">
+
+                                <ImageView
+                                    android:id="@+id/imgPagoMetodoIconoCalendario"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:src="@drawable/icono_calendario"
+                                    app:tint="#5B6472" />
+
+                                <EditText
+                                    android:id="@+id/etPagoMetodoVencimiento"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:text="09/28"
+                                    android:textColor="@color/inputTexto"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayoutPagoMetodo14"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutPagoMetodo13"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtPagoMetodoCvvCvc"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="CVV / CVC"
+                                    android:textColor="#374151"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/imgPagoMetodoIconoInfo"
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:src="@drawable/icono_info"
+                                    app:tint="#9AA4BC" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutPagoMetodo10"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="6dp"
+                                android:background="@drawable/bg_campo"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="14dp">
+
+                                <ImageView
+                                    android:id="@+id/imgPagoMetodoIconoCandado"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:src="@drawable/icono_candado"
+                                    app:tint="#5B6472" />
+
+                                <EditText
+                                    android:id="@+id/etPagoMetodoCvv"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:inputType="numberPassword"
+                                    android:text="842"
+                                    android:textColor="@color/inputTexto"
+                                    android:textSize="15sp" />
+
+                                <ImageView
+                                    android:id="@+id/imgPagoMetodoIconoVistaAbierta"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:src="@drawable/icono_vista_abierta"
+                                    app:tint="#5B6472" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtPagoMetodoNaMeroDeCuotas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="NÃºmero de cuotas"
+                        android:textColor="#374151"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo6"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_campo"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp">
+
+                        <ImageView
+                            android:id="@+id/imgPagoMetodoIconoTarjeta"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/icono_tarjeta"
+                            app:tint="#5B6472" />
+
+                        <EditText
+                            android:id="@+id/etPagoMetodoCuotas"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:text="1 cuota - $ 1.714.400 COP (Sin interÃ©s)"
+                            android:textColor="@color/inputTexto"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/imgPagoMetodoIconoChevronAbajo"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/icono_chevron_abajo"
+                            app:tint="#5B6472" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutPagoMetodo3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/bg_chip_verde"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:id="@+id/imgPagoMetodoIconoCifrado"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/icono_cifrado"
+                            app:tint="#065F46" />
+
+                        <TextView
+                            android:id="@+id/txtPagoMetodoTransacciaNCifradaDeExtremoAExtremo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="TransacciÃ³n Cifrada de Extremo a Extremo"
+                            android:textColor="#065F46"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPagoMetodoPagar"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#0F4C4C"
+                android:text="Pagar"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="26dp"
+                app:elevation="0dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

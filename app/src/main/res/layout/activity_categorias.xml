@@ -9,7 +9,6 @@
     android:orientation="vertical"
     tools:context=".activities.CategoriasActivity">
 
-    <!-- HEADER ESTÁTICO -->
     <LinearLayout
         android:id="@+id/linearLayoutCategoriasHeader"
         android:layout_width="match_parent"
@@ -81,7 +80,6 @@
             android:paddingHorizontal="24dp"
             android:paddingBottom="24dp">
 
-            <!-- BUSCADOR -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardCategoriasBusqueda"
                 android:layout_width="match_parent"
@@ -137,7 +135,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- CHIPS DE FILTRO -->
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollCategoriasChips"
                 android:layout_width="match_parent"
@@ -151,7 +148,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- Chip 1: Apple -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardCategoriasChipApple"
                         android:layout_width="wrap_content"
@@ -189,7 +185,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Chip 2: Samsung -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardCategoriasChipSamsung"
                         android:layout_width="wrap_content"
@@ -228,7 +223,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Chip 3: Xiaomi -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardCategoriasChipXiaomi"
                         android:layout_width="wrap_content"
@@ -267,7 +261,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Chip 4: Audio -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardCategoriasChipAudio"
                         android:layout_width="wrap_content"
@@ -309,7 +302,6 @@
 
             </HorizontalScrollView>
 
-            <!-- BANNER TECNOFAST -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardCategoriasBanner"
                 android:layout_width="match_parent"
@@ -413,7 +405,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- EXPLORAR CATALOGO HEADER -->
             <LinearLayout
                 android:id="@+id/linearLayoutCategoriasCatalogHeader"
                 android:layout_width="match_parent"
@@ -441,7 +432,6 @@
 
             </LinearLayout>
 
-            <!-- GRID DE CATEGORIAS - ROW 1 -->
             <LinearLayout
                 android:id="@+id/linearLayoutCategoriasRow1"
                 android:layout_width="match_parent"
@@ -449,7 +439,6 @@
                 android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
-                <!-- Card 1: Smartphones & Tablets -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardCategoriasItem1"
                     android:layout_width="0dp"
@@ -558,7 +547,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Card 2: Computadores -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardCategoriasItem2"
                     android:layout_width="0dp"
@@ -669,7 +657,6 @@
 
             </LinearLayout>
 
-            <!-- GRID DE CATEGORIAS - ROW 2 -->
             <LinearLayout
                 android:id="@+id/linearLayoutCategoriasRow2"
                 android:layout_width="match_parent"
@@ -677,7 +664,6 @@
                 android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
-                <!-- Card 3: Audio & Sonido -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardCategoriasItem3"
                     android:layout_width="0dp"
@@ -786,7 +772,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Card 4: Smartwatches -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardCategoriasItem4"
                     android:layout_width="0dp"
@@ -897,7 +882,6 @@
 
             </LinearLayout>
 
-            <!-- GRID DE CATEGORIAS - ROW 3 -->
             <LinearLayout
                 android:id="@+id/linearLayoutCategoriasRow3"
                 android:layout_width="match_parent"
@@ -905,7 +889,6 @@
                 android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
-                <!-- Card 5: Gaming & Consolas -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardCategoriasItem5"
                     android:layout_width="0dp"
@@ -1014,7 +997,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Card 6: Accesorios & Carga -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardCategoriasItem6"
                     android:layout_width="0dp"
@@ -1125,7 +1107,6 @@
 
             </LinearLayout>
 
-            <!-- GRID DE CATEGORIAS - ROW 4 -->
             <LinearLayout
                 android:id="@+id/linearLayoutCategoriasRow4"
                 android:layout_width="match_parent"
@@ -1133,7 +1114,6 @@
                 android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
-                <!-- Card 7: Cámaras & Drones -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardCategoriasItem7"
                     android:layout_width="0dp"
@@ -1242,7 +1222,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Card 8: Hogar & Smart TV -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardCategoriasItem8"
                     android:layout_width="0dp"
@@ -1353,7 +1332,6 @@
 
             </LinearLayout>
 
-            <!-- TENDENCIA EN COLOMBIA -->
             <LinearLayout
                 android:id="@+id/linearLayoutCategoriasTendenciaSection"
                 android:layout_width="match_parent"
@@ -1427,7 +1405,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <!-- Product 1 -->
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/cardCategoriasTendencia1"
                             android:layout_width="180dp"
@@ -1543,7 +1520,6 @@
                             </LinearLayout>
                         </com.google.android.material.card.MaterialCardView>
 
-                        <!-- Product 2 -->
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/cardCategoriasTendencia2"
                             android:layout_width="180dp"

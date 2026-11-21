@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "999999999999",
+    "project_id": "celtest",
+    "web_app_id": "1"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "Android:SHA256:58:2A:9D:6B:A2:72:73:4B:5C:72:5D:43:72:61:62:3B:6D:2B:5B:1B:7B:73:4D:6B:5D:2D:3D:45:5B:71:73",
+        "client_id": "999999999999-testclient0000000000000000000000000000.apps.googleusercontent.com",
+        "android_client_info": {
+          "package_name": "com.example.celnova",
+          "releases": [],
+          "admob": []
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999999999999-testclient0000000000000000000000000000.apps.googleusercontent.com",
+          "client_type": 1,
+          "redirect_uris": ["com.example.celnova:/oauthredirect"]
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDummyDummyDummyDummyDummyDummyDummyDummyDummyDummy"
+        }
+      ],
+      "services": {
+        "analytics": {
+          "status": "disabled",
+          "version": "23.0.0",
+          "tracking_id": "G-XXXXXXXXXX"
+        },
+        "appbase": {
+          "status": "enabled",
+          "version": "23.0.0",
+          "storageBucket": "celtest.appspot.com"
+        },
+        "appcontents": {
+          "status": "disabled",
+          "version": "23.0.0"
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

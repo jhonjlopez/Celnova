@@ -9,7 +9,6 @@
     android:orientation="vertical"
     tools:context=".activities.AdminProductosActivity">
 
-    <!-- HEADER ESTÁTICO -->
     <LinearLayout
         android:id="@+id/linearLayoutAdminProductosHeader"
         android:layout_width="match_parent"
@@ -107,7 +106,6 @@
 
     </LinearLayout>
 
-    <!-- BODY SCROLLVIEW -->
     <ScrollView
         android:id="@+id/scrollViewAdminProductos"
         android:layout_width="match_parent"
@@ -123,7 +121,6 @@
             android:paddingHorizontal="16dp"
             android:paddingBottom="24dp">
 
-            <!-- TÍTULO -->
             <LinearLayout
                 android:id="@+id/linearLayoutAdminProductosTituloRow"
                 android:layout_width="match_parent"
@@ -181,7 +178,6 @@
 
             </LinearLayout>
 
-            <!-- KPIs -->
             <LinearLayout
                 android:id="@+id/linearLayoutAdminProductosKpis"
                 android:layout_width="match_parent"
@@ -189,7 +185,6 @@
                 android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
-                <!-- KPI 1: SKUs -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdminProductosKpi1"
                     android:layout_width="0dp"
@@ -254,7 +249,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- KPI 2: Hoy -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdminProductosKpi2"
                     android:layout_width="0dp"
@@ -319,7 +313,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- KPI 3: Última actualización -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardAdminProductosKpi3"
                     android:layout_width="0dp"
@@ -386,7 +379,6 @@
 
             </LinearLayout>
 
-            <!-- TABS -->
             <LinearLayout
                 android:id="@+id/linearLayoutAdminProductosTabs"
                 android:layout_width="match_parent"
@@ -494,7 +486,6 @@
 
             </LinearLayout>
 
-            <!-- BUSCADOR -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminProductosBusqueda"
                 android:layout_width="match_parent"
@@ -550,7 +541,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- FILTROS -->
             <HorizontalScrollView
                 android:id="@+id/scrollViewAdminProductosFiltros"
                 android:layout_width="match_parent"
@@ -654,7 +644,6 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <!-- SUPERVISIÓN DE CATÁLOGO -->
             <LinearLayout
                 android:id="@+id/linearLayoutAdminProductosSupervisionHeader"
                 android:layout_width="match_parent"
@@ -684,7 +673,6 @@
 
             </LinearLayout>
 
-            <!-- PRODUCTO 1 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminProducto1"
                 android:layout_width="match_parent"
@@ -883,7 +871,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- PRODUCTO 2 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminProducto2"
                 android:layout_width="match_parent"
@@ -1091,7 +1078,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- PRODUCTO 3 -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminProducto3"
                 android:layout_width="match_parent"
@@ -1305,7 +1291,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- AUDITORÍA TRANSACCIONAL -->
             <LinearLayout
                 android:id="@+id/linearLayoutAdminProductosAuditoriaHeader"
                 android:layout_width="match_parent"
@@ -1335,7 +1320,6 @@
 
             </LinearLayout>
 
-            <!-- ORDEN -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminProductosOrden"
                 android:layout_width="match_parent"
@@ -1673,7 +1657,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- BOTÓN DESCARGA -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAdminProductosDescargar"
                 android:layout_width="match_parent"
@@ -1693,7 +1676,6 @@
 
     </ScrollView>
 
-    <!-- ADMIN BOTTOM NAVIGATION -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationAdminProductos"
         android:layout_width="match_parent"

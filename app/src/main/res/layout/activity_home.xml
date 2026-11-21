@@ -9,7 +9,6 @@
     android:orientation="vertical"
     tools:context=".activities.HomeActivity">
 
-    <!-- HEADER ESTÁTICO -->
     <LinearLayout
         android:id="@+id/linearLayoutHomeHeader"
         android:layout_width="match_parent"
@@ -81,7 +80,6 @@
             android:paddingHorizontal="24dp"
             android:paddingBottom="24dp">
 
-            <!-- SALUDO -->
             <LinearLayout
                 android:id="@+id/linearLayoutHomeSaludoContainer"
                 android:layout_width="match_parent"
@@ -119,7 +117,6 @@
                 android:textColor="@color/txtTexto"
                 android:textSize="15sp" />
 
-            <!-- BUSCADOR -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardHomeBusqueda"
                 android:layout_width="match_parent"
@@ -175,7 +172,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- BANNER PRINCIPAL -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardHomeBanner"
                 android:layout_width="match_parent"
@@ -281,7 +277,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- EXPLORAR POR CATEGORIA -->
             <LinearLayout
                 android:id="@+id/linearLayoutHomeCategoriasSection"
                 android:layout_width="match_parent"
@@ -333,7 +328,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <!-- Chip 1: Smartphones -->
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/cardHomeChipSmartphones"
                             android:layout_width="wrap_content"
@@ -373,7 +367,6 @@
                             </LinearLayout>
                         </com.google.android.material.card.MaterialCardView>
 
-                        <!-- Chip 2: Laptops -->
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/cardHomeChipLaptops"
                             android:layout_width="wrap_content"
@@ -413,7 +406,6 @@
                             </LinearLayout>
                         </com.google.android.material.card.MaterialCardView>
 
-                        <!-- Chip 3: Audio & Hi-Fi -->
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/cardHomeChipAudio"
                             android:layout_width="wrap_content"
@@ -458,7 +450,6 @@
 
             </LinearLayout>
 
-            <!-- OFERTAS DEL DIA -->
             <LinearLayout
                 android:id="@+id/linearLayoutHomeOfertasSection"
                 android:layout_width="match_parent"
@@ -504,7 +495,6 @@
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <!-- Badge timer -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardHomeOfertasTimerBadge"
                         android:layout_width="wrap_content"
@@ -558,7 +548,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <!-- Product Card 1: Galaxy S24 Ultra -->
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/cardHomeOferta1"
                             android:layout_width="180dp"
@@ -719,7 +708,6 @@
                             </LinearLayout>
                         </com.google.android.material.card.MaterialCardView>
 
-                        <!-- Product Card 2: Sony WH-1000XM5 -->
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/cardHomeOferta2"
                             android:layout_width="180dp"
@@ -885,7 +873,6 @@
 
             </LinearLayout>
 
-            <!-- MAS VENDIDOS -->
             <LinearLayout
                 android:id="@+id/linearLayoutHomeMasVendidosSection"
                 android:layout_width="match_parent"
@@ -924,7 +911,6 @@
 
                 </LinearLayout>
 
-                <!-- Mas Vendido Item 1 -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardHomeMasVendidosItem1"
                     android:layout_width="match_parent"
@@ -1056,7 +1042,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Mas Vendido Item 2 -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardHomeMasVendidosItem2"
                     android:layout_width="match_parent"
@@ -1190,7 +1175,6 @@
 
             </LinearLayout>
 
-            <!-- NUEVOS LANZAMIENTOS -->
             <LinearLayout
                 android:id="@+id/linearLayoutHomeNuevosSection"
                 android:layout_width="match_parent"
@@ -1260,7 +1244,6 @@
 
                 </LinearLayout>
 
-                <!-- Nuevos Lanzamientos Card -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardHomeNuevosCard"
                     android:layout_width="match_parent"

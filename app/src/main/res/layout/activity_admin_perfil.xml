@@ -9,7 +9,6 @@
     android:orientation="vertical"
     tools:context=".activities.AdminPerfilActivity">
 
-    <!-- HEADER -->
     <LinearLayout
         android:id="@+id/linearLayoutAdminPerfilHeader"
         android:layout_width="match_parent"
@@ -69,7 +68,6 @@
             android:paddingHorizontal="16dp"
             android:paddingBottom="24dp">
 
-            <!-- HERO CARD -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminPerfilHero"
                 android:layout_width="match_parent"
@@ -182,7 +180,6 @@
                         android:textColor="#D5E8E8"
                         android:textSize="12sp" />
 
-                    <!-- MINI STATS -->
                     <LinearLayout
                         android:id="@+id/linearLayoutAdminPerfilHeroStats"
                         android:layout_width="match_parent"
@@ -292,7 +289,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- INFORMACIÓN DE LA CUENTA -->
             <TextView
                 android:id="@+id/txtAdminPerfilInfoLabel"
                 android:layout_width="match_parent"
@@ -544,7 +540,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- SEGURIDAD Y PERMISOS -->
             <TextView
                 android:id="@+id/txtAdminPerfilSeguridadLabel"
                 android:layout_width="match_parent"
@@ -774,7 +769,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- ACTIVIDAD RECIENTE -->
             <TextView
                 android:id="@+id/txtAdminPerfilActividadLabel"
                 android:layout_width="match_parent"
@@ -904,7 +898,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- ACCIONES -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAdminPerfilEditar"
                 android:layout_width="match_parent"

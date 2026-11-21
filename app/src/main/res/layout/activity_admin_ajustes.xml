@@ -9,7 +9,6 @@
     android:orientation="vertical"
     tools:context=".activities.AdminAjustesActivity">
 
-    <!-- HEADER -->
     <LinearLayout
         android:id="@+id/linearLayoutAdminAjustesHeader"
         android:layout_width="match_parent"
@@ -141,7 +140,6 @@
                 android:textColor="@color/txtTextoSecundario"
                 android:textSize="11sp" />
 
-            <!-- CUENTA -->
             <TextView
                 android:id="@+id/txtAdminAjustesCuentaLabel"
                 android:layout_width="match_parent"
@@ -169,7 +167,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!-- Seguridad -->
                     <LinearLayout
                         android:id="@+id/rowAdminAjustesSeguridad"
                         android:layout_width="match_parent"
@@ -239,7 +236,6 @@
                         android:layout_marginStart="58dp"
                         android:background="@color/lineaDivisor" />
 
-                    <!-- Notificaciones -->
                     <LinearLayout
                         android:id="@+id/rowAdminAjustesNotificaciones"
                         android:layout_width="match_parent"
@@ -300,7 +296,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- PLATAFORMA -->
             <TextView
                 android:id="@+id/txtAdminAjustesPlataformaLabel"
                 android:layout_width="match_parent"
@@ -531,7 +526,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- SOPORTE -->
             <TextView
                 android:id="@+id/txtAdminAjustesSoporteLabel"
                 android:layout_width="match_parent"

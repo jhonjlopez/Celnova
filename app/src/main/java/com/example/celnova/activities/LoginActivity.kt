@@ -17,8 +17,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.doAfterTextChanged
 import com.example.celnova.R
+import com.example.celnova.services.AuthService
+import com.example.celnova.services.ROL_ADMINISTRADOR
+import com.example.celnova.services.ROL_VENDEDOR
+import com.example.celnova.services.SesionService
+import com.example.celnova.CelnovaFirebase
 import com.example.celnova.utils.ValidadorCorreo
-
 class LoginActivity : AppCompatActivity() {
 
     private var isPasswordVisible = false
@@ -33,12 +37,12 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+        CelnovaFirebase.inicializar()
+        AuthService.ensureSeeded()
+
         val etEmail = findViewById<EditText>(R.id.etLoginCorreo)
         val etPassword = findViewById<EditText>(R.id.etLoginContrasena)
         val btnToggle = findViewById<ImageView>(R.id.btnLoginTogglePassword)
-
-        etEmail.setText("jhonlopez@gmail.com")
-        etPassword.setText("Prueba123*")
 
         val noSpaceFilter = android.text.InputFilter { source, start, end, _, _, _ ->
             for (i in start until end) {
@@ -143,6 +147,19 @@ class LoginActivity : AppCompatActivity() {
 
         actualizarEstadoBotonLogin()
 
+        fun navegarPorRol(rol: String, email: String) {
+            val intent = Intent(
+                this,
+                when (rol) {
+                    ROL_ADMINISTRADOR -> AdminDashboardActivity::class.java
+                    ROL_VENDEDOR -> VendedorDashboardActivity::class.java
+                    else -> HomeActivity::class.java
+                }
+            ).apply { putExtra("email", email) }
+            startActivity(intent)
+            finish()
+        }
+
         btnLogin.setOnClickListener {
             val correo = etEmail.text.toString().trim().lowercase()
             val password = etPassword.text.toString()
@@ -172,12 +189,17 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-            val isAdmin = correo.equals("jhonlopezadmin@gmail.com", ignoreCase = true) || correo.startsWith("jhonlopezadmin", ignoreCase = true)
-            val targetClass = if (isAdmin) AdminDashboardActivity::class.java else HomeActivity::class.java
-            val intent = Intent(this, targetClass)
-            startActivity(intent)
-            finish()
+            AuthService.signIn(
+                correo,
+                password,
+                onSuccess = { usuario ->
+                    Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+                    navegarPorRol(usuario.rol, correo)
+                },
+                onError = { e ->
+                    Toast.makeText(this, "Credenciales inválidas. Inténtalo de nuevo.", Toast.LENGTH_SHORT).show()
+                }
+            )
         }
 
         val btnHuella = findViewById<com.google.android.material.card.MaterialCardView>(R.id.btnLoginHuella)
@@ -201,11 +223,8 @@ class LoginActivity : AppCompatActivity() {
                                 super.onAuthenticationSucceeded(result)
                                 Toast.makeText(applicationContext, "¡Inicio de sesión con huella exitoso!", Toast.LENGTH_SHORT).show()
                                 val correoActual = etEmail.text.toString().trim().lowercase()
-                                val isAdmin = correoActual.equals("jhonlopezadmin@gmail.com", ignoreCase = true) || correoActual.startsWith("jhonlopezadmin", ignoreCase = true)
-                                val targetClass = if (isAdmin) AdminDashboardActivity::class.java else HomeActivity::class.java
-                                val intent = Intent(this@LoginActivity, targetClass)
-                                startActivity(intent)
-                                finish()
+                                SesionService.guardar(correoActual)
+                                navegarPorRol("comprador", correoActual)
                             }
 
                             override fun onAuthenticationFailed() {
@@ -216,7 +235,7 @@ class LoginActivity : AppCompatActivity() {
 
                     val promptInfo = BiometricPrompt.PromptInfo.Builder()
                         .setTitle("Autenticación biométrica")
-                        .setSubtitle("Usa tu huella para iniciar sesión como jhonlopez@gmail.com")
+                        .setSubtitle("Usa tu huella para iniciar sesión")
                         .setNegativeButtonText("Cancelar")
                         .build()
 
@@ -257,3 +276,5 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 }
+
+

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.celnova.R
-
+import com.example.celnova.CelnovaFirebase
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +21,8 @@ class SplashActivity : AppCompatActivity() {
             insets
         }
 
+        CelnovaFirebase.inicializar()
+
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -28,3 +30,6 @@ class SplashActivity : AppCompatActivity() {
         }, 3000)
     }
 }
+
+
+

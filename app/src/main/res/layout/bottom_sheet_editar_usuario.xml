@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:padding="24dp">
 
-    <!-- Header Row -->
     <LinearLayout
         android:id="@+id/linearLayoutDialogEditarHeader"
         android:layout_width="match_parent"
@@ -63,7 +62,6 @@
         android:textColor="@color/txtTextoSecundario"
         android:textSize="12sp" />
 
-    <!-- Form ScrollArea -->
     <ScrollView
         android:id="@+id/scrollViewDialogEditar"
         android:layout_width="match_parent"
@@ -77,7 +75,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Field 1: Nombre Completo -->
             <TextView
                 android:id="@+id/txtDialogEditarNombreLabel"
                 android:layout_width="match_parent"
@@ -125,7 +122,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Field 2: Correo -->
             <TextView
                 android:id="@+id/txtDialogEditarCorreoLabel"
                 android:layout_width="match_parent"
@@ -174,7 +170,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Field 3: Teléfono -->
             <TextView
                 android:id="@+id/txtDialogEditarTelefonoLabel"
                 android:layout_width="match_parent"
@@ -223,7 +218,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Field 4: Ciudad -->
             <TextView
                 android:id="@+id/txtDialogEditarCiudadLabel"
                 android:layout_width="match_parent"
@@ -272,7 +266,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Roles section header -->
             <TextView
                 android:id="@+id/txtDialogEditarRolesHeader"
                 android:layout_width="match_parent"
@@ -283,14 +276,12 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
-            <!-- Role Options Cards -->
             <RadioGroup
                 android:id="@+id/radioGroupDialogEditarRoles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp">
 
-                <!-- Role 1: Cliente -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardRoleCliente"
                     android:layout_width="match_parent"
@@ -375,7 +366,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Role 2: Vendedor / Tienda Oficial (Selected highlighted) -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardRoleVendedor"
                     android:layout_width="match_parent"
@@ -462,7 +452,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Role 3: Moderador / Soporte -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardRoleModerador"
                     android:layout_width="match_parent"
@@ -547,7 +536,6 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Role 4: Admin -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardRoleAdmin"
                     android:layout_width="match_parent"
@@ -633,7 +621,6 @@
 
             </RadioGroup>
 
-            <!-- Toggle: Cuenta Habilitada -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardDialogEditarEstado"
                 android:layout_width="match_parent"
@@ -689,7 +676,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Action Buttons Row -->
     <LinearLayout
         android:id="@+id/linearLayoutDialogEditarButtons"
         android:layout_width="match_parent"

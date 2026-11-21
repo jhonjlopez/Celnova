@@ -9,7 +9,6 @@
     android:orientation="vertical"
     tools:context=".activities.AdminUsuariosActivity">
 
-    <!-- HEADER ESTÁTICO -->
     <LinearLayout
         android:id="@+id/linearLayoutAdminUsersHeader"
         android:layout_width="match_parent"
@@ -107,7 +106,6 @@
 
     </LinearLayout>
 
-    <!-- BODY SCROLLVIEW -->
     <ScrollView
         android:id="@+id/scrollViewAdminUsers"
         android:layout_width="match_parent"
@@ -124,7 +122,6 @@
             android:paddingHorizontal="24dp"
             android:paddingBottom="24dp">
 
-            <!-- BUSCADOR -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminUsersBusqueda"
                 android:layout_width="match_parent"
@@ -180,7 +177,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- CHIPS DE FILTRO -->
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollAdminUsersChips"
                 android:layout_width="match_parent"
@@ -194,7 +190,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <!-- Chip 1: Todos -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminUsersChipTodos"
                         android:layout_width="wrap_content"
@@ -232,7 +227,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Chip 2: Clientes -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminUsersChipClientes"
                         android:layout_width="wrap_content"
@@ -255,7 +249,6 @@
                             android:textStyle="bold" />
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Chip 3: Vendedores -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminUsersChipVendedores"
                         android:layout_width="wrap_content"
@@ -280,7 +273,6 @@
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <!-- BANNER RESUMEN RED -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminUsersBanner"
                 android:layout_width="match_parent"
@@ -352,7 +344,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- SECTION HEADER -->
             <LinearLayout
                 android:id="@+id/linearLayoutAdminUsersSectionHeader"
                 android:layout_width="match_parent"
@@ -380,7 +371,6 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- CARD USER 1: Carlos Mendoza -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminUser1"
                 android:layout_width="match_parent"
@@ -491,7 +481,6 @@
                             android:checked="true" />
                     </LinearLayout>
 
-                    <!-- Stats Card row -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminUser1Stats"
                         android:layout_width="match_parent"
@@ -590,7 +579,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Footer Row -->
                     <LinearLayout
                         android:id="@+id/linearLayoutAdminUser1Footer"
                         android:layout_width="match_parent"
@@ -645,7 +633,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- CARD USER 2: Valentine Gómez -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminUser2"
                 android:layout_width="match_parent"
@@ -756,7 +743,6 @@
                             android:checked="true" />
                     </LinearLayout>
 
-                    <!-- Stats Card row -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminUser2Stats"
                         android:layout_width="match_parent"
@@ -855,7 +841,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Footer Row -->
                     <LinearLayout
                         android:id="@+id/linearLayoutAdminUser2Footer"
                         android:layout_width="match_parent"
@@ -909,7 +894,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- CARD USER 3: Santiago Restrepo -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminUser3"
                 android:layout_width="match_parent"
@@ -1020,7 +1004,6 @@
                             android:checked="true" />
                     </LinearLayout>
 
-                    <!-- Stats Card row -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminUser3Stats"
                         android:layout_width="match_parent"
@@ -1093,7 +1076,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Footer Row -->
                     <LinearLayout
                         android:id="@+id/linearLayoutAdminUser3Footer"
                         android:layout_width="match_parent"
@@ -1147,7 +1129,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- CARD USER 4: Impor. Andina SAS -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdminUser4"
                 android:layout_width="match_parent"
@@ -1254,7 +1235,6 @@
 
                     </LinearLayout>
 
-                    <!-- Alert Box -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAdminUser4Alert"
                         android:layout_width="match_parent"
@@ -1293,7 +1273,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Footer Row -->
                     <LinearLayout
                         android:id="@+id/linearLayoutAdminUser4Footer"
                         android:layout_width="match_parent"
@@ -1351,7 +1330,6 @@
 
     </ScrollView>
 
-    <!-- ADMIN BOTTOM NAVIGATION -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationAdminUsers"
         android:layout_width="match_parent"
