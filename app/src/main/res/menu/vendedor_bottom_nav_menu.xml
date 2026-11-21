@@ -21,4 +21,9 @@
         android:icon="@drawable/icono_ajuste"
         android:title="Ajustes" />
 
+    <item
+        android:id="@+id/nav_vendedor_perfil"
+        android:icon="@drawable/icono_usuario"
+        android:title="Perfil" />
+
 </menu>

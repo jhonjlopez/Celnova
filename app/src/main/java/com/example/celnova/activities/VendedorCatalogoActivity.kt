@@ -55,7 +55,18 @@ class VendedorCatalogoActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-                R.id.nav_vendedor_ajustes -> true
+                R.id.nav_vendedor_ajustes -> {
+                    startActivity(Intent(this, VendedorAjustesActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
+                }
+                R.id.nav_vendedor_perfil -> {
+                    startActivity(Intent(this, VendedorPerfilActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
+                }
                 else -> false
             }
         }

@@ -43,21 +43,29 @@ class PerfilActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_inicio -> {
                     startActivity(Intent(this, HomeActivity::class.java))
+                    @Suppress("DEPRECATION")
+                    overridePendingTransition(0, 0)
                     finish()
                     true
                 }
                 R.id.nav_categorias -> {
                     startActivity(Intent(this, CategoriasActivity::class.java))
+                    @Suppress("DEPRECATION")
+                    overridePendingTransition(0, 0)
                     finish()
                     true
                 }
                 R.id.nav_buscar -> {
                     startActivity(Intent(this, BuscarActivity::class.java))
+                    @Suppress("DEPRECATION")
+                    overridePendingTransition(0, 0)
                     finish()
                     true
                 }
                 R.id.nav_carrito -> {
                     startActivity(Intent(this, CarritoActivity::class.java))
+                    @Suppress("DEPRECATION")
+                    overridePendingTransition(0, 0)
                     finish()
                     true
                 }

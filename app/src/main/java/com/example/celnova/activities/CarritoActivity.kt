@@ -56,16 +56,34 @@ class CarritoActivity : AppCompatActivity() {
 
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_inicio -> { irAInicio(); true }
+                R.id.nav_inicio -> {
+                    startActivity(Intent(this, HomeActivity::class.java))
+                    @Suppress("DEPRECATION")
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
+                }
                 R.id.nav_categorias -> {
-                    startActivity(Intent(this, CategoriasActivity::class.java)); finish(); true
+                    startActivity(Intent(this, CategoriasActivity::class.java))
+                    @Suppress("DEPRECATION")
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
                 }
                 R.id.nav_buscar -> {
-                    startActivity(Intent(this, BuscarActivity::class.java)); finish(); true
+                    startActivity(Intent(this, BuscarActivity::class.java))
+                    @Suppress("DEPRECATION")
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
                 }
                 R.id.nav_carrito -> true
                 R.id.nav_perfil -> {
-                    startActivity(Intent(this, PerfilActivity::class.java)); finish(); true
+                    startActivity(Intent(this, PerfilActivity::class.java))
+                    @Suppress("DEPRECATION")
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
                 }
                 else -> false
             }
